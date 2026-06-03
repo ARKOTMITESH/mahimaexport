@@ -2125,14 +2125,15 @@ html.lenis, html.lenis body { height: auto; }
   right: 30px;
   width: 56px;
   height: 56px;
-  background: #25D366;
-  color: var(--white);
+  background: #080808;
+  color: var(--gold);
+  border: 1px solid var(--gold);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 999;
-  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.3), 0 0 0 1px rgba(212, 175, 55, 0.2);
+  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.15), 0 0 0 1px rgba(212, 175, 55, 0.1);
   transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   text-decoration: none;
 }
@@ -2141,7 +2142,7 @@ html.lenis, html.lenis body { height: auto; }
   position: absolute;
   inset: -4px;
   border-radius: 50%;
-  border: 1px solid rgba(37, 211, 102, 0.4);
+  border: 1px solid rgba(212, 175, 55, 0.4);
   opacity: 0;
   animation: waPulse 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
   pointer-events: none;
@@ -2174,8 +2175,9 @@ html.lenis, html.lenis body { height: auto; }
 
 .whatsapp-float:hover {
   transform: translateY(-4px) scale(1.05);
-  background: #128C7E;
-  box-shadow: 0 8px 24px rgba(18, 140, 126, 0.4), 0 0 0 1px rgba(212, 175, 55, 0.4);
+  background: var(--gold);
+  color: #080808;
+  box-shadow: 0 8px 30px rgba(212, 175, 55, 0.35), 0 0 0 1px var(--gold);
 }
 
 .whatsapp-float:hover .whatsapp-float-icon {
