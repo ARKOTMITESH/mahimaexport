@@ -115,8 +115,9 @@ input, textarea, select { font-family: 'Inter', sans-serif; }
   to   { transform: rotate(360deg); }
 }
 
-.emblem-center { position: absolute; }
+.emblem-center { position: absolute; display: flex; align-items: center; justify-content: center; }
 .emblem-svg { width: 70px; height: 70px; opacity: 0; }
+.emblem-svg.loader-emblem-img { width: 55px; height: 55px; object-fit: contain; }
 
 .loader-logo-text {
   display: flex; flex-direction: column; align-items: center; gap: 6px;
@@ -192,7 +193,7 @@ input, textarea, select { font-family: 'Inter', sans-serif; }
 }
 
 .logo-mark { display: flex; align-items: center; }
-.logo-emblem-svg { width: 40px; height: 40px; }
+.logo-emblem-svg, .logo-emblem-img { width: 42px; height: 42px; object-fit: contain; }
 
 .logo-text {
   display: flex; flex-direction: column; gap: 1px;
@@ -1964,7 +1965,7 @@ input, textarea, select { font-family: 'Inter', sans-serif; }
 .ft-logo { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
 
 .ft-logo-mark { flex-shrink: 0; }
-.ft-emblem { width: 40px; height: 40px; }
+.ft-emblem, .ft-emblem-img { width: 42px; height: 42px; object-fit: contain; }
 
 .ft-logo-text { display: flex; flex-direction: column; gap: 3px; }
 
