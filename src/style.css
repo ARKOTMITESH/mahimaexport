@@ -173,11 +173,14 @@ input, textarea, select { font-family: 'Inter', sans-serif; }
 .navbar {
   position: fixed; top: 0; left: 0; right: 0;
   height: var(--nav-h); z-index: 1000;
+  background: rgba(8, 8, 8, 0.75);
+  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 1px 0 rgba(212,175,55,0.05);
   transition: background .4s ease, box-shadow .4s ease;
 }
 
 .navbar.scrolled {
-  background: rgba(8,8,8,0.94);
+  background: rgba(8, 8, 8, 0.94);
   backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
   box-shadow: 0 1px 0 rgba(212,175,55,0.1);
 }
@@ -208,7 +211,7 @@ input, textarea, select { font-family: 'Inter', sans-serif; }
 .logo-secondary {
   font-family: 'Cormorant Garamond', serif;
   font-size: 0.72rem; font-weight: 300;
-  letter-spacing: 0.35em; color: rgba(212,175,55,0.65); line-height: 1;
+  letter-spacing: 0.35em; color: rgba(212,175,55,0.85); line-height: 1;
 }
 
 .nav-links {
@@ -2056,7 +2059,7 @@ input, textarea, select { font-family: 'Inter', sans-serif; }
 @media (max-width: 1024px) {
   :root { --pad: 80px; }
   .nav-links { display: none; }
-  .hamburger { display: flex; }
+  .hamburger { display: flex; margin-left: auto; }
   .nav-cta { display: none; }
   .about-grid { grid-template-columns: 1fr; gap: 48px; }
   .about-badge { right: 0; }
@@ -2073,6 +2076,15 @@ input, textarea, select { font-family: 'Inter', sans-serif; }
 
 @media (max-width: 768px) {
   :root { --pad: 60px; }
+  .logo-primary {
+    font-size: 0.85rem;
+    letter-spacing: 0.14em;
+  }
+  .logo-secondary {
+    font-size: 0.65rem;
+    letter-spacing: 0.28em;
+    color: rgba(212, 175, 55, 0.85);
+  }
   .products-grid { grid-template-columns: 1fr; }
   .card-featured, .card-wide { grid-column: span 1; }
   .pc-content-wide { flex-direction: column !important; gap: 24px; }
@@ -2093,6 +2105,15 @@ input, textarea, select { font-family: 'Inter', sans-serif; }
 
 @media (max-width: 540px) {
   :root { --pad: 48px; }
+  .logo-primary {
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+  }
+  .logo-secondary {
+    font-size: 0.58rem;
+    letter-spacing: 0.22em;
+    color: rgba(212, 175, 55, 0.95);
+  }
   .container { padding: 0 20px; }
   .nav-inner { padding: 0 20px; }
   .hero-content { padding: 0 20px; }
