@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{name}} - Details & Specs | Mahima Global Exports</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Inter:wght@300;400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+
+    <!-- CUSTOM CURSOR -->
+    <div id="cursor" class="cursor"></div>
+    <div id="cursor-follower" class="cursor-follower"></div>
+
+    <!-- NAVIGATION -->
+    <nav id="navbar" class="navbar scrolled">
+      <div class="nav-inner">
+        <a href="/index.html#hero" class="nav-logo" id="nav-logo-link">
+          <div class="logo-mark">
+            <svg viewBox="0 0 44 44" fill="none" class="logo-emblem-svg">
+              <circle cx="22" cy="22" r="20" stroke="#D4AF37" stroke-width="0.8" opacity="0.5"/>
+              <text x="22" y="27" text-anchor="middle" font-family="Cormorant Garamond" font-size="16" font-weight="600" fill="#D4AF37">M</text>
+            </svg>
+          </div>
+          <div class="logo-text">
+            <span class="logo-primary">MAHIMA GLOBAL</span>
+            <span class="logo-secondary">EXPORTS</span>
+          </div>
+        </a>
+        <ul class="nav-links" id="nav-links-list">
+          <li><a href="/index.html" class="nav-link">Home</a></li>
+          <li><a href="/about.html" class="nav-link">About</a></li>
+          <li><a href="/products.html" class="nav-link">Products</a></li>
+          <li class="nav-dropdown">
+            <a href="/network.html" class="nav-link">Network <span class="nav-arrow">▾</span></a>
+            <ul class="dropdown-menu">
+              <li><a href="/network.html#global-network">Global Network</a></li>
+              <li><a href="/network.html#process">Export Process</a></li>
+              <li><a href="/network.html#certifications">Certifications</a></li>
+              <li><a href="/network.html#faq">FAQs</a></li>
+            </ul>
+          </li>
+          <li><a href="/why-us.html" class="nav-link">Why Us</a></li>
+          <li><a href="/partners.html" class="nav-link">Partners</a></li>
+          <li><a href="/contact.html" class="nav-link">Contact</a></li>
+        </ul>
+
+        <a href="/contact.html" class="nav-cta" id="nav-cta-btn">
+          <span>Request Quote</span>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Open Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- MOBILE MENU -->
+    <div id="mobile-menu" class="mobile-menu">
+      <div class="mobile-menu-inner">
+        <ul class="mobile-links">
+          <li><a href="/index.html" class="mob-link">Home</a></li>
+          <li><a href="/about.html" class="mob-link">About Us</a></li>
+          <li><a href="/products.html" class="mob-link">Products</a></li>
+          <li><a href="/network.html" class="mob-link">Global Network</a></li>
+          <li><a href="/why-us.html" class="mob-link">Why Choose Us</a></li>
+          <li><a href="/network.html#process" class="mob-link">Export Process</a></li>
+          <li><a href="/partners.html" class="mob-link">Partnerships</a></li>
+          <li><a href="/contact.html" class="mob-link">Contact</a></li>
+        </ul>
+        <div class="mobile-cta">
+          <a href="/contact.html" class="btn btn-primary">Request A Quote</a>
+        </div>
+      </div>
+    </div>
+
+
+    <main style="padding-top: calc(var(--nav-h) + 40px); min-height: 85vh; display: flex; align-items: center; justify-content: center; background: #080808;">
+      <div class="container" style="max-width: 900px; margin: 40px auto; width: 100%;">
+        <div class="prod-card details-card" style="min-height: auto; cursor: default; overflow: visible;">
+          <div class="pc-bg" style="{{imageStyle}}"></div>
+          <div class="pc-overlay" style="background: linear-gradient(to top, rgba(8,8,8,.99) 0%, rgba(8,8,8,.75) 50%, rgba(8,8,8,.3) 100%);"></div>
+          
+          <div class="pc-content" style="padding: 48px; justify-content: start;">
+            <a href="/{{backUrl}}" class="bc-link" style="margin-bottom: 24px; opacity: 0.8; display: inline-flex; align-items: center; gap: 8px;"><span>←</span> Back to Overview</a>
+            
+            <div class="pc-icon" style="font-size: 3.5rem; margin-bottom: 16px;">{{icon}}</div>
+            
+            <div style="display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap; text-align: left; margin-bottom: 8px;">
+              <h1 class="sec-title" style="font-size: 2.8rem; margin: 0; font-weight: 300; line-height: 1.1;">{{name}}</h1>
+              <span class="detail-code-badge">CODE: {{code}}</span>
+            </div>
+            
+            <p class="sec-sub" style="margin: 0 0 32px 0; max-width: 100%; color: var(--gold); letter-spacing: 0.12em; text-transform: uppercase; font-size: 0.8rem; font-weight: 600; text-align: left;">{{tagline}}</p>
+            
+            <p style="font-size: 0.92rem; color: var(--white-70); line-height: 1.85; margin-bottom: 40px; max-width: 760px; text-align: left;">
+              {{desc}}
+            </p>
+            
+            <div class="details-split" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 44px; text-align: left; width: 100%;">
+              <!-- Commercial Benefits Left -->
+              <div class="details-col">
+                <h3 class="details-heading">Commercial Advantages</h3>
+                <ul class="details-list">
+                  {{benefitsList}}
+                </ul>
+              </div>
+              <!-- Health & Wellness Right -->
+              <div class="details-col">
+                <h3 class="details-heading">Health &amp; Wellness Benefits</h3>
+                <ul class="details-list">
+                  {{healthList}}
+                </ul>
+              </div>
+            </div>
+
+            <a href="https://wa.me/911234567890?text={{waMsg}}" target="_blank" rel="noopener" class="btn btn-primary" style="align-self: flex-start; padding: 18px 40px; border-radius: 4px; display: inline-flex; align-items: center; gap: 12px; font-weight: 600;">
+              <span>Get A Quote via WhatsApp</span>
+              <!-- WhatsApp Icon SVG -->
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="display: block;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            </a>
+          </div>
+          <div class="pc-border-glow" style="opacity: 1;"></div>
+        </div>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer-glow"></div>
+      <div class="footer-inner">
+        <div class="footer-top">
+          <div class="ft-brand">
+            <div class="ft-logo">
+              <div class="ft-logo-mark">
+                <svg viewBox="0 0 44 44" fill="none" class="ft-emblem">
+                  <circle cx="22" cy="22" r="20" stroke="#D4AF37" stroke-width="0.8" opacity="0.5"/>
+                  <text x="22" y="27" text-anchor="middle" font-family="Cormorant Garamond" font-size="16" font-weight="600" fill="#D4AF37">M</text>
+                </svg>
+              </div>
+              <div class="ft-logo-text">
+                <span class="ft-brand-name">MAHIMA GLOBAL EXPORTS</span>
+                <span class="ft-legal">MAHIMA GLOBAL ENTREPRENEURS OPC PRIVATE LIMITED</span>
+              </div>
+            </div>
+            <p class="ft-tagline">Connecting Global Markets Through<br />Trust, Quality & Excellence</p>
+            <div class="ft-taglines">
+              <span>"From India To The World"</span>
+              <div class="ft-social">
+              <a href="#" class="soc-btn" aria-label="Facebook">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
+              </a>
+              <a href="#" class="soc-btn" aria-label="Instagram">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              </a>
+              <a href="#" class="soc-btn" aria-label="YouTube">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.163a3.003 3.003 0 00-2.11-2.108C19.524 3.545 12 3.545 12 3.545s-7.525 0-9.388.51A3.002 3.002 0 00.502 6.163C0 8.07 0 12 0 12s0 3.93.502 5.837a3.002 3.002 0 002.11 2.108c1.863.51 9.388.51 9.388.51s7.525 0 9.388-.51a3.002 3.002 0 002.11-2.108c.502-1.907.502-5.837.502-5.837s0-3.93-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+              </a>
+              <a href="#" class="soc-btn" aria-label="LinkedIn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+              </a>
+              <a href="https://wa.me/911234567890" class="soc-btn" aria-label="WhatsApp">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              </a>
+            </div>
+          </div>
+          </div>
+          <div class="ft-col">
+            <h5>Products</h5>
+            <ul>
+              <li><a href="/products.html?filter=vetiver">Vetiver Products</a></li>
+              <li><a href="/products.html?filter=rice">Basmati Rice</a></li>
+              <li><a href="/products.html?filter=rice">Non-Basmati Rice</a></li>
+              <li><a href="/products.html?filter=spices">Authentic Indian Spices</a></li>
+              <li><a href="/products.html?filter=meat">Meats &amp; Poultry</a></li>
+              <li><a href="/products.html?filter=seafood">Seafood Products</a></li>
+              <li><a href="/products.html?filter=fresh">Fresh Fruits &amp; Veg</a></li>
+              <li><a href="/products.html?filter=beverages">Tea &amp; Coffee</a></li>
+            </ul>
+          </div>
+          <div class="ft-col">
+            <h5>Markets</h5>
+            <ul>
+              <li><a href="/network.html">USA &amp; Canada</a></li>
+              <li><a href="/network.html">United Kingdom</a></li>
+              <li><a href="/network.html">Europe (EU)</a></li>
+              <li><a href="/network.html">UAE &amp; Saudi Arabia</a></li>
+              <li><a href="/network.html">Singapore &amp; Asia</a></li>
+              <li><a href="/network.html">Australia</a></li>
+              <li><a href="/network.html">Africa</a></li>
+            </ul>
+          </div>
+          <div class="ft-col">
+            <h5>Company</h5>
+            <ul>
+              <li><a href="/about.html">About Us</a></li>
+              <li><a href="/why-us.html">Why Choose Us</a></li>
+              <li><a href="/network.html#process">Export Process</a></li>
+              <li><a href="/network.html#certifications">Certifications</a></li>
+              <li><a href="/index.html#blog">Insights Blog</a></li>
+              <li><a href="/network.html#faq">Frequently Asked Questions</a></li>
+            </ul>
+          </div>
+          <div class="ft-col">
+            <h5>Contact</h5>
+            <ul>
+              <li><a href="mailto:info@mahimaglobalexports.com">info@mahimaglobalexports.com</a></li>
+              <li><a href="tel:+911234567890">+91 12345 67890</a></li>
+              <li><a href="https://wa.me/911234567890">WhatsApp Business</a></li>
+              <li><a href="/contact.html">Schedule Meeting</a></li>
+              <li><a href="/contact.html">Become A Buyer</a></li>
+              <li><a href="/contact.html">Become A Supplier</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="ft-sep"></div>
+        <div class="ft-bottom">
+          <p>© 2026 Mahima Global Entrepreneurs (OPC) Private Limited. All Rights Reserved. | Vetiver Agro Farm | Built by IIITIHAS UNIVERSAL PVT LTD</p>
+          <div class="ft-legal-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Use</a>
+            <a href="#">Cookie Policy</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- INLINE DETAILS PAGE STYLING -->
+    <style>
+      .detail-code-badge {
+        background: rgba(212, 175, 55, 0.08);
+        border: 1px solid var(--gold);
+        color: var(--gold);
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: 1rem;
+        padding: 5px 14px;
+        border-radius: 4px;
+        letter-spacing: 0.08em;
+        align-self: center;
+      }
+      .details-heading {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 1.35rem;
+        color: var(--gold);
+        margin-bottom: 20px;
+        letter-spacing: 0.05em;
+        border-bottom: 1px solid rgba(212,175,55,0.15);
+        padding-bottom: 8px;
+      }
+      .details-list {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+      .details-list li {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        font-size: 0.88rem;
+        color: var(--white-70);
+        line-height: 1.6;
+      }
+      .details-list li .bullet {
+        color: var(--gold);
+        font-size: 0.65rem;
+        margin-top: 3px;
+        flex-shrink: 0;
+      }
+      .navbar {
+        background: rgba(8,8,8,0.94);
+        backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
+        box-shadow: 0 1px 0 rgba(212,175,55,0.1);
+      }
+      @media(max-width: 768px) {
+        .details-split {
+          grid-template-columns: 1fr;
+          gap: 32px;
+        }
+        .detail-code-badge {
+          margin-top: 8px;
+          align-self: flex-start;
+        }
+      }
+    </style>
+
+    <script type="module" src="/src/subpage.js"></script>
+  </body>
+</html>

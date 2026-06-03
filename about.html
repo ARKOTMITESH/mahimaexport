@@ -1,0 +1,542 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us | Mahima Global Exports</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Inter:wght@300;400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+
+    <!-- CUSTOM CURSOR -->
+    <div id="cursor" class="cursor"></div>
+    <div id="cursor-follower" class="cursor-follower"></div>
+
+    <!-- NAVIGATION -->
+    <nav id="navbar" class="navbar scrolled">
+      <div class="nav-inner">
+        <a href="/index.html#hero" class="nav-logo" id="nav-logo-link">
+          <div class="logo-mark">
+            <svg viewBox="0 0 44 44" fill="none" class="logo-emblem-svg">
+              <circle cx="22" cy="22" r="20" stroke="#D4AF37" stroke-width="0.8" opacity="0.5"/>
+              <text x="22" y="27" text-anchor="middle" font-family="Cormorant Garamond" font-size="16" font-weight="600" fill="#D4AF37">M</text>
+            </svg>
+          </div>
+          <div class="logo-text">
+            <span class="logo-primary">MAHIMA GLOBAL</span>
+            <span class="logo-secondary">EXPORTS</span>
+          </div>
+        </a>
+        <ul class="nav-links" id="nav-links-list">
+          <li><a href="/index.html" class="nav-link">Home</a></li>
+          <li><a href="/about.html" class="nav-link active">About</a></li>
+          <li><a href="/products.html" class="nav-link">Products</a></li>
+          <li class="nav-dropdown">
+            <a href="/network.html" class="nav-link">Network <span class="nav-arrow">▾</span></a>
+            <ul class="dropdown-menu">
+              <li><a href="/network.html#global-network">Global Network</a></li>
+              <li><a href="/network.html#process">Export Process</a></li>
+              <li><a href="/network.html#certifications">Certifications</a></li>
+              <li><a href="/network.html#faq">FAQs</a></li>
+            </ul>
+          </li>
+          <li><a href="/why-us.html" class="nav-link">Why Us</a></li>
+          <li><a href="/partners.html" class="nav-link">Partners</a></li>
+          <li><a href="/contact.html" class="nav-link">Contact</a></li>
+        </ul>
+
+        <a href="/contact.html" class="nav-cta" id="nav-cta-btn">
+          <span>Request Quote</span>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Open Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- MOBILE MENU -->
+    <div id="mobile-menu" class="mobile-menu">
+      <div class="mobile-menu-inner">
+        <ul class="mobile-links">
+          <li><a href="/index.html" class="mob-link">Home</a></li>
+          <li><a href="/about.html" class="mob-link active">About Us</a></li>
+          <li><a href="/products.html" class="mob-link">Products</a></li>
+          <li><a href="/network.html" class="mob-link">Global Network</a></li>
+          <li><a href="/why-us.html" class="mob-link">Why Choose Us</a></li>
+          <li><a href="/network.html#process" class="mob-link">Export Process</a></li>
+          <li><a href="/partners.html" class="mob-link">Partnerships</a></li>
+          <li><a href="/contact.html" class="mob-link">Contact</a></li>
+        </ul>
+        <div class="mobile-cta">
+          <a href="/contact.html" class="btn btn-primary">Request A Quote</a>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- MAIN BODY -->
+    <main style="padding-top: calc(var(--nav-h) + 20px); background: #080808; overflow: hidden;">
+      
+      <!-- HERO BANNER -->
+      <section class="about-hero-section" style="padding: 80px 0 60px; position: relative;">
+        <div class="container" style="max-width: 1100px; margin: 0 auto; padding: 0 20px; text-align: center;">
+          <span class="sec-label" style="display: block; font-family: 'Inter', sans-serif; font-size: 0.8rem; letter-spacing: 0.2em; color: var(--gold); margin-bottom: 12px; font-weight: 600; text-transform: uppercase;">Corporate Profile</span>
+          <h1 class="sec-title" style="font-size: 3.5rem; font-weight: 300; line-height: 1.1; margin-bottom: 20px;">Mahima Global Exports</h1>
+          <div class="gold-bar" style="width: 80px; height: 1.5px; background: var(--gold); margin: 0 auto 30px;"></div>
+          <p style="font-size: 1.1rem; color: var(--white-70); line-height: 1.8; max-width: 800px; margin: 0 auto;">
+            A division of Mahima Global Entrepreneurs OPC Private Limited. Connecting the rich resources of India with discerning markets across the globe through integrity, quality, and supply-chain excellence.
+          </p>
+        </div>
+      </section>
+
+      <!-- VIDEO AND BIO SECTION -->
+      <section style="padding: 40px 0 80px;">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+          <div class="about-grid-custom">
+            
+            <!-- Video Frame Column -->
+            <div class="about-left-col reveal">
+              <div class="about-visual-frame" style="height: 380px; border-radius: 6px; cursor: pointer; background: linear-gradient(135deg, rgba(8,8,8,0.5), rgba(8,8,8,0.85)), url('/images/about.png') no-repeat center center/cover;" id="about-page-video-frame">
+                <div class="avf-inner" style="position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; background: rgba(8, 8, 8, 0.45);">
+                  <div class="avf-play" style="width: 70px; height: 70px; background: rgba(212,175,55,0.1); border: 1.5px solid var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.3s var(--ease); margin-bottom: 16px;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#D4AF37" style="margin-left: 2px;"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                  </div>
+                  <span style="font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; color: var(--white); font-weight: 500; letter-spacing: 0.05em;">Watch Corporate Presentation</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Detailed Matter Column -->
+            <div class="about-right-col reveal">
+              <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 300; color: var(--gold); margin-bottom: 20px; line-height: 1.2;">Global Standards. Local Relationships.</h2>
+              <p style="font-size: 0.92rem; color: var(--white-70); line-height: 1.8; margin-bottom: 16px;">
+                Mahima Global Entrepreneurs OPC Private Limited was incorporated on **January 10, 2025**, with the mission of establishing a world-class trade bridge. Sourcing agricultural commodities, spices, premium rice, organic vetiver roots, and industrial materials directly from verified farms and mines across India, we oversee the entire export process from inspection to freight delivery.
+              </p>
+              <p style="font-size: 0.92rem; color: var(--white-70); line-height: 1.8; margin-bottom: 24px;">
+                Our core operational framework emphasizes absolute supply-chain transparency, laboratory testing certifications (such as APEDA, Spices Board, and ISO compliance), and customized container packaging. We work on the foundation that commercial transactions must deliver equal value to both local growers and global buyers.
+              </p>
+              
+              <!-- Core Pillars Grid -->
+              <div class="about-mini-pillars">
+                <div class="amp-item">
+                  <span class="amp-icon">🌱</span>
+                  <div>
+                    <strong>Direct Farm Sourcing</strong>
+                    <span>Fair pricing & organic quality checks</span>
+                  </div>
+                </div>
+                <div class="amp-item">
+                  <span class="amp-icon">📦</span>
+                  <div>
+                    <strong>Sella & Vacuum Packing</strong>
+                    <span>Advanced shelf-life preservation</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- SOURCING & PHILOSOPHY SECTION -->
+      <section style="padding: 80px 0; background: #080808; position: relative; border-top: 1px solid rgba(212,175,55,0.08);">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+          <div class="about-grid-custom" style="grid-template-columns: 0.95fr 1.05fr; align-items: start;">
+            
+            <div class="reveal">
+              <span class="sec-label" style="display: block; font-family: 'Inter', sans-serif; font-size: 0.8rem; letter-spacing: 0.2em; color: var(--gold); margin-bottom: 12px; font-weight: 600; text-transform: uppercase;">Direct Sourcing</span>
+              <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; font-weight: 300; color: var(--gold); margin-bottom: 24px; line-height: 1.2;">Empowering Local Growers, Securing Global Markets</h2>
+              <p style="font-size: 0.92rem; color: var(--white-70); line-height: 1.85; margin-bottom: 20px;">
+                Our trade model is founded on direct partnerships. By eliminating intermediary brokers, Mahima Global Exports establishes stable supply agreements with agricultural cooperatives, farmers, and raw material harvesters in major producing zones across India, including Andhra Pradesh, Rajasthan, and South India.
+              </p>
+              <p style="font-size: 0.92rem; color: var(--white-70); line-height: 1.85; margin-bottom: 20px;">
+                This fair-trade framework yields two distinct benefits: local farming communities receive equitable pricing and guaranteed off-take contracts, while our international buyers secure primary-quality commodities that are fully traceable from farm to shipping container.
+              </p>
+            </div>
+            
+            <div class="reveal" style="border: 1px solid var(--glass-border); padding: 40px; background: var(--charcoal-2); border-radius: 6px;">
+              <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: var(--white); margin-bottom: 24px; font-weight: 500;">Sustainable Supply Metrics</h3>
+              
+              <div style="display: flex; flex-direction: column; gap: 20px;">
+                <div style="border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 16px;">
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                    <span style="font-size: 0.88rem; color: var(--white); font-weight: 500;">Traceable Cooperative Farms</span>
+                    <span style="font-size: 0.92rem; color: var(--gold); font-weight: 600;">10,000+ Hectares</span>
+                  </div>
+                  <p style="font-size: 0.78rem; color: var(--white-70); line-height: 1.4;">Cultivated under strict crop monitoring and pesticide control protocols.</p>
+                </div>
+                
+                <div style="border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 16px;">
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                    <span style="font-size: 0.88rem; color: var(--white); font-weight: 500;">Farmer Income Improvement</span>
+                    <span style="font-size: 0.92rem; color: var(--gold); font-weight: 600;">+25% Net Income</span>
+                  </div>
+                  <p style="font-size: 0.78rem; color: var(--white-70); line-height: 1.4;">Fair pricing structure that reinvests in sustainable agricultural tools.</p>
+                </div>
+                
+                <div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                    <span style="font-size: 0.88rem; color: var(--white); font-weight: 500;">Sustainable Logistics</span>
+                    <span style="font-size: 0.92rem; color: var(--gold); font-weight: 600;">Optimized Rail Sourcing</span>
+                  </div>
+                  <p style="font-size: 0.78rem; color: var(--white-70); line-height: 1.4;">Routing materials via efficient rail cargo networks to shipping ports.</p>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </section>
+
+      <!-- LEADER PROFILE & INCORPORATION DETAILS -->
+      <section style="padding: 80px 0; background: #0c0c0c; position: relative;">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+          <div class="leader-grid">
+            
+            <!-- Leadership Card -->
+            <div class="leader-card reveal">
+              <div class="lc-inner" style="border: 1px solid var(--glass-border); background: var(--charcoal-2); border-radius: 6px; padding: 40px; text-align: left; position: relative;">
+                <div class="lc-header" style="display: flex; align-items: center; gap: 20px; margin-bottom: 24px; border-bottom: 1px solid rgba(212,175,55,0.15); padding-bottom: 20px;">
+                  <div style="width: 60px; height: 60px; border-radius: 50%; border: 1.5px solid var(--gold); display: flex; align-items: center; justify-content: center; font-size: 1.8rem; background: var(--charcoal);">👨‍💼</div>
+                  <div>
+                    <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; color: var(--white); margin: 0; font-weight: 500;">Sunil Kumar Pyna</h3>
+                    <span style="font-size: 0.8rem; color: var(--gold); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600;">Founder &amp; Director</span>
+                  </div>
+                </div>
+                <p style="font-size: 0.9rem; color: var(--white-70); line-height: 1.75; margin-bottom: 16px;">
+                  "At Mahima Global, our business is built upon trust. Sourcing from our cooperative agricultural communities and verified mining zones, we take personal responsibility for the quality of every cargo ship we load. From India to the world, our goal is absolute transparency, timely logistics, and competitive global value."
+                </p>
+                <div style="font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-style: italic; color: var(--gold); text-align: right;">— Sunil Kumar Pyna</div>
+              </div>
+            </div>
+
+            <!-- Corporate Milestones -->
+            <div class="corporate-details reveal">
+              <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 300; color: var(--gold); margin-bottom: 24px; text-align: left; border-bottom: 1px solid rgba(212,175,55,0.15); padding-bottom: 10px;">Corporate Registration</h2>
+              <table style="width: 100%; border-collapse: collapse; text-align: left;">
+                <tr style="border-bottom: 1px solid rgba(212,175,55,0.08);">
+                  <td style="padding: 14px 0; color: var(--gold); font-size: 0.76rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600; width: 180px;">Company Entity</td>
+                  <td style="padding: 14px 0; color: var(--white-70); font-size: 0.9rem;">Mahima Global Entrepreneurs (OPC) Private Limited</td>
+                </tr>
+                <tr style="border-bottom: 1px solid rgba(212,175,55,0.08);">
+                  <td style="padding: 14px 0; color: var(--gold); font-size: 0.76rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600;">Date of Incorporation</td>
+                  <td style="padding: 14px 0; color: var(--white-70); font-size: 0.9rem;">January 10, 2025</td>
+                </tr>
+                <tr style="border-bottom: 1px solid rgba(212,175,55,0.08);">
+                  <td style="padding: 14px 0; color: var(--gold); font-size: 0.76rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600;">Registered Office</td>
+                  <td style="padding: 14px 0; color: var(--white-70); font-size: 0.9rem; line-height: 1.6;">
+                    28/7/93, Sadha vari Palem, Navalakh Gardens, Nellore, Andhra Pradesh, India, 524002
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding: 14px 0; color: var(--gold); font-size: 0.76rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600;">Principal Division</td>
+                  <td style="padding: 14px 0; color: var(--white-70); font-size: 0.9rem;">Mahima Global Exports</td>
+                </tr>
+              </table>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- QUALITY STANDARDS & INSPECTION -->
+      <section style="padding: 80px 0; background: #0c0c0c; position: relative; border-top: 1px solid rgba(212,175,55,0.08);">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px; text-align: center;">
+          <span class="sec-label" style="display: block; font-family: 'Inter', sans-serif; font-size: 0.8rem; letter-spacing: 0.2em; color: var(--gold); margin-bottom: 12px; font-weight: 600; text-transform: uppercase;">Trade Standards</span>
+          <h2 class="sec-title" style="font-size: 2.8rem; font-weight: 300; margin-bottom: 24px;">Our Strict Quality Gateways</h2>
+          <p style="font-size: 1rem; color: var(--white-70); line-height: 1.8; max-width: 800px; margin: 0 auto 50px;">
+            Every cargo shipment undergoes a multi-stage physical and chemical inspection process to guarantee international regulatory compliance.
+          </p>
+          
+          <div class="quality-timeline-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; text-align: left;">
+            <div style="border: 1px solid rgba(255,255,255,0.05); background: var(--charcoal); padding: 24px; border-radius: 6px;">
+              <span style="font-family: 'Bebas Neue', sans-serif; font-size: 2rem; color: var(--gold); display: block; margin-bottom: 12px;">STAGE 01</span>
+              <h4 style="font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; color: var(--white); margin-bottom: 8px; font-weight: 500;">Pre-Harvest Audit</h4>
+              <p style="font-size: 0.78rem; color: var(--white-70); line-height: 1.55;">
+                We verify agricultural chemical use, soil condition, and grain moisture levels prior to crop harvest.
+              </p>
+            </div>
+            
+            <div style="border: 1px solid rgba(255,255,255,0.05); background: var(--charcoal); padding: 24px; border-radius: 6px;">
+              <span style="font-family: 'Bebas Neue', sans-serif; font-size: 2rem; color: var(--gold); display: block; margin-bottom: 12px;">STAGE 02</span>
+              <h4 style="font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; color: var(--white); margin-bottom: 8px; font-weight: 500;">Sieving & Sorting</h4>
+              <p style="font-size: 0.78rem; color: var(--white-70); line-height: 1.55;">
+                Grains and spices undergo mechanical sorting to eliminate debris, black seeds, and size inconsistencies.
+              </p>
+            </div>
+            
+            <div style="border: 1px solid rgba(255,255,255,0.05); background: var(--charcoal); padding: 24px; border-radius: 6px;">
+              <span style="font-family: 'Bebas Neue', sans-serif; font-size: 2rem; color: var(--gold); display: block; margin-bottom: 12px;">STAGE 03</span>
+              <h4 style="font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; color: var(--white); margin-bottom: 8px; font-weight: 500;">Lab Verification</h4>
+              <p style="font-size: 0.78rem; color: var(--white-70); line-height: 1.55;">
+                Certified lab assays check for heavy metals (e.g. Lead chromate), aflatoxins, and pesticide residues.
+              </p>
+            </div>
+            
+            <div style="border: 1px solid rgba(255,255,255,0.05); background: var(--charcoal); padding: 24px; border-radius: 6px;">
+              <span style="font-family: 'Bebas Neue', sans-serif; font-size: 2rem; color: var(--gold); display: block; margin-bottom: 12px;">STAGE 04</span>
+              <h4 style="font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; color: var(--white); margin-bottom: 8px; font-weight: 500;">Vacuum Packing</h4>
+              <p style="font-size: 0.78rem; color: var(--white-70); line-height: 1.55;">
+                Vacuum packaging in multi-layer bags prevents moisture ingress and cargo infestation during maritime transit.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CORE VALUES SECTION -->
+      <section style="padding: 80px 0 100px;">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px; text-align: center;">
+          <span class="sec-label" style="display: block; font-family: 'Inter', sans-serif; font-size: 0.8rem; letter-spacing: 0.2em; color: var(--gold); margin-bottom: 12px; font-weight: 600; text-transform: uppercase;">Corporate Pillars</span>
+          <h2 class="sec-title" style="font-size: 2.8rem; font-weight: 300; margin-bottom: 48px;">Our Core Principles</h2>
+          
+          <div class="pillars-grid-custom" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; text-align: left;">
+            
+            <div class="value-card" style="border: 1px solid var(--glass-border); padding: 32px; background: var(--charcoal); border-radius: 6px; position: relative;">
+              <div style="font-size: 2rem; margin-bottom: 16px;">🌱</div>
+              <h4 style="font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; color: var(--white); margin-bottom: 10px; font-weight: 500;">Purity &amp; Safety</h4>
+              <p style="font-size: 0.84rem; color: var(--white-70); line-height: 1.6;">
+                Every grain of rice, spice batch, or vetiver extract is laboratory verified for purity, ensuring no lead additives, pesticides, or unauthorized compounds.
+              </p>
+            </div>
+            
+            <div class="value-card" style="border: 1px solid var(--glass-border); padding: 32px; background: var(--charcoal); border-radius: 6px; position: relative;">
+              <div style="font-size: 2rem; margin-bottom: 16px;">🔒</div>
+              <h4 style="font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; color: var(--white); margin-bottom: 10px; font-weight: 500;">Supply Integrity</h4>
+              <p style="font-size: 0.84rem; color: var(--white-70); line-height: 1.6;">
+                We monitor temperature lines, humidity levels, and cargo packing schedules. Our direct relationships keep logistics reliable and predictable.
+              </p>
+            </div>
+            
+            <div class="value-card" style="border: 1px solid var(--glass-border); padding: 32px; background: var(--charcoal); border-radius: 6px; position: relative;">
+              <div style="font-size: 2rem; margin-bottom: 16px;">🌍</div>
+              <h4 style="font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; color: var(--white); margin-bottom: 10px; font-weight: 500;">Fair Trade</h4>
+              <p style="font-size: 0.84rem; color: var(--white-70); line-height: 1.6;">
+                Supporting agricultural cooperatives through direct trade models. Sourcing ethically guarantees sustainable quality for our buyers.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- VIDEO MODAL CONTAINER -->
+    <div id="video-modal" style="position: fixed; inset: 0; z-index: 999999; display: none; align-items: center; justify-content: center; background: rgba(0,0,0,0.92); opacity: 0; transition: opacity 0.4s var(--ease);">
+      <div style="position: absolute; top: 20px; right: 20px; font-size: 2rem; color: var(--white); cursor: pointer; z-index: 2;" id="video-modal-close">×</div>
+      <div style="width: 90%; max-width: 800px; aspect-ratio: 16/9; background: #000; border-radius: 4px; overflow: hidden; position: relative; border: 1px solid rgba(212,175,55,0.3);">
+        <video id="modal-video-element" controls style="width: 100%; height: 100%; display: block;" src="https://player.vimeo.com/external/371433846.sd.mp4?s=236da2f3c0220689b1d2d38562d4e68e4a904128&profile_id=139&oauth2_token_id=57447761"></video>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer-glow"></div>
+      <div class="footer-inner">
+        <div class="footer-top">
+          <div class="ft-brand">
+            <div class="ft-logo">
+              <div class="ft-logo-mark">
+                <svg viewBox="0 0 44 44" fill="none" class="ft-emblem">
+                  <circle cx="22" cy="22" r="20" stroke="#D4AF37" stroke-width="0.8" opacity="0.5"/>
+                  <text x="22" y="27" text-anchor="middle" font-family="Cormorant Garamond" font-size="16" font-weight="600" fill="#D4AF37">M</text>
+                </svg>
+              </div>
+              <div class="ft-logo-text">
+                <span class="ft-brand-name">MAHIMA GLOBAL EXPORTS</span>
+                <span class="ft-legal">MAHIMA GLOBAL ENTREPRENEURS OPC PRIVATE LIMITED</span>
+              </div>
+            </div>
+            <p class="ft-tagline">Connecting Global Markets Through<br />Trust, Quality & Excellence</p>
+            <div class="ft-taglines">
+              <span>"From India To The World"</span>
+              <div class="ft-social">
+              <a href="#" class="soc-btn" aria-label="Facebook">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
+              </a>
+              <a href="#" class="soc-btn" aria-label="Instagram">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              </a>
+              <a href="#" class="soc-btn" aria-label="YouTube">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.163a3.003 3.003 0 00-2.11-2.108C19.524 3.545 12 3.545 12 3.545s-7.525 0-9.388.51A3.002 3.002 0 00.502 6.163C0 8.07 0 12 0 12s0 3.93.502 5.837a3.002 3.002 0 002.11 2.108c1.863.51 9.388.51 9.388.51s7.525 0 9.388-.51a3.002 3.002 0 002.11-2.108c.502-1.907.502-5.837.502-5.837s0-3.93-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+              </a>
+              <a href="#" class="soc-btn" aria-label="LinkedIn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+              </a>
+              <a href="https://wa.me/911234567890" class="soc-btn" aria-label="WhatsApp">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              </a>
+            </div>
+          </div>
+          </div>
+          <div class="ft-col">
+            <h5>Products</h5>
+            <ul>
+              <li><a href="/products.html?filter=vetiver">Vetiver Products</a></li>
+              <li><a href="/products.html?filter=rice">Basmati Rice</a></li>
+              <li><a href="/products.html?filter=rice">Non-Basmati Rice</a></li>
+              <li><a href="/products.html?filter=spices">Authentic Indian Spices</a></li>
+              <li><a href="/products.html?filter=meat">Meats &amp; Poultry</a></li>
+              <li><a href="/products.html?filter=seafood">Seafood Products</a></li>
+              <li><a href="/products.html?filter=fresh">Fresh Fruits &amp; Veg</a></li>
+              <li><a href="/products.html?filter=beverages">Tea &amp; Coffee</a></li>
+            </ul>
+          </div>
+          <div class="ft-col">
+            <h5>Markets</h5>
+            <ul>
+              <li><a href="/network.html">USA &amp; Canada</a></li>
+              <li><a href="/network.html">United Kingdom</a></li>
+              <li><a href="/network.html">Europe (EU)</a></li>
+              <li><a href="/network.html">UAE &amp; Saudi Arabia</a></li>
+              <li><a href="/network.html">Singapore &amp; Asia</a></li>
+              <li><a href="/network.html">Australia</a></li>
+              <li><a href="/network.html">Africa</a></li>
+            </ul>
+          </div>
+          <div class="ft-col">
+            <h5>Company</h5>
+            <ul>
+              <li><a href="/about.html">About Us</a></li>
+              <li><a href="/why-us.html">Why Choose Us</a></li>
+              <li><a href="/network.html#process">Export Process</a></li>
+              <li><a href="/network.html#certifications">Certifications</a></li>
+              <li><a href="/index.html#blog">Insights Blog</a></li>
+              <li><a href="/network.html#faq">Frequently Asked Questions</a></li>
+            </ul>
+          </div>
+          <div class="ft-col">
+            <h5>Contact</h5>
+            <ul>
+              <li><a href="mailto:info@mahimaglobalexports.com">info@mahimaglobalexports.com</a></li>
+              <li><a href="tel:+911234567890">+91 12345 67890</a></li>
+              <li><a href="https://wa.me/911234567890">WhatsApp Business</a></li>
+              <li><a href="/contact.html">Schedule Meeting</a></li>
+              <li><a href="/contact.html">Become A Buyer</a></li>
+              <li><a href="/contact.html">Become A Supplier</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="ft-sep"></div>
+        <div class="ft-bottom">
+          <p>© 2026 Mahima Global Entrepreneurs (OPC) Private Limited. All Rights Reserved. | Vetiver Agro Farm | Built by IIITIHAS UNIVERSAL PVT LTD</p>
+          <div class="ft-legal-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Use</a>
+            <a href="#">Cookie Policy</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- STYLING SPECIFIC TO ABOUT PAGE -->
+    <style>
+      .navbar {
+        background: rgba(8,8,8,0.94);
+        backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
+        box-shadow: 0 1px 0 rgba(212,175,55,0.1);
+      }
+      .about-grid-custom {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 50px;
+        align-items: center;
+      }
+      .about-mini-pillars {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        margin-top: 30px;
+      }
+      .amp-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+      }
+      .amp-icon {
+        font-size: 1.5rem;
+        margin-top: 2px;
+      }
+      .amp-item strong {
+        display: block;
+        font-size: 0.88rem;
+        color: var(--white);
+        margin-bottom: 4px;
+      }
+      .amp-item span {
+        font-size: 0.78rem;
+        color: var(--white-70);
+        line-height: 1.4;
+        display: block;
+      }
+      .leader-grid {
+        display: grid;
+        grid-template-columns: 1fr 1.1fr;
+        gap: 60px;
+        align-items: center;
+      }
+      .value-card {
+        transition: transform 0.4s var(--ease), border-color 0.4s var(--ease);
+      }
+      .value-card:hover {
+        transform: translateY(-6px);
+        border-color: var(--gold);
+      }
+      @media(max-width: 991px) {
+        .about-grid-custom, .leader-grid {
+          grid-template-columns: 1fr;
+          gap: 40px;
+        }
+        .pillars-grid-custom {
+          grid-template-columns: 1fr !important;
+          gap: 24px;
+        }
+        .quality-timeline-grid {
+          grid-template-columns: 1fr !important;
+          gap: 20px;
+        }
+      }
+    </style>
+
+    <script type="module" src="/src/subpage.js"></script>
+    <script type="module">
+      document.addEventListener('DOMContentLoaded', () => {
+        // Video Modal Script
+        const playFrame = document.getElementById('about-page-video-frame');
+        const modal = document.getElementById('video-modal');
+        const close = document.getElementById('video-modal-close');
+        const video = document.getElementById('modal-video-element');
+
+        if (playFrame && modal && close && video) {
+          playFrame.addEventListener('click', () => {
+            modal.style.display = 'flex';
+            setTimeout(() => {
+              modal.style.opacity = '1';
+            }, 10);
+            video.play().catch(() => {});
+          });
+
+          const closeModal = () => {
+            modal.style.opacity = '0';
+            setTimeout(() => {
+              modal.style.display = 'none';
+              video.pause();
+              video.currentTime = 0;
+            }, 400);
+          };
+
+          close.addEventListener('click', closeModal);
+          modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal();
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

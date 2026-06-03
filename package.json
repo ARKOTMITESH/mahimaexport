@@ -1,0 +1,20 @@
+{
+  "name": "zw",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/generate-pages.js && vite",
+    "build": "node scripts/generate-pages.js && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^8.0.10"
+  },
+  "dependencies": {
+    "gsap": "^3.15.0",
+    "lenis": "^1.3.23",
+    "lucide": "^1.14.0",
+    "three": "^0.184.0"
+  }
+}

@@ -1,0 +1,467 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Export Portfolio | Mahima Global Exports</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Inter:wght@300;400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+
+    <!-- CUSTOM CURSOR -->
+    <div id="cursor" class="cursor"></div>
+    <div id="cursor-follower" class="cursor-follower"></div>
+
+    <!-- NAVIGATION -->
+    <nav id="navbar" class="navbar scrolled">
+      <div class="nav-inner">
+        <a href="/index.html#hero" class="nav-logo" id="nav-logo-link">
+          <div class="logo-mark">
+            <svg viewBox="0 0 44 44" fill="none" class="logo-emblem-svg">
+              <circle cx="22" cy="22" r="20" stroke="#D4AF37" stroke-width="0.8" opacity="0.5"/>
+              <text x="22" y="27" text-anchor="middle" font-family="Cormorant Garamond" font-size="16" font-weight="600" fill="#D4AF37">M</text>
+            </svg>
+          </div>
+          <div class="logo-text">
+            <span class="logo-primary">MAHIMA GLOBAL</span>
+            <span class="logo-secondary">EXPORTS</span>
+          </div>
+        </a>
+        <ul class="nav-links" id="nav-links-list">
+          <li><a href="/index.html" class="nav-link">Home</a></li>
+          <li><a href="/about.html" class="nav-link">About</a></li>
+          <li><a href="/products.html" class="nav-link active">Products</a></li>
+          <li class="nav-dropdown">
+            <a href="/network.html" class="nav-link">Network <span class="nav-arrow">▾</span></a>
+            <ul class="dropdown-menu">
+              <li><a href="/network.html#global-network">Global Network</a></li>
+              <li><a href="/network.html#process">Export Process</a></li>
+              <li><a href="/network.html#certifications">Certifications</a></li>
+              <li><a href="/network.html#faq">FAQs</a></li>
+            </ul>
+          </li>
+          <li><a href="/why-us.html" class="nav-link">Why Us</a></li>
+          <li><a href="/partners.html" class="nav-link">Partners</a></li>
+          <li><a href="/contact.html" class="nav-link">Contact</a></li>
+        </ul>
+
+        <a href="/contact.html" class="nav-cta" id="nav-cta-btn">
+          <span>Request Quote</span>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Open Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- MOBILE MENU -->
+    <div id="mobile-menu" class="mobile-menu">
+      <div class="mobile-menu-inner">
+        <ul class="mobile-links">
+          <li><a href="/index.html" class="mob-link">Home</a></li>
+          <li><a href="/about.html" class="mob-link">About Us</a></li>
+          <li><a href="/products.html" class="mob-link active">Products</a></li>
+          <li><a href="/network.html" class="mob-link">Global Network</a></li>
+          <li><a href="/why-us.html" class="mob-link">Why Choose Us</a></li>
+          <li><a href="/network.html#process" class="mob-link">Export Process</a></li>
+          <li><a href="/partners.html" class="mob-link">Partnerships</a></li>
+          <li><a href="/contact.html" class="mob-link">Contact</a></li>
+        </ul>
+        <div class="mobile-cta">
+          <a href="/contact.html" class="btn btn-primary">Request A Quote</a>
+        </div>
+      </div>
+    </div>
+
+
+    <main style="padding-top: calc(var(--nav-h) + 20px); background: #080808; overflow: hidden; min-height: 100vh;">
+      
+      <!-- HERO BANNER -->
+      <section class="products-hero-section" style="padding: 80px 0 30px; position: relative;">
+        <div class="container" style="max-width: 1100px; margin: 0 auto; padding: 0 20px; text-align: center;">
+          <span class="sec-label" style="display: block; font-family: 'Inter', sans-serif; font-size: 0.8rem; letter-spacing: 0.2em; color: var(--gold); margin-bottom: 12px; font-weight: 600; text-transform: uppercase;">Export Portfolio</span>
+          <h1 class="sec-title" style="font-size: 3.5rem; font-weight: 300; line-height: 1.1; margin-bottom: 20px;">Our Premium Products</h1>
+          <div class="gold-bar" style="width: 80px; height: 1.5px; background: var(--gold); margin: 0 auto 24px;"></div>
+          <p style="font-size: 1.1rem; color: var(--white-70); line-height: 1.8; max-width: 800px; margin: 0 auto;">
+            Explore our extensive range of high-quality, ethically sourced commodities. Sourced directly from verified farms and mines across India, we guarantee absolute supply-chain transparency and international compliance.
+          </p>
+        </div>
+      </section>
+
+      <!-- FILTER CONTROL -->
+      <section class="filter-section" style="padding: 10px 0; margin-bottom: 40px; position: relative; z-index: 10;">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: center; flex-wrap: wrap; gap: 12px;">
+          <button class="filter-btn active" data-filter="all">All Portfolio</button>
+          <button class="filter-btn" data-filter="vetiver">Vetiver</button>
+          <button class="filter-btn" data-filter="rice">Rice &amp; Grains</button>
+          <button class="filter-btn" data-filter="spices">Spices</button>
+          <button class="filter-btn" data-filter="meat">Poultry &amp; Meats</button>
+          <button class="filter-btn" data-filter="seafood">Seafood</button>
+          <button class="filter-btn" data-filter="fresh">Fresh Produce</button>
+          <button class="filter-btn" data-filter="beverages">Tea &amp; Coffee</button>
+          <button class="filter-btn" data-filter="industrial">Industrial Sourcing</button>
+        </div>
+      </section>
+
+      <!-- PRODUCTS SHOWCASE GRID -->
+      <section class="products-list-section" style="padding-bottom: 100px;">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+          <div class="products-grid" id="products-grid-container">
+
+            <!-- VETIVER PRODUCTS -->
+            <a href="vetiver-overview.html" class="prod-card reveal" data-cat="vetiver">
+              <div class="pc-bg" id="pc-bg-0"></div>
+              <div class="pc-overlay"></div>
+              <div class="pc-content">
+                <h3 class="pc-name">Vetiver Collection</h3>
+                <p class="pc-desc">Premium vetiver roots, pure essential oil, planting material, and extracts sourced from certified sustainable farms.</p>
+              </div>
+              <div class="pc-border-glow"></div>
+            </a>
+
+            <!-- PREMIUM BASMATI RICE -->
+            <a href="basmati-rice-overview.html" class="prod-card reveal" data-cat="rice">
+              <div class="pc-bg" id="pc-bg-1"></div>
+              <div class="pc-overlay"></div>
+              <div class="pc-content">
+                <h3 class="pc-name">Premium Basmati Rice</h3>
+                <p class="pc-desc">Finest aged Basmati rice varieties, celebrated for long grains, distinctive aroma, and superior cooking quality.</p>
+              </div>
+              <div class="pc-border-glow"></div>
+            </a>
+
+            <!-- NON-BASMATI RICE -->
+            <a href="non-basmati-rice-overview.html" class="prod-card reveal" data-cat="rice">
+              <div class="pc-bg" id="pc-bg-2"></div>
+              <div class="pc-overlay"></div>
+              <div class="pc-content">
+                <h3 class="pc-name">Non-Basmati Rice</h3>
+                <p class="pc-desc">Export-grade Indian non-Basmati rice cultivated across fertile plains, packed for retail and wholesale.</p>
+              </div>
+              <div class="pc-border-glow"></div>
+            </a>
+
+            <!-- AUTHENTIC INDIAN SPICES -->
+            <a href="spices-overview.html" class="prod-card reveal" data-cat="spices">
+              <div class="pc-bg" id="pc-bg-3"></div>
+              <div class="pc-overlay"></div>
+              <div class="pc-content">
+                <h3 class="pc-name">Authentic Indian Spices</h3>
+                <p class="pc-desc">Sourced directly from India's spice fields, laboratory tested for high purity and active compounds.</p>
+              </div>
+              <div class="pc-border-glow"></div>
+            </a>
+
+            <!-- FRESH & FROZEN CHICKEN -->
+            <a href="chicken-overview.html" class="prod-card reveal" data-cat="meat">
+              <div class="pc-bg" id="pc-bg-4"></div>
+              <div class="pc-overlay"></div>
+              <div class="pc-content">
+                <h3 class="pc-name">Chicken Products</h3>
+                <p class="pc-desc">Export-quality poultry products processed under strict hygiene and international food safety standards.</p>
+              </div>
+              <div class="pc-border-glow"></div>
+            </a>
+
+            <!-- PREMIUM MEAT PRODUCTS -->
+            <a href="meat-overview.html" class="prod-card reveal" data-cat="meat">
+              <div class="pc-bg" id="pc-bg-5"></div>
+              <div class="pc-overlay"></div>
+              <div class="pc-content">
+                <h3 class="pc-name">Premium Meat Products</h3>
+                <p class="pc-desc">High-quality boneless buffalo meat, mutton, and lamb cuts processed in state-of-the-art plants.</p>
+              </div>
+              <div class="pc-border-glow"></div>
+            </a>
+
+            <!-- SEAFOOD & FISH PRODUCTS -->
+            <a href="seafood-overview.html" class="prod-card reveal" data-cat="seafood">
+              <div class="pc-bg" id="pc-bg-6"></div>
+              <div class="pc-overlay"></div>
+              <div class="pc-content">
+                <h3 class="pc-name">Seafood & Fish Products</h3>
+                <p class="pc-desc">Freshly caught and IQF frozen marine products sourced from certified aquaculture and ocean fleets.</p>
+              </div>
+              <div class="pc-border-glow"></div>
+            </a>
+
+            <!-- FRESH FRUITS -->
+            <a href="fruits-overview.html" class="prod-card reveal" data-cat="fresh">
+              <div class="pc-bg" id="pc-bg-7"></div>
+              <div class="pc-overlay"></div>
+              <div class="pc-content">
+                <h3 class="pc-name">Fresh Fruits Portfolio</h3>
+                <p class="pc-desc">Premium fresh fruits selected for size, coloration, brix value, and longer export transit shelf life.</p>
+              </div>
+              <div class="pc-border-glow"></div>
+            </a>
+
+            <!-- FRESH VEGETABLES -->
+            <a href="vegetables-overview.html" class="prod-card reveal" data-cat="fresh">
+              <div class="pc-bg" id="pc-bg-8"></div>
+              <div class="pc-overlay"></div>
+              <div class="pc-content">
+                <h3 class="pc-name">Fresh Vegetables</h3>
+                <p class="pc-desc">Farm-fresh Indian vegetables harvested, temperature-controlled, and packed to preserve crispness.</p>
+              </div>
+              <div class="pc-border-glow"></div>
+            </a>
+
+            <!-- PREMIUM COFFEE PRODUCTS -->
+            <a href="coffee-overview.html" class="prod-card reveal" data-cat="beverages">
+              <div class="pc-bg" id="pc-bg-9"></div>
+              <div class="pc-overlay"></div>
+              <div class="pc-content">
+                <h3 class="pc-name">Premium Coffee Products</h3>
+                <p class="pc-desc">Aromatic coffee beans and instant coffee powder sourced from India's premier high-altitude plantations.</p>
+              </div>
+              <div class="pc-border-glow"></div>
+            </a>
+
+            <!-- PREMIUM TEA PRODUCTS -->
+            <a href="tea-overview.html" class="prod-card reveal" data-cat="beverages">
+              <div class="pc-bg" id="pc-bg-10"></div>
+              <div class="pc-overlay"></div>
+              <div class="pc-content">
+                <h3 class="pc-name">Premium Tea Products</h3>
+                <p class="pc-desc">Exceptional whole leaf, CTC, and organic teas sourced from India's most celebrated single estates.</p>
+              </div>
+              <div class="pc-border-glow"></div>
+            </a>
+
+            <!-- INDUSTRIAL RAW MATERIALS -->
+            <a href="industrial-overview.html" class="prod-card reveal" data-cat="industrial">
+              <div class="pc-bg" id="pc-bg-11"></div>
+              <div class="pc-overlay"></div>
+              <div class="pc-content">
+                <h3 class="pc-name">Industrial Sourcing</h3>
+                <p class="pc-desc">Comprehensive supply solutions for industrial commodities, natural fibers, minerals, paper products, and custom textiles.</p>
+              </div>
+              <div class="pc-border-glow"></div>
+            </a>
+
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer-glow"></div>
+      <div class="footer-inner">
+        <div class="footer-top">
+          <div class="ft-brand">
+            <div class="ft-logo">
+              <div class="ft-logo-mark">
+                <svg viewBox="0 0 44 44" fill="none" class="ft-emblem">
+                  <circle cx="22" cy="22" r="20" stroke="#D4AF37" stroke-width="0.8" opacity="0.5"/>
+                  <text x="22" y="27" text-anchor="middle" font-family="Cormorant Garamond" font-size="16" font-weight="600" fill="#D4AF37">M</text>
+                </svg>
+              </div>
+              <div class="ft-logo-text">
+                <span class="ft-brand-name">MAHIMA GLOBAL EXPORTS</span>
+                <span class="ft-legal">MAHIMA GLOBAL ENTREPRENEURS OPC PRIVATE LIMITED</span>
+              </div>
+            </div>
+            <p class="ft-tagline">Connecting Global Markets Through<br />Trust, Quality & Excellence</p>
+            <div class="ft-taglines">
+              <span>"From India To The World"</span>
+              <div class="ft-social">
+              <a href="#" class="soc-btn" aria-label="Facebook">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
+              </a>
+              <a href="#" class="soc-btn" aria-label="Instagram">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              </a>
+              <a href="#" class="soc-btn" aria-label="YouTube">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.163a3.003 3.003 0 00-2.11-2.108C19.524 3.545 12 3.545 12 3.545s-7.525 0-9.388.51A3.002 3.002 0 00.502 6.163C0 8.07 0 12 0 12s0 3.93.502 5.837a3.002 3.002 0 002.11 2.108c1.863.51 9.388.51 9.388.51s7.525 0 9.388-.51a3.002 3.002 0 002.11-2.108c.502-1.907.502-5.837.502-5.837s0-3.93-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+              </a>
+              <a href="#" class="soc-btn" aria-label="LinkedIn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+              </a>
+              <a href="https://wa.me/911234567890" class="soc-btn" aria-label="WhatsApp">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              </a>
+            </div>
+          </div>
+          </div>
+          <div class="ft-col">
+            <h5>Products</h5>
+            <ul>
+              <li><a href="/products.html?filter=vetiver">Vetiver Products</a></li>
+              <li><a href="/products.html?filter=rice">Basmati Rice</a></li>
+              <li><a href="/products.html?filter=rice">Non-Basmati Rice</a></li>
+              <li><a href="/products.html?filter=spices">Authentic Indian Spices</a></li>
+              <li><a href="/products.html?filter=meat">Meats &amp; Poultry</a></li>
+              <li><a href="/products.html?filter=seafood">Seafood Products</a></li>
+              <li><a href="/products.html?filter=fresh">Fresh Fruits &amp; Veg</a></li>
+              <li><a href="/products.html?filter=beverages">Tea &amp; Coffee</a></li>
+            </ul>
+          </div>
+          <div class="ft-col">
+            <h5>Markets</h5>
+            <ul>
+              <li><a href="/network.html">USA &amp; Canada</a></li>
+              <li><a href="/network.html">United Kingdom</a></li>
+              <li><a href="/network.html">Europe (EU)</a></li>
+              <li><a href="/network.html">UAE &amp; Saudi Arabia</a></li>
+              <li><a href="/network.html">Singapore &amp; Asia</a></li>
+              <li><a href="/network.html">Australia</a></li>
+              <li><a href="/network.html">Africa</a></li>
+            </ul>
+          </div>
+          <div class="ft-col">
+            <h5>Company</h5>
+            <ul>
+              <li><a href="/about.html">About Us</a></li>
+              <li><a href="/why-us.html">Why Choose Us</a></li>
+              <li><a href="/network.html#process">Export Process</a></li>
+              <li><a href="/network.html#certifications">Certifications</a></li>
+              <li><a href="/index.html#blog">Insights Blog</a></li>
+              <li><a href="/network.html#faq">Frequently Asked Questions</a></li>
+            </ul>
+          </div>
+          <div class="ft-col">
+            <h5>Contact</h5>
+            <ul>
+              <li><a href="mailto:info@mahimaglobalexports.com">info@mahimaglobalexports.com</a></li>
+              <li><a href="tel:+911234567890">+91 12345 67890</a></li>
+              <li><a href="https://wa.me/911234567890">WhatsApp Business</a></li>
+              <li><a href="/contact.html">Schedule Meeting</a></li>
+              <li><a href="/contact.html">Become A Buyer</a></li>
+              <li><a href="/contact.html">Become A Supplier</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="ft-sep"></div>
+        <div class="ft-bottom">
+          <p>© 2026 Mahima Global Entrepreneurs (OPC) Private Limited. All Rights Reserved. | Vetiver Agro Farm | Built by IIITIHAS UNIVERSAL PVT LTD</p>
+          <div class="ft-legal-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Use</a>
+            <a href="#">Cookie Policy</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- INLINE PRODUCTS PAGE STYLING -->
+    <style>
+      .navbar {
+        background: rgba(8,8,8,0.94);
+        backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
+        box-shadow: 0 1px 0 rgba(212,175,55,0.1);
+      }
+      .filter-btn {
+        background: rgba(255, 255, 255, 0.02);
+        border: 1px solid rgba(212, 175, 55, 0.12);
+        color: var(--white-70);
+        padding: 10px 24px;
+        font-family: 'Inter', sans-serif;
+        font-size: 0.8rem;
+        font-weight: 500;
+        border-radius: 40px;
+        cursor: pointer;
+        transition: all 0.35s var(--ease);
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+      .filter-btn:hover {
+        background: rgba(212, 175, 55, 0.06);
+        border-color: var(--gold);
+        color: var(--white);
+        transform: translateY(-2px);
+      }
+      .filter-btn.active {
+        background: var(--gold);
+        border-color: var(--gold);
+        color: #080808;
+        font-weight: 600;
+        box-shadow: 0 4px 15px rgba(212, 175, 55, 0.25);
+      }
+      .prod-card {
+        transition: transform .4s var(--ease), box-shadow .4s ease, opacity 0.3s ease, scale 0.3s ease !important;
+      }
+      @media(max-width: 768px) {
+        .filter-section .container {
+          gap: 8px;
+        }
+        .filter-btn {
+          padding: 8px 16px;
+          font-size: 0.72rem;
+        }
+      }
+    </style>
+
+    <script type="module" src="/src/subpage.js"></script>
+    <script type="module">
+      document.addEventListener('DOMContentLoaded', () => {
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const productCards = document.querySelectorAll('.products-grid .prod-card');
+
+        // Function to filter products
+        const filterProducts = (filterValue) => {
+          // Update active class on buttons
+          filterButtons.forEach(btn => {
+            if (btn.getAttribute('data-filter') === filterValue) {
+              btn.classList.add('active');
+            } else {
+              btn.classList.remove('active');
+            }
+          });
+
+          // Show/hide cards with animation
+          productCards.forEach(card => {
+            const cardCat = card.getAttribute('data-cat');
+            if (filterValue === 'all' || cardCat === filterValue) {
+              card.style.display = 'block';
+              setTimeout(() => {
+                card.style.opacity = '1';
+                card.style.transform = 'scale(1)';
+              }, 10);
+            } else {
+              card.style.opacity = '0';
+              card.style.transform = 'scale(0.95)';
+              setTimeout(() => {
+                card.style.display = 'none';
+              }, 300);
+            }
+          });
+        };
+
+        // Click listeners on buttons
+        filterButtons.forEach(btn => {
+          btn.addEventListener('click', () => {
+            const filterValue = btn.getAttribute('data-filter');
+            // Update URL query parameters without reloading
+            const url = new URL(window.location);
+            if (filterValue === 'all') {
+              url.searchParams.delete('filter');
+            } else {
+              url.searchParams.set('filter', filterValue);
+            }
+            window.history.pushState({}, '', url);
+
+            filterProducts(filterValue);
+          });
+        });
+
+        // Initialize filter from URL parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const urlFilter = urlParams.get('filter');
+        if (urlFilter) {
+          // Check if filter exists
+          const validFilters = ['vetiver', 'rice', 'spices', 'meat', 'seafood', 'fresh', 'beverages', 'industrial'];
+          if (validFilters.includes(urlFilter)) {
+            filterProducts(urlFilter);
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

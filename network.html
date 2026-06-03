@@ -1,0 +1,732 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Global Network &amp; Services | Mahima Global Exports</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Inter:wght@300;400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+
+    <!-- CUSTOM CURSOR -->
+    <div id="cursor" class="cursor"></div>
+    <div id="cursor-follower" class="cursor-follower"></div>
+
+    <!-- NAVIGATION -->
+    <nav id="navbar" class="navbar scrolled">
+      <div class="nav-inner">
+        <a href="/index.html#hero" class="nav-logo" id="nav-logo-link">
+          <div class="logo-mark">
+            <svg viewBox="0 0 44 44" fill="none" class="logo-emblem-svg">
+              <circle cx="22" cy="22" r="20" stroke="#D4AF37" stroke-width="0.8" opacity="0.5"/>
+              <text x="22" y="27" text-anchor="middle" font-family="Cormorant Garamond" font-size="16" font-weight="600" fill="#D4AF37">M</text>
+            </svg>
+          </div>
+          <div class="logo-text">
+            <span class="logo-primary">MAHIMA GLOBAL</span>
+            <span class="logo-secondary">EXPORTS</span>
+          </div>
+        </a>
+        <ul class="nav-links" id="nav-links-list">
+          <li><a href="/index.html" class="nav-link">Home</a></li>
+          <li><a href="/about.html" class="nav-link">About</a></li>
+          <li><a href="/products.html" class="nav-link">Products</a></li>
+          <li class="nav-dropdown">
+            <a href="/network.html" class="nav-link active">Network <span class="nav-arrow">▾</span></a>
+            <ul class="dropdown-menu">
+              <li><a href="/network.html#global-network">Global Network</a></li>
+              <li><a href="/network.html#process">Export Process</a></li>
+              <li><a href="/network.html#certifications">Certifications</a></li>
+              <li><a href="/network.html#faq">FAQs</a></li>
+            </ul>
+          </li>
+          <li><a href="/why-us.html" class="nav-link">Why Us</a></li>
+          <li><a href="/partners.html" class="nav-link">Partners</a></li>
+          <li><a href="/contact.html" class="nav-link">Contact</a></li>
+        </ul>
+
+        <a href="/contact.html" class="nav-cta" id="nav-cta-btn">
+          <span>Request Quote</span>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Open Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- MOBILE MENU -->
+    <div id="mobile-menu" class="mobile-menu">
+      <div class="mobile-menu-inner">
+        <ul class="mobile-links">
+          <li><a href="/index.html" class="mob-link">Home</a></li>
+          <li><a href="/about.html" class="mob-link">About Us</a></li>
+          <li><a href="/products.html" class="mob-link">Products</a></li>
+          <li><a href="/network.html" class="mob-link active">Global Network</a></li>
+          <li><a href="/why-us.html" class="mob-link">Why Choose Us</a></li>
+          <li><a href="/network.html#process" class="mob-link">Export Process</a></li>
+          <li><a href="/partners.html" class="mob-link">Partnerships</a></li>
+          <li><a href="/contact.html" class="mob-link">Contact</a></li>
+        </ul>
+        <div class="mobile-cta">
+          <a href="/contact.html" class="btn btn-primary">Request A Quote</a>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- MAIN BODY -->
+    <main style="padding-top: calc(var(--nav-h) + 20px); background: #080808; overflow: hidden;">
+      
+      <!-- HERO BANNER -->
+      <section style="padding: 80px 0 40px; position: relative; text-align: center;">
+        <div class="container" style="max-width: 1100px; margin: 0 auto; padding: 0 20px;">
+          <span class="sec-label" style="display: block; font-family: 'Inter', sans-serif; font-size: 0.8rem; letter-spacing: 0.2em; color: var(--gold); margin-bottom: 12px; font-weight: 600; text-transform: uppercase;">Trade &amp; Logistics</span>
+          <h1 class="sec-title" style="font-size: 3.5rem; font-weight: 300; line-height: 1.1; margin-bottom: 20px;">Global Sourcing &amp; Network</h1>
+          <div class="gold-bar" style="width: 80px; height: 1.5px; background: var(--gold); margin: 0 auto 30px;"></div>
+          <p style="font-size: 1.1rem; color: var(--white-70); line-height: 1.8; max-width: 800px; margin: 0 auto;">
+            Ensuring safe transit, compliance verification, and prompt container delivery to major sea ports across North America, Europe, Middle East, and Asia.
+          </p>
+        </div>
+      </section>
+
+      <!-- GLOBAL PRESENCE / MAP -->
+      <section id="global-network" class="section network-section" style="padding: 40px 0 80px;">
+        <div class="container">
+          <div class="sec-header reveal">
+            <span class="sec-label">GLOBAL PRESENCE</span>
+            <h2 class="sec-title">Our <em>International</em> Trade Network</h2>
+            <p class="sec-sub">Connecting manufacturers with buyers across continents through trusted trade relationships</p>
+          </div>
+          <div class="network-body">
+            <div class="network-map-wrap reveal">
+              <canvas id="map-canvas" class="map-canvas" style="width: 100%; height: 400px; display: block; background: #0b0b0f; border-radius: 6px; border: 1px solid rgba(212,175,55,0.08);"></canvas>
+              <div class="map-legend">
+                <div class="map-legend-item"><span class="legend-dot"></span> Trade Hub</div>
+                <div class="map-legend-item"><span class="legend-line"></span> Active Route</div>
+              </div>
+            </div>
+            <div class="network-stats reveal">
+              <div class="nstat">
+                <div class="nstat-icon">🌐</div>
+                <div class="nstat-num">100+</div>
+                <div class="nstat-lbl">International Buyers</div>
+              </div>
+              <div class="nstat">
+                <div class="nstat-icon">🗺️</div>
+                <div class="nstat-num">50+</div>
+                <div class="nstat-lbl">Countries Connected</div>
+              </div>
+              <div class="nstat">
+                <div class="nstat-icon">📦</div>
+                <div class="nstat-num">25+</div>
+                <div class="nstat-lbl">Product Categories</div>
+              </div>
+              <div class="nstat">
+                <div class="nstat-icon">🚢</div>
+                <div class="nstat-num">10,000+</div>
+                <div class="nstat-lbl">Successful Shipments</div>
+              </div>
+            </div>
+          </div>
+          <div class="regions-row reveal">
+            <div class="region-chip"><span>🌎</span> North America</div>
+            <div class="region-chip"><span>🇪🇺</span> Europe</div>
+            <div class="region-chip"><span>🌙</span> Middle East</div>
+            <div class="region-chip"><span>🌏</span> Asia Pacific</div>
+            <div class="region-chip"><span>🌍</span> Africa</div>
+            <div class="region-chip"><span>🦘</span> Australia</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- EXPORT PROCESS SECTION -->
+      <section id="process" class="section process-section" style="background: #0a0a0d;">
+        <div class="container">
+          <div class="sec-header reveal">
+            <span class="sec-label">TRADE WORKFLOW</span>
+            <h2 class="sec-title">Our Standardized <em>Export</em> Process</h2>
+            <p class="sec-sub">Step-by-step transparency from initial sourcing inquiry to destination port customs clearance</p>
+          </div>
+
+          <div class="process-wrap">
+            <div class="process-timeline-line">
+              <div class="process-timeline-bar" id="process-bar"></div>
+            </div>
+            
+            <div class="process-steps">
+              <div class="ps-step" data-step="1">
+                <div class="ps-bubble"><span>01</span></div>
+                <div class="ps-body">
+                  <div class="ps-icon">📨</div>
+                  <h4>Inquiry &amp; Requirement</h4>
+                  <p>Buyer submits commercial inquiry specifying product specs, grade, packing, and destination port</p>
+                </div>
+              </div>
+              <div class="ps-step" data-step="2">
+                <div class="ps-bubble"><span>02</span></div>
+                <div class="ps-body">
+                  <div class="ps-icon">💰</div>
+                  <h4>Quotation &amp; FOB/CIF</h4>
+                  <p>Our trade desk issues competitive quotation outlining cargo prices, ocean freight costs, and schedules</p>
+                </div>
+              </div>
+              <div class="ps-step" data-step="3">
+                <div class="ps-bubble"><span>03</span></div>
+                <div class="ps-body">
+                  <div class="ps-icon">🤝</div>
+                  <h4>Sourcing &amp; Auditing</h4>
+                  <p>Authentic products are audited from cooperative farms and ISO certified processing facilities</p>
+                </div>
+              </div>
+              <div class="ps-step" data-step="4">
+                <div class="ps-bubble"><span>04</span></div>
+                <div class="ps-body">
+                  <div class="ps-icon">🔬</div>
+                  <h4>Sample Approval</h4>
+                  <p>Physical samples dispatched for buyer inspection, lab testing, and approval</p>
+                </div>
+              </div>
+              <div class="ps-step" data-step="5">
+                <div class="ps-bubble"><span>05</span></div>
+                <div class="ps-body">
+                  <div class="ps-icon">📜</div>
+                  <h4>Contract Confirmation</h4>
+                  <p>Commercial contract, payment terms (LC/TT/DP), and supply agreement finalized</p>
+                </div>
+              </div>
+              <div class="ps-step" data-step="6">
+                <div class="ps-bubble"><span>06</span></div>
+                <div class="ps-body">
+                  <div class="ps-icon">🏭</div>
+                  <h4>Production Monitoring</h4>
+                  <p>Real-time factory monitoring with progress updates and production quality checks</p>
+                </div>
+              </div>
+              <div class="ps-step" data-step="7">
+                <div class="ps-bubble"><span>07</span></div>
+                <div class="ps-body">
+                  <div class="ps-icon">✅</div>
+                  <h4>Quality Inspection</h4>
+                  <p>Pre-shipment inspection by certified third-party inspectors (SGS, Bureau Veritas)</p>
+                </div>
+              </div>
+              <div class="ps-step" data-step="8">
+                <div class="ps-bubble"><span>08</span></div>
+                <div class="ps-body">
+                  <div class="ps-icon">📄</div>
+                  <h4>Export Documentation</h4>
+                  <p>Complete export docs: Bill of Lading, Certificate of Origin, Phytosanitary, Insurance</p>
+                </div>
+              </div>
+              <div class="ps-step" data-step="9">
+                <div class="ps-bubble"><span>09</span></div>
+                <div class="ps-body">
+                  <div class="ps-icon">🚢</div>
+                  <h4>International Shipping</h4>
+                  <p>Container booking, port clearance, freight forwarding and real-time tracking</p>
+                </div>
+              </div>
+              <div class="ps-step" data-step="10">
+                <div class="ps-bubble"><span>10</span></div>
+                <div class="ps-body">
+                  <div class="ps-icon">🏁</div>
+                  <h4>Delivery Support</h4>
+                  <p>Port clearance assistance, final delivery confirmation, and post-shipment support</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- CERTIFICATIONS -->
+      <section id="certifications" class="section certs-section">
+        <div class="container">
+          <div class="sec-header reveal">
+            <span class="sec-label">TRUST & COMPLIANCE</span>
+            <h2 class="sec-title">Certifications &amp; <em>Compliance</em></h2>
+            <p class="sec-sub">Internationally recognized quality standards ensuring world-class export excellence</p>
+          </div>
+          <div class="certs-grid">
+            <div class="cert-card glass-card reveal">
+              <div class="cc-glow"></div>
+              <div class="cc-icon">🏆</div>
+              <h4>ISO 9001:2015</h4>
+              <p>Quality Management System Certification</p>
+              <span class="cc-tag">Quality</span>
+            </div>
+            <div class="cert-card glass-card reveal">
+              <div class="cc-glow"></div>
+              <div class="cc-icon">🌿</div>
+              <h4>Organic Certified</h4>
+              <p>NOP / EU Organic Standards Compliance</p>
+              <span class="cc-tag">Organic</span>
+            </div>
+            <div class="cert-card glass-card reveal">
+              <div class="cc-glow"></div>
+              <div class="cc-icon">🇮🇳</div>
+              <h4>APEDA Registered</h4>
+              <p>Agricultural & Processed Food Exports Authority</p>
+              <span class="cc-tag">Government</span>
+            </div>
+            <div class="cert-card glass-card reveal">
+              <div class="cc-glow"></div>
+              <div class="cc-icon">🌶️</div>
+              <h4>Spices Board India</h4>
+              <p>Registered Exporter of Purity-Tested Indian Spices</p>
+              <span class="cc-tag">Spices</span>
+            </div>
+            <div class="cert-card glass-card reveal">
+              <div class="cc-glow"></div>
+              <div class="cc-icon">⚖️</div>
+              <h4>HACCP Compliant</h4>
+              <p>Hazard Analysis Critical Control Point Food Safety</p>
+              <span class="cc-tag">Safety</span>
+            </div>
+            <div class="cert-card glass-card reveal">
+              <div class="cc-glow"></div>
+              <div class="cc-icon">🟢</div>
+              <h4>Halal Certified</h4>
+              <p>Certified Processing for Islamic Markets Sourced Clean</p>
+              <span class="cc-tag">Religious</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FREQUENTLY ASKED QUESTIONS (FAQ) -->
+      <section id="faq" class="section faq-section" style="background: #060608;">
+        <div class="container">
+          <div class="sec-header reveal">
+            <span class="sec-label">COMMON INQUIRIES</span>
+            <h2 class="sec-title">Frequently Asked <em>Questions</em></h2>
+            <p class="sec-sub">Quick answers to key international trade procedures, logistics, and capabilities</p>
+          </div>
+
+          <div class="faq-grid">
+            <div class="faq-left reveal-left">
+              <div class="faq-note-card">
+                <h4 class="fnc-title">Need custom information?</h4>
+                <p class="fnc-p">Our dedicated trade desk is available 24/7 to answer custom packaging, private labeling, and port-to-port logistics inquiries.</p>
+                <a href="/contact.html" class="btn btn-primary btn-full">Submit Custom Inquiry</a>
+              </div>
+            </div>
+
+            <div class="faq-right reveal-right">
+              <div class="faq-accordion-group">
+                
+                <div class="faq-item">
+                  <button class="faq-trigger">
+                    <span class="faq-q">What products do you supply?</span>
+                    <span class="faq-icon-wrap">
+                      <span class="faq-icon-line h-line"></span>
+                      <span class="faq-icon-line v-line"></span>
+                    </span>
+                  </button>
+                  <div class="faq-content">
+                    <div class="faq-content-inner">
+                      <p>Mahima Global Exports offers a diverse portfolio of products across multiple industries, including agricultural commodities, rice (Basmati &amp; Non-Basmati), authentic spices, premium vetiver products, fresh meats, chicken, seafood, fresh fruits, vegetables, and tea/coffee. We also provide customized sourcing for industrial raw materials, textiles, paper products, and export-grade commodities tailored to specific international requirements.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="faq-item">
+                  <button class="faq-trigger">
+                    <span class="faq-q">Do you manage export logistics and documentation?</span>
+                    <span class="faq-icon-wrap">
+                      <span class="faq-icon-line h-line"></span>
+                      <span class="faq-icon-line v-line"></span>
+                    </span>
+                  </button>
+                  <div class="faq-content">
+                    <div class="faq-content-inner">
+                      <p>Yes. We provide comprehensive, end-to-end export solutions. This includes initial product sourcing, independent quality inspections (SGS/Bureau Veritas), customized packaging, container booking, custom house agency (CHA) clearance at loading ports, phytosanitary/fumigation documentation, Certificate of Origin paperwork, and sea/air freight forwarding to your destination port.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="faq-item">
+                  <button class="faq-trigger">
+                    <span class="faq-q">Can you provide customized packaging and private labeling?</span>
+                    <span class="faq-icon-wrap">
+                      <span class="faq-icon-line h-line"></span>
+                      <span class="faq-icon-line v-line"></span>
+                    </span>
+                  </button>
+                  <div class="faq-content">
+                    <div class="faq-content-inner">
+                      <p>Absolutely. We specialize in private labeling (OEM) and custom branding services. We can customize retail bags, bulk woven sacks, corrugated cardboard master cartons, vacuum packaging, and specialized labeling according to your brand design guidelines, local market language requirements, and country-specific food labelling laws.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="faq-item">
+                  <button class="faq-trigger">
+                    <span class="faq-q">What payment methods do you accept?</span>
+                    <span class="faq-icon-wrap">
+                      <span class="faq-icon-line h-line"></span>
+                      <span class="faq-icon-line v-line"></span>
+                    </span>
+                  </button>
+                  <div class="faq-content">
+                    <div class="faq-content-inner">
+                      <p>We support internationally recognized, secure payment terms to ensure mutual security:
+                        <br />• Telegraphic Transfer (Advance T/T)
+                        <br />• Irrevocable Letter of Credit at Sight (L/C)
+                        <br />• Documents Against Payment (D/P) / Documentary Collection
+                        <br />All payment structures are agreed upon in advance and detailed transparently inside the commercial proforma invoice.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="faq-item">
+                  <button class="faq-trigger">
+                    <span class="faq-q">What is the Minimum Order Quantity (MOQ)?</span>
+                    <span class="faq-icon-wrap">
+                      <span class="faq-icon-line h-line"></span>
+                      <span class="faq-icon-line v-line"></span>
+                    </span>
+                  </button>
+                  <div class="faq-content">
+                    <div class="faq-content-inner">
+                      <p>MOQ varies depending on the product category. For staple commodities (like Basmati and Non-Basmati rice, spices), our standard MOQ is 1 Full Container Load (FCL) of either 20ft or 40ft (ranging from 12 MT to 25 MT). For high-value oils, vetiver extracts, and specialty blends, we accept smaller trial quantities. Please consult our trade specialists for specific MOQs.</p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer-glow"></div>
+      <div class="footer-inner">
+        <div class="footer-top">
+          <div class="ft-brand">
+            <div class="ft-logo">
+              <div class="ft-logo-mark">
+                <svg viewBox="0 0 44 44" fill="none" class="ft-emblem">
+                  <circle cx="22" cy="22" r="20" stroke="#D4AF37" stroke-width="0.8" opacity="0.5"/>
+                  <text x="22" y="27" text-anchor="middle" font-family="Cormorant Garamond" font-size="16" font-weight="600" fill="#D4AF37">M</text>
+                </svg>
+              </div>
+              <div class="ft-logo-text">
+                <span class="ft-brand-name">MAHIMA GLOBAL EXPORTS</span>
+                <span class="ft-legal">MAHIMA GLOBAL ENTREPRENEURS OPC PRIVATE LIMITED</span>
+              </div>
+            </div>
+            <p class="ft-tagline">Connecting Global Markets Through<br />Trust, Quality & Excellence</p>
+            <div class="ft-taglines">
+              <span>"From India To The World"</span>
+              <div class="ft-social">
+              <a href="#" class="soc-btn" aria-label="Facebook">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
+              </a>
+              <a href="#" class="soc-btn" aria-label="Instagram">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              </a>
+              <a href="#" class="soc-btn" aria-label="YouTube">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.163a3.003 3.003 0 00-2.11-2.108C19.524 3.545 12 3.545 12 3.545s-7.525 0-9.388.51A3.002 3.002 0 00.502 6.163C0 8.07 0 12 0 12s0 3.93.502 5.837a3.002 3.002 0 002.11 2.108c1.863.51 9.388.51 9.388.51s7.525 0 9.388-.51a3.002 3.002 0 002.11-2.108c.502-1.907.502-5.837.502-5.837s0-3.93-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+              </a>
+              <a href="#" class="soc-btn" aria-label="LinkedIn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+              </a>
+              <a href="https://wa.me/911234567890" class="soc-btn" aria-label="WhatsApp">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              </a>
+            </div>
+          </div>
+          </div>
+          <div class="ft-col">
+            <h5>Products</h5>
+            <ul>
+              <li><a href="/products.html?filter=vetiver">Vetiver Products</a></li>
+              <li><a href="/products.html?filter=rice">Basmati Rice</a></li>
+              <li><a href="/products.html?filter=rice">Non-Basmati Rice</a></li>
+              <li><a href="/products.html?filter=spices">Authentic Indian Spices</a></li>
+              <li><a href="/products.html?filter=meat">Meats &amp; Poultry</a></li>
+              <li><a href="/products.html?filter=seafood">Seafood Products</a></li>
+              <li><a href="/products.html?filter=fresh">Fresh Fruits &amp; Veg</a></li>
+              <li><a href="/products.html?filter=beverages">Tea &amp; Coffee</a></li>
+            </ul>
+          </div>
+          <div class="ft-col">
+            <h5>Markets</h5>
+            <ul>
+              <li><a href="/network.html">USA &amp; Canada</a></li>
+              <li><a href="/network.html">United Kingdom</a></li>
+              <li><a href="/network.html">Europe (EU)</a></li>
+              <li><a href="/network.html">UAE &amp; Saudi Arabia</a></li>
+              <li><a href="/network.html">Singapore &amp; Asia</a></li>
+              <li><a href="/network.html">Australia</a></li>
+              <li><a href="/network.html">Africa</a></li>
+            </ul>
+          </div>
+          <div class="ft-col">
+            <h5>Company</h5>
+            <ul>
+              <li><a href="/about.html">About Us</a></li>
+              <li><a href="/why-us.html">Why Choose Us</a></li>
+              <li><a href="/network.html#process">Export Process</a></li>
+              <li><a href="/network.html#certifications">Certifications</a></li>
+              <li><a href="/index.html#blog">Insights Blog</a></li>
+              <li><a href="/network.html#faq">Frequently Asked Questions</a></li>
+            </ul>
+          </div>
+          <div class="ft-col">
+            <h5>Contact</h5>
+            <ul>
+              <li><a href="mailto:info@mahimaglobalexports.com">info@mahimaglobalexports.com</a></li>
+              <li><a href="tel:+911234567890">+91 12345 67890</a></li>
+              <li><a href="https://wa.me/911234567890">WhatsApp Business</a></li>
+              <li><a href="/contact.html">Schedule Meeting</a></li>
+              <li><a href="/contact.html">Become A Buyer</a></li>
+              <li><a href="/contact.html">Become A Supplier</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="ft-sep"></div>
+        <div class="ft-bottom">
+          <p>© 2026 Mahima Global Entrepreneurs (OPC) Private Limited. All Rights Reserved. | Vetiver Agro Farm | Built by IIITIHAS UNIVERSAL PVT LTD</p>
+          <div class="ft-legal-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Use</a>
+            <a href="#">Cookie Policy</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- STYLING AND SCRIPTS -->
+    <style>
+      .navbar {
+        background: rgba(8,8,8,0.94);
+        backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
+        box-shadow: 0 1px 0 rgba(212,175,55,0.1);
+      }
+      .cert-card {
+        transition: transform 0.4s var(--ease), border-color 0.4s var(--ease);
+      }
+      .cert-card:hover {
+        transform: translateY(-6px);
+        border-color: var(--gold);
+      }
+      /* Vertical timeline layout for Network page */
+      .process-wrap {
+        position: relative;
+        padding: 40px 0;
+      }
+      .process-timeline-line {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 2px;
+        background: rgba(212, 175, 55, 0.12);
+        z-index: 1;
+      }
+      .process-timeline-bar {
+        width: 100%;
+        height: 0%; /* Animated by ScrollTrigger */
+        background: linear-gradient(to bottom, var(--gold-dk), var(--gold), var(--gold-lt));
+        box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+      }
+      .process-steps {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        gap: 60px;
+      }
+      .ps-step {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+    </style>
+
+    <script type="module" src="/src/subpage.js"></script>
+    <script type="module">
+      import { gsap } from 'gsap';
+      import { ScrollTrigger } from 'gsap/ScrollTrigger';
+      gsap.registerPlugin(ScrollTrigger);
+
+      document.addEventListener('DOMContentLoaded', () => {
+        // Map Canvas Drawing
+        const canvas = document.getElementById('map-canvas');
+        if (canvas) {
+          const ctx = canvas.getContext('2d');
+          let W = canvas.offsetWidth, H = canvas.offsetHeight;
+          canvas.width = W; canvas.height = H;
+
+          const hubs = [
+            { name: 'India (Origin)', x: .64, y: .45, main: true },
+            { name: 'New York',       x: .20, y: .34 },
+            { name: 'London',         x: .45, y: .23 },
+            { name: 'Dubai',          x: .60, y: .39 },
+            { name: 'Singapore',      x: .76, y: .54 },
+            { name: 'Sydney',         x: .83, y: .73 },
+            { name: 'Nairobi',        x: .57, y: .59 },
+            { name: 'Paris',          x: .47, y: .25 },
+            { name: 'Tokyo',          x: .87, y: .30 },
+            { name: 'Riyadh',         x: .60, y: .44 },
+            { name: 'Toronto',        x: .21, y: .29 },
+            { name: 'Johannesburg',   x: .55, y: .71 },
+            { name: 'Seoul',          x: .85, y: .32 },
+          ];
+
+          const routes = hubs.slice(1).map((_, i) => [0, i + 1]);
+          routes.push([2, 3]);
+          routes.push([4, 8]);
+
+          const routeParticles = routes.map(([fi, ti]) => ({
+            fi, ti, t: Math.random(), spd: .003 + Math.random() * .003,
+          }));
+
+          function lerp(a, b, t) { return a + (b - a) * t; }
+          function quad(p0, cp, p1, t) {
+            return (1-t)*(1-t)*p0 + 2*(1-t)*t*cp + t*t*p1;
+          }
+
+          function render() {
+            ctx.clearRect(0, 0, W, H);
+
+            // Grid lines
+            ctx.strokeStyle = 'rgba(212,175,55,.035)';
+            ctx.lineWidth = 1;
+            for(let x = 0; x < W; x += 40) {
+              ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, H); ctx.stroke();
+            }
+            for(let y = 0; y < H; y += 40) {
+              ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(W, y); ctx.stroke();
+            }
+
+            // Draw routes
+            routes.forEach(([fi, ti]) => {
+              const f = hubs[fi], t = hubs[ti];
+              const fx = f.x * W, fy = f.y * H;
+              const tx = t.x * W, ty = t.y * H;
+              const cx = (fx + tx) / 2;
+              const cy = Math.min(fy, ty) - 40; // curve upwards
+
+              ctx.strokeStyle = 'rgba(212,175,55,0.12)';
+              ctx.lineWidth = 1.2;
+              ctx.beginPath();
+              ctx.moveTo(fx, fy);
+              ctx.quadraticCurveTo(cx, cy, tx, ty);
+              ctx.stroke();
+            });
+
+            // Route particles
+            routeParticles.forEach(p => {
+              p.t += p.spd;
+              if (p.t > 1) { p.t = 0; p.spd = .003 + Math.random() * .003; }
+
+              const f = hubs[p.fi], t = hubs[p.ti];
+              const fx = f.x * W, fy = f.y * H;
+              const tx = t.x * W, ty = t.y * H;
+              const cx = (fx + tx) / 2;
+              const cy = Math.min(fy, ty) - 40;
+
+              const px = quad(fx, cx, tx, p.t);
+              const py = quad(fy, cy, ty, p.t);
+
+              ctx.fillStyle = '#D4AF37';
+              ctx.shadowColor = '#D4AF37';
+              ctx.shadowBlur = 4;
+              ctx.beginPath();
+              ctx.arc(px, py, 2.5, 0, Math.PI * 2);
+              ctx.fill();
+              ctx.shadowBlur = 0; // reset
+            });
+
+            // Draw hubs
+            hubs.forEach(h => {
+              const hx = h.x * W, hy = h.y * H;
+              ctx.fillStyle = h.main ? '#D4AF37' : 'rgba(248,248,248,0.85)';
+              ctx.beginPath();
+              ctx.arc(hx, hy, h.main ? 6 : 4, 0, Math.PI * 2);
+              ctx.fill();
+
+              // Label
+              ctx.fillStyle = 'rgba(248,248,248,0.55)';
+              ctx.font = '9px Inter';
+              ctx.fillText(h.name, hx + 10, hy + 3);
+            });
+
+            requestAnimationFrame(render);
+          }
+          render();
+
+          window.addEventListener('resize', () => {
+            W = canvas.offsetWidth; H = canvas.offsetHeight;
+            canvas.width = W; canvas.height = H;
+          });
+        }
+
+        // FAQs Accordion
+        const items = document.querySelectorAll('.faq-item');
+        items.forEach(item => {
+          const trigger = item.querySelector('.faq-trigger');
+          const content = item.querySelector('.faq-content');
+
+          if (trigger && content) {
+            trigger.addEventListener('click', () => {
+              const active = item.classList.contains('active');
+              
+              // Collapse others
+              items.forEach(other => {
+                other.classList.remove('active');
+                const c = other.querySelector('.faq-content');
+                if (c) gsap.to(c, { maxHeight: 0, opacity: 0, duration: 0.35, ease: 'power2.out' });
+              });
+
+              if (!active) {
+                item.classList.add('active');
+                const targetHeight = content.scrollHeight;
+                gsap.fromTo(content,
+                  { maxHeight: 0, opacity: 0 },
+                  { maxHeight: targetHeight, opacity: 1, duration: 0.45, ease: 'power2.out' }
+                );
+              }
+            });
+          }
+        });
+
+        // Timeline progress animation
+        const bar = document.getElementById('process-bar');
+        const steps = document.querySelectorAll('.ps-step');
+        
+        if (bar && steps.length > 0) {
+          ScrollTrigger.create({
+            trigger: '.process-wrap',
+            start: 'top 70%',
+            end: 'bottom 40%',
+            scrub: 1,
+            onUpdate: self => {
+              // Animate height of the active gold line
+              gsap.to(bar, { height: (self.progress * 100) + '%', duration: 0.1, overwrite: 'auto' });
+              
+              // Toggle active class on steps
+              steps.forEach((step, i) => {
+                step.classList.toggle('active', self.progress > i / steps.length);
+              });
+            }
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
