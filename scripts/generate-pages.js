@@ -8,10 +8,173 @@ const __dirname = path.dirname(__filename);
 
 const rootDir = path.resolve(__dirname, '..');
 const templateDir = path.resolve(rootDir, 'templates');
+const BASE_URL = 'https://mahimaglobalentrepreneurs.com';
 
 // Load templates
 const overviewTemplate = fs.readFileSync(path.resolve(templateDir, 'overview.html'), 'utf8');
 const detailsTemplate = fs.readFileSync(path.resolve(templateDir, 'details.html'), 'utf8');
+
+// Collect all generated page URLs for sitemap
+const sitemapUrls = [];
+
+// Static pages for sitemap
+const staticPages = [
+  { url: '/', priority: '1.0', changefreq: 'weekly' },
+  { url: '/about.html', priority: '0.8', changefreq: 'monthly' },
+  { url: '/products.html', priority: '0.9', changefreq: 'weekly' },
+  { url: '/network.html', priority: '0.7', changefreq: 'monthly' },
+  { url: '/why-us.html', priority: '0.7', changefreq: 'monthly' },
+  { url: '/partners.html', priority: '0.7', changefreq: 'monthly' },
+  { url: '/contact.html', priority: '0.8', changefreq: 'monthly' },
+];
+staticPages.forEach(p => sitemapUrls.push(p));
+
+// Helper: truncate description to ~155 chars for meta
+function metaDesc(text, maxLen = 155) {
+  if (!text) return '';
+  const clean = text.replace(/\s+/g, ' ').trim();
+  if (clean.length <= maxLen) return clean;
+  return clean.substring(0, maxLen - 3).replace(/\s+\S*$/, '') + '...';
+}
+
+// Helper: generate keywords from product name, tagline, and desc
+function genKeywords(product, variety) {
+  const base = [
+    product.name.toLowerCase(),
+    'export',
+    'India',
+    'mahima global',
+    'bulk supplier',
+    'wholesale',
+  ];
+  if (variety) {
+    base.push(variety.name.toLowerCase());
+    base.push(variety.code);
+    // Extract key words from tagline
+    if (variety.tagline) {
+      variety.tagline.split(/[\s,]+/).filter(w => w.length > 3).forEach(w => base.push(w.toLowerCase()));
+    }
+  } else {
+    if (product.tagline) {
+      product.tagline.split(/[\s,]+/).filter(w => w.length > 3).forEach(w => base.push(w.toLowerCase()));
+    }
+  }
+  // Deduplicate
+  return [...new Set(base)].join(', ');
+}
+
+// Helper: generate JSON-LD schema for overview pages (BreadcrumbList + ItemList)
+function overviewSchema(product) {
+  const schemas = [];
+
+  // BreadcrumbList
+  schemas.push({
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${BASE_URL}/` },
+      { '@type': 'ListItem', position: 2, name: 'Products', item: `${BASE_URL}/products.html` },
+      { '@type': 'ListItem', position: 3, name: product.name, item: `${BASE_URL}/${product.slug}-overview.html` },
+    ],
+  });
+
+  // ItemList of varieties
+  if (product.varieties && product.varieties.length > 0) {
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'ItemList',
+      name: `${product.name} — Available Varieties`,
+      numberOfItems: product.varieties.length,
+      itemListElement: product.varieties.map((v, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        name: v.name,
+        url: `${BASE_URL}/${product.slug}-${v.slug}.html`,
+      })),
+    });
+  }
+
+  return schemas.map(s => `<script type="application/ld+json">\n${JSON.stringify(s, null, 2)}\n    </script>`).join('\n    ');
+}
+
+// Helper: generate JSON-LD schema for detail pages (BreadcrumbList + Product)
+function detailSchema(product, variety) {
+  const schemas = [];
+  const filename = `${product.slug}-${variety.slug}.html`;
+
+  // BreadcrumbList
+  schemas.push({
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${BASE_URL}/` },
+      { '@type': 'ListItem', position: 2, name: 'Products', item: `${BASE_URL}/products.html` },
+      { '@type': 'ListItem', position: 3, name: product.name, item: `${BASE_URL}/${product.slug}-overview.html` },
+      { '@type': 'ListItem', position: 4, name: variety.name, item: `${BASE_URL}/${filename}` },
+    ],
+  });
+
+  // Product schema (AEO/GEO optimized)
+  const productSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: variety.name,
+    description: variety.desc,
+    sku: variety.code,
+    brand: {
+      '@type': 'Brand',
+      name: 'Mahima Global Entrepreneurs',
+    },
+    manufacturer: {
+      '@type': 'Organization',
+      name: 'Mahima Global Entrepreneurs OPC Private Limited',
+      url: BASE_URL,
+    },
+    category: product.name,
+    url: `${BASE_URL}/${filename}`,
+    image: `${BASE_URL}${variety.image || product.image}`,
+    offers: {
+      '@type': 'Offer',
+      availability: 'https://schema.org/InStock',
+      priceSpecification: {
+        '@type': 'PriceSpecification',
+        priceCurrency: 'USD',
+        valueAddedTaxIncluded: false,
+      },
+      seller: {
+        '@type': 'Organization',
+        name: 'Mahima Global Entrepreneurs',
+      },
+      eligibleRegion: [
+        { '@type': 'Country', name: 'United States' },
+        { '@type': 'Country', name: 'United Arab Emirates' },
+        { '@type': 'Country', name: 'Singapore' },
+        { '@type': 'Country', name: 'United Kingdom' },
+        { '@type': 'Country', name: 'Germany' },
+        { '@type': 'Country', name: 'Australia' },
+        { '@type': 'Country', name: 'Saudi Arabia' },
+        { '@type': 'Country', name: 'Japan' },
+      ],
+    },
+    countryOfOrigin: {
+      '@type': 'Country',
+      name: 'India',
+    },
+  };
+
+  // Add additional properties if available
+  if (variety.benefits && variety.benefits.length > 0) {
+    productSchema.additionalProperty = variety.benefits.map(b => ({
+      '@type': 'PropertyValue',
+      name: 'Key Feature',
+      value: b,
+    }));
+  }
+
+  schemas.push(productSchema);
+
+  return schemas.map(s => `<script type="application/ld+json">\n${JSON.stringify(s, null, 2)}\n    </script>`).join('\n    ');
+}
 
 // Generate pages
 products.forEach(product => {
@@ -52,6 +215,11 @@ products.forEach(product => {
     varietiesGrid = `<p style="grid-column: 1/-1; text-align: center; color: var(--white-40); padding: 40px 0;">No varieties currently listed for this category.</p>`;
   }
 
+  // SEO metadata for overview page
+  const overviewMetaDesc = metaDesc(`Explore our ${product.name} export varieties. ${product.desc}`);
+  const overviewKeywords = genKeywords(product);
+  const overviewSchemaMarkup = overviewSchema(product);
+
   // Generate overview page
   const imageStyle = `background-image: linear-gradient(135deg, rgba(8, 8, 8, 0.72), rgba(8, 8, 8, 0.96)), url('${product.image}');`;
   let overviewHtml = overviewTemplate
@@ -61,9 +229,15 @@ products.forEach(product => {
     .replaceAll('{{icon}}', product.icon)
     .replaceAll('{{slug}}', product.slug)
     .replaceAll('{{imageStyle}}', imageStyle)
-    .replaceAll('{{varietiesGrid}}', varietiesGrid);
+    .replaceAll('{{varietiesGrid}}', varietiesGrid)
+    .replaceAll('{{metaDescription}}', overviewMetaDesc)
+    .replaceAll('{{metaKeywords}}', overviewKeywords)
+    .replaceAll('{{schemaMarkup}}', overviewSchemaMarkup);
 
   fs.writeFileSync(path.resolve(rootDir, `${product.slug}-overview.html`), overviewHtml, 'utf8');
+
+  // Add to sitemap
+  sitemapUrls.push({ url: `/${product.slug}-overview.html`, priority: '0.8', changefreq: 'weekly' });
 
   // 2. Generate detailed pages for each variety
   if (product.varieties && product.varieties.length > 0) {
@@ -83,6 +257,12 @@ products.forEach(product => {
       const varImage = variety.image || product.image;
       const varImageStyle = `background-image: linear-gradient(135deg, rgba(8, 8, 8, 0.72), rgba(8, 8, 8, 0.96)), url('${varImage}');`;
 
+      // SEO metadata for detail page
+      const detailMetaDesc = metaDesc(`${variety.name} (${variety.code}) — ${variety.tagline}. ${variety.desc}`);
+      const detailKeywords = genKeywords(product, variety);
+      const detailSchemaMarkup = detailSchema(product, variety);
+      const canonicalSlug = `${product.slug}-${variety.slug}.html`;
+
       let detailsHtml = detailsTemplate
         .replaceAll('{{name}}', variety.name)
         .replaceAll('{{code}}', variety.code)
@@ -94,11 +274,18 @@ products.forEach(product => {
         .replaceAll('{{healthList}}', healthList)
         .replaceAll('{{imageStyle}}', varImageStyle)
         .replaceAll('{{waMsg}}', encodeURIComponent(variety.waMsg))
-        .replaceAll('{{backUrl}}', `${product.slug}-overview.html`);
+        .replaceAll('{{backUrl}}', `${product.slug}-overview.html`)
+        .replaceAll('{{metaDescription}}', detailMetaDesc)
+        .replaceAll('{{metaKeywords}}', detailKeywords)
+        .replaceAll('{{schemaMarkup}}', detailSchemaMarkup)
+        .replaceAll('{{canonicalSlug}}', canonicalSlug);
 
       const filename = `${product.slug}-${variety.slug}.html`;
       fs.writeFileSync(path.resolve(rootDir, filename), detailsHtml, 'utf8');
       console.log(`  -> Generated variety details page: ${filename}`);
+
+      // Add to sitemap
+      sitemapUrls.push({ url: `/${filename}`, priority: '0.6', changefreq: 'monthly' });
     });
   }
 
@@ -110,4 +297,29 @@ products.forEach(product => {
   }
 });
 
-console.log("Static product pages and variety detail pages generated successfully!");
+// ─── GENERATE SITEMAP.XML ───────────────────────────────────────
+const today = new Date().toISOString().split('T')[0];
+let sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+`;
+
+sitemapUrls.forEach(page => {
+  const loc = page.url === '/' ? BASE_URL + '/' : BASE_URL + page.url;
+  sitemapXml += `  <url>
+    <loc>${loc}</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>${page.changefreq}</changefreq>
+    <priority>${page.priority}</priority>
+  </url>
+`;
+});
+
+sitemapXml += `</urlset>
+`;
+
+fs.writeFileSync(path.resolve(rootDir, 'public', 'sitemap.xml'), sitemapXml, 'utf8');
+console.log(`\nSitemap generated: public/sitemap.xml (${sitemapUrls.length} URLs)`);
+console.log("Static product pages, variety detail pages, and sitemap generated successfully!");

@@ -1,0 +1,16 @@
+# Mahima Global Entrepreneurs — Robots.txt
+# https://mahimaglobalentrepreneurs.com
+
+User-agent: *
+Allow: /
+Disallow: /node_modules/
+Disallow: /src/
+Disallow: /scripts/
+Disallow: /templates/
+Disallow: /dist/
+
+# Sitemaps
+Sitemap: https://mahimaglobalentrepreneurs.com/sitemap.xml
+
+# Crawl-delay (optional, for well-behaved bots)
+Crawl-delay: 1
