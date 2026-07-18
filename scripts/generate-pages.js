@@ -41,7 +41,7 @@ function metaDesc(text, maxLen = 155) {
 function genKeywords(product, variety) {
   const base = [
     product.name.toLowerCase(),
-    'export',
+    product.tradeType || 'export',
     'India',
     'mahima global',
     'bulk supplier',
@@ -158,7 +158,7 @@ function detailSchema(product, variety) {
     },
     countryOfOrigin: {
       '@type': 'Country',
-      name: 'India',
+      name: product.tradeType === 'import' ? (product.specs["Import Origin"] ? product.specs["Import Origin"].split(',')[0].trim() : 'Global') : 'India',
     },
   };
 
@@ -215,8 +215,10 @@ products.forEach(product => {
     varietiesGrid = `<p style="grid-column: 1/-1; text-align: center; color: var(--white-40); padding: 40px 0;">No varieties currently listed for this category.</p>`;
   }
 
+  const tradeTypeLabel = product.tradeType === 'import' ? 'Import' : 'Export';
+
   // SEO metadata for overview page
-  const overviewMetaDesc = metaDesc(`Explore our ${product.name} export varieties. ${product.desc}`);
+  const overviewMetaDesc = metaDesc(`Explore our ${product.name} ${tradeTypeLabel.toLowerCase()} varieties. ${product.desc}`);
   const overviewKeywords = genKeywords(product);
   const overviewSchemaMarkup = overviewSchema(product);
 
@@ -232,7 +234,8 @@ products.forEach(product => {
     .replaceAll('{{varietiesGrid}}', varietiesGrid)
     .replaceAll('{{metaDescription}}', overviewMetaDesc)
     .replaceAll('{{metaKeywords}}', overviewKeywords)
-    .replaceAll('{{schemaMarkup}}', overviewSchemaMarkup);
+    .replaceAll('{{schemaMarkup}}', overviewSchemaMarkup)
+    .replaceAll('{{tradeTypeLabel}}', tradeTypeLabel);
 
   fs.writeFileSync(path.resolve(rootDir, `${product.slug}-overview.html`), overviewHtml, 'utf8');
 
@@ -278,7 +281,8 @@ products.forEach(product => {
         .replaceAll('{{metaDescription}}', detailMetaDesc)
         .replaceAll('{{metaKeywords}}', detailKeywords)
         .replaceAll('{{schemaMarkup}}', detailSchemaMarkup)
-        .replaceAll('{{canonicalSlug}}', canonicalSlug);
+        .replaceAll('{{canonicalSlug}}', canonicalSlug)
+        .replaceAll('{{tradeTypeLabel}}', tradeTypeLabel);
 
       const filename = `${product.slug}-${variety.slug}.html`;
       fs.writeFileSync(path.resolve(rootDir, filename), detailsHtml, 'utf8');

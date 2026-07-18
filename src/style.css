@@ -1017,6 +1017,10 @@ input, textarea, select { font-family: 'Inter', sans-serif; }
 #pc-bg-9 { background: url('/images/coffee.png') center/cover no-repeat; }
 #pc-bg-10 { background: url('/images/tea.png') center/cover no-repeat; }
 #pc-bg-11 { background: url('/images/industrial.png') center/cover no-repeat; }
+#pc-bg-12 { background: url('/images/polymers.png') center/cover no-repeat; }
+#pc-bg-13 { background: url('/images/chemicals.png') center/cover no-repeat; }
+#pc-bg-14 { background: url('/images/machinery.png') center/cover no-repeat; }
+#pc-bg-15 { background: url('/images/fruits.png') center/cover no-repeat; }
 
 .pc-overlay {
   position: absolute; inset: 0;

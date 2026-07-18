@@ -155,7 +155,9 @@
       <!-- FILTER CONTROL -->
       <section class="filter-section" style="padding: 10px 0; margin-bottom: 40px; position: relative; z-index: 10;">
         <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: center; flex-wrap: wrap; gap: 12px;">
-          <button class="filter-btn active" data-filter="all">All Portfolio</button>
+          <button class="filter-btn active" data-filter="all">All Divisions</button>
+          <button class="filter-btn" data-filter="export">Export Catalog</button>
+          <button class="filter-btn" data-filter="import">Import Sourcing</button>
           <button class="filter-btn" data-filter="vetiver">Vetiver</button>
           <button class="filter-btn" data-filter="rice">Rice &amp; Grains</button>
           <button class="filter-btn" data-filter="spices">Spices</button>
@@ -173,7 +175,7 @@
           <div class="products-grid" id="products-grid-container">
 
             <!-- VETIVER PRODUCTS -->
-            <a href="vetiver-overview.html" class="prod-card reveal" data-cat="vetiver">
+            <a href="vetiver-overview.html" class="prod-card reveal" data-cat="vetiver" data-trade="export">
               <div class="pc-bg" id="pc-bg-0"></div>
               <div class="pc-overlay"></div>
               <div class="pc-content">
@@ -184,7 +186,7 @@
             </a>
 
             <!-- PREMIUM BASMATI RICE -->
-            <a href="basmati-rice-overview.html" class="prod-card reveal" data-cat="rice">
+            <a href="basmati-rice-overview.html" class="prod-card reveal" data-cat="rice" data-trade="export">
               <div class="pc-bg" id="pc-bg-1"></div>
               <div class="pc-overlay"></div>
               <div class="pc-content">
@@ -195,7 +197,7 @@
             </a>
 
             <!-- NON-BASMATI RICE -->
-            <a href="non-basmati-rice-overview.html" class="prod-card reveal" data-cat="rice">
+            <a href="non-basmati-rice-overview.html" class="prod-card reveal" data-cat="rice" data-trade="export">
               <div class="pc-bg" id="pc-bg-2"></div>
               <div class="pc-overlay"></div>
               <div class="pc-content">
@@ -206,7 +208,7 @@
             </a>
 
             <!-- AUTHENTIC INDIAN SPICES -->
-            <a href="spices-overview.html" class="prod-card reveal" data-cat="spices">
+            <a href="spices-overview.html" class="prod-card reveal" data-cat="spices" data-trade="export">
               <div class="pc-bg" id="pc-bg-3"></div>
               <div class="pc-overlay"></div>
               <div class="pc-content">
@@ -217,7 +219,7 @@
             </a>
 
             <!-- FRESH & FROZEN CHICKEN -->
-            <a href="chicken-overview.html" class="prod-card reveal" data-cat="meat">
+            <a href="chicken-overview.html" class="prod-card reveal" data-cat="meat" data-trade="export">
               <div class="pc-bg" id="pc-bg-4"></div>
               <div class="pc-overlay"></div>
               <div class="pc-content">
@@ -228,7 +230,7 @@
             </a>
 
             <!-- PREMIUM MEAT PRODUCTS -->
-            <a href="meat-overview.html" class="prod-card reveal" data-cat="meat">
+            <a href="meat-overview.html" class="prod-card reveal" data-cat="meat" data-trade="export">
               <div class="pc-bg" id="pc-bg-5"></div>
               <div class="pc-overlay"></div>
               <div class="pc-content">
@@ -239,7 +241,7 @@
             </a>
 
             <!-- SEAFOOD & FISH PRODUCTS -->
-            <a href="seafood-overview.html" class="prod-card reveal" data-cat="seafood">
+            <a href="seafood-overview.html" class="prod-card reveal" data-cat="seafood" data-trade="export">
               <div class="pc-bg" id="pc-bg-6"></div>
               <div class="pc-overlay"></div>
               <div class="pc-content">
@@ -250,7 +252,7 @@
             </a>
 
             <!-- FRESH FRUITS -->
-            <a href="fruits-overview.html" class="prod-card reveal" data-cat="fresh">
+            <a href="fruits-overview.html" class="prod-card reveal" data-cat="fresh" data-trade="export">
               <div class="pc-bg" id="pc-bg-7"></div>
               <div class="pc-overlay"></div>
               <div class="pc-content">
@@ -261,7 +263,7 @@
             </a>
 
             <!-- FRESH VEGETABLES -->
-            <a href="vegetables-overview.html" class="prod-card reveal" data-cat="fresh">
+            <a href="vegetables-overview.html" class="prod-card reveal" data-cat="fresh" data-trade="export">
               <div class="pc-bg" id="pc-bg-8"></div>
               <div class="pc-overlay"></div>
               <div class="pc-content">
@@ -272,7 +274,7 @@
             </a>
 
             <!-- PREMIUM COFFEE PRODUCTS -->
-            <a href="coffee-overview.html" class="prod-card reveal" data-cat="beverages">
+            <a href="coffee-overview.html" class="prod-card reveal" data-cat="beverages" data-trade="export">
               <div class="pc-bg" id="pc-bg-9"></div>
               <div class="pc-overlay"></div>
               <div class="pc-content">
@@ -283,7 +285,7 @@
             </a>
 
             <!-- PREMIUM TEA PRODUCTS -->
-            <a href="tea-overview.html" class="prod-card reveal" data-cat="beverages">
+            <a href="tea-overview.html" class="prod-card reveal" data-cat="beverages" data-trade="export">
               <div class="pc-bg" id="pc-bg-10"></div>
               <div class="pc-overlay"></div>
               <div class="pc-content">
@@ -294,12 +296,56 @@
             </a>
 
             <!-- INDUSTRIAL RAW MATERIALS -->
-            <a href="industrial-overview.html" class="prod-card reveal" data-cat="industrial">
+            <a href="industrial-overview.html" class="prod-card reveal" data-cat="industrial" data-trade="export">
               <div class="pc-bg" id="pc-bg-11"></div>
               <div class="pc-overlay"></div>
               <div class="pc-content">
                 <h3 class="pc-name">Industrial Sourcing</h3>
                 <p class="pc-desc">Comprehensive supply solutions for industrial commodities, natural fibers, minerals, paper products, and custom textiles.</p>
+              </div>
+              <div class="pc-border-glow"></div>
+            </a>
+
+            <!-- INDUSTRIAL POLYMERS -->
+            <a href="polymers-import-overview.html" class="prod-card reveal" data-cat="polymers" data-trade="import">
+              <div class="pc-bg" id="pc-bg-12"></div>
+              <div class="pc-overlay"></div>
+              <div class="pc-content">
+                <h3 class="pc-name">Industrial Polymers</h3>
+                <p class="pc-desc">High-grade polymers and raw plastic materials sourced from leading global chemical producers for domestic manufacturing.</p>
+              </div>
+              <div class="pc-border-glow"></div>
+            </a>
+
+            <!-- SPECIALTY CHEMICALS -->
+            <a href="chemicals-import-overview.html" class="prod-card reveal" data-cat="chemicals" data-trade="import">
+              <div class="pc-bg" id="pc-bg-13"></div>
+              <div class="pc-overlay"></div>
+              <div class="pc-content">
+                <h3 class="pc-name">Specialty Chemicals</h3>
+                <p class="pc-desc">Premium specialty and fine chemicals imported for industrial applications, pharmaceutical formulation, and processing.</p>
+              </div>
+              <div class="pc-border-glow"></div>
+            </a>
+
+            <!-- PRECISION MACHINERY -->
+            <a href="machinery-import-overview.html" class="prod-card reveal" data-cat="machinery" data-trade="import">
+              <div class="pc-bg" id="pc-bg-14"></div>
+              <div class="pc-overlay"></div>
+              <div class="pc-content">
+                <h3 class="pc-name">Precision Machinery</h3>
+                <p class="pc-desc">Advanced production machinery, equipment parts, and instrumentation sourced from global precision engineering manufacturers.</p>
+              </div>
+              <div class="pc-border-glow"></div>
+            </a>
+
+            <!-- AGRICULTURAL IMPORTS -->
+            <a href="agricultural-imports-overview.html" class="prod-card reveal" data-cat="agricultural-imports" data-trade="import">
+              <div class="pc-bg" id="pc-bg-15"></div>
+              <div class="pc-overlay"></div>
+              <div class="pc-content">
+                <h3 class="pc-name">Agricultural Imports</h3>
+                <p class="pc-desc">High-quality agricultural commodities, raw materials, and inputs imported to meet the requirements of Indian processors.</p>
               </div>
               <div class="pc-border-glow"></div>
             </a>
@@ -381,6 +427,7 @@
               <li><a href="/network.html#certifications">Certifications</a></li>
               <li><a href="/index.html#blog">Insights Blog</a></li>
               <li><a href="/network.html#faq">Frequently Asked Questions</a></li>
+              <li><a href="/compliance.html">Trade Compliance</a></li>
             </ul>
           </div>
           <div class="ft-col">
@@ -399,9 +446,9 @@
         <div class="ft-bottom">
           <p>© 2026 Mahima Global Entrepreneurs (OPC) Private Limited. All Rights Reserved. | Vetiver Agro Farm | Built by IIITIHAS UNIVERSAL PVT LTD</p>
           <div class="ft-legal-links">
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Use</a>
-            <a href="#">Cookie Policy</a>
+            <a href="/compliance.html">Privacy Policy</a>
+            <a href="/compliance.html">Terms of Use</a>
+            <a href="/compliance.html">Cookie & Trade Policy</a>
           </div>
         </div>
       </div>
@@ -475,7 +522,8 @@
           // Show/hide cards with animation
           productCards.forEach(card => {
             const cardCat = card.getAttribute('data-cat');
-            if (filterValue === 'all' || cardCat === filterValue) {
+            const cardTrade = card.getAttribute('data-trade') || 'export';
+            if (filterValue === 'all' || cardCat === filterValue || cardTrade === filterValue) {
               card.style.display = 'block';
               setTimeout(() => {
                 card.style.opacity = '1';
@@ -513,7 +561,7 @@
         const urlFilter = urlParams.get('filter');
         if (urlFilter) {
           // Check if filter exists
-          const validFilters = ['vetiver', 'rice', 'spices', 'meat', 'seafood', 'fresh', 'beverages', 'industrial'];
+          const validFilters = ['vetiver', 'rice', 'spices', 'meat', 'seafood', 'fresh', 'beverages', 'industrial', 'polymers', 'chemicals', 'machinery', 'agricultural-imports', 'export', 'import'];
           if (validFilters.includes(urlFilter)) {
             filterProducts(urlFilter);
           }
