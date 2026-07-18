@@ -187,7 +187,7 @@ products.forEach(product => {
     product.varieties.forEach(variety => {
       const varietyUrl = `${product.slug}-${variety.slug}.html`;
       const encodedWaMsg = encodeURIComponent(variety.waMsg);
-      const waLink = `https://wa.me/911234567890?text=${encodedWaMsg}`;
+      const waLink = `https://wa.me/919381706785?text=${encodedWaMsg}`;
       const imgPath = variety.image || product.image;
 
       varietiesGrid += `

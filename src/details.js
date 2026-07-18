@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
     quoteBtn.addEventListener('click', (e) => {
       e.preventDefault();
       // WhatsApp link format with pre-filled message text
-      const waNumber = "911234567890"; // Mahima exports WhatsApp business contact
+      const waNumber = "919381706785"; // Mahima exports WhatsApp business contact
       const waUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent(product.waMsg)}`;
       window.open(waUrl, '_blank');
     });
