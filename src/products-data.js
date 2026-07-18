@@ -413,6 +413,28 @@ export const products = [
           "Aids in clearing mucus from lungs and airways."
         ],
         "waMsg": "Hi Mahima Global Exports, I am interested in getting a quote for Green Cardamom (Code: SPC-CRD)."
+      },
+      {
+        "slug": "premium-cumin-seeds",
+        "name": "Premium Cumin Seeds (Jeera)",
+        "code": "SPC-CUM",
+        "tagline": "99% pure Singapore-grade machine cleaned cumin seeds",
+        "image": "/images/spices.png",
+        "desc": "High-grade, machine-cleaned cumin seeds (Singapore 99% purity) sourced from the optimal spice belts of Gujarat and Rajasthan. Renowned for its rich essential oil content (thymol), intense earthy aroma, and health benefits, perfect for retail packing and oil extraction.",
+        "benefits": [
+          "Singapore 99% purity grade, free from dust, stones, and weed seeds.",
+          "High volatile oil content (minimum 2.5% to 3.5% essential oils).",
+          "Thoroughly machine cleaned and color sorted for consistency.",
+          "Available in bulk PP bags or custom retail pouches."
+        ],
+        "health": [
+          "Rich source of iron, helping to prevent anemia and fatigue.",
+          "Contains thymol, which stimulates salivary glands and aids digestion.",
+          "Possesses powerful antioxidant properties that reduce oxidative stress.",
+          "Helps manage blood glucose levels and supports weight management.",
+          "Displays natural antimicrobial and antiseptic qualities."
+        ],
+        "waMsg": "Hi Mahima Global Exports, I am interested in getting a quote for Premium Cumin Seeds (Code: SPC-CUM)."
       }
     ],
     "tradeType": "export"
@@ -1260,6 +1282,27 @@ export const products = [
           "Designed for lead-free stabilizer processing in modern plants."
         ],
         "waMsg": "Hi Mahima Global Entrepreneurs, I am interested in getting a quote for Imported PVC Suspension Resin (Code: IMP-PVC)."
+      },
+      {
+        "slug": "hdpe-granules",
+        "name": "HDPE Granules (High Density)",
+        "code": "IMP-HDP",
+        "tagline": "Blow molding and pipe grade virgin HDPE resins",
+        "image": "/images/polymers.png",
+        "desc": "High Density Polyethylene (HDPE) resins imported from leading global petrochemical manufacturers. Selected for its exceptional tensile strength, impact resistance, and high melting point, it is extensively used in Indian manufacturing for rigid plastic containers, utility pipes, and high-strength industrial sacks.",
+        "benefits": [
+          "High density and rigidity, providing structural strength to final parts.",
+          "Excellent resistance to environmental stress cracking (ESCR).",
+          "Optimal melt flow rate (MFR) for consistent pipe and blow molding profiles.",
+          "Supplied in sealed 25kg packaging with full batch trace certificates."
+        ],
+        "health": [
+          "100% virgin polymer, free from bisphenols (BPA) and phthalates.",
+          "FSSAI & FDA compliant grades for packaging milk, beverages, and water.",
+          "Highly resistant to chemical corrosion, safe for storing chemicals.",
+          "100% recyclable thermoplastic material under circular Code 2."
+        ],
+        "waMsg": "Hi Mahima Global Entrepreneurs, I am interested in getting a quote for Imported HDPE Granules (Code: IMP-HDP)."
       }
     ]
   },
@@ -1333,6 +1376,27 @@ export const products = [
           "Manufactured under ISO 14001 environmental management."
         ],
         "waMsg": "Hi Mahima Global Entrepreneurs, I am interested in getting a quote for Imported Ethyl Acetate (Code: IMP-ETC)."
+      },
+      {
+        "slug": "methylene-chloride",
+        "name": "Methylene Chloride (MDC)",
+        "code": "IMP-MDC",
+        "tagline": "99.9% pure pharmaceutical extraction solvent",
+        "image": "/images/chemicals.png",
+        "desc": "High-purity Methylene Chloride (Dichloromethane) solvent imported in bulk. Essential for pharmaceutical API extraction, chemical synthesis, aerosol formulations, and metal degreasing. Sourced directly from major international producers with a guaranteed purity of 99.9%.",
+        "benefits": [
+          "99.9% pure chemical grade with extremely low water content (under 100 ppm).",
+          "Excellent solvency power for cellulose esters, fats, oils, and resins.",
+          "Non-flammable solvent, reducing hazard profiles in industrial workshops.",
+          "Supplied in sealed UN-approved heavy steel drums for transit safety."
+        ],
+        "health": [
+          "Complies with RoHS regulations and REACH registration mandates.",
+          "Highly volatile organic compound; requires proper fume exhaust systems.",
+          "Safety Data Sheet (SDS) and Certificate of Analysis (COA) supplied with each shipment.",
+          "Low boiling point (39.6°C) requires cool storage conditions."
+        ],
+        "waMsg": "Hi Mahima Global Entrepreneurs, I am interested in getting a quote for Imported Methylene Chloride (Code: IMP-MDC)."
       }
     ]
   },
@@ -1406,6 +1470,27 @@ export const products = [
           "Equipped with fast electronic shutter interlock circuits."
         ],
         "waMsg": "Hi Mahima Global Entrepreneurs, I am interested in getting a quote for Imported Laser Modules (Code: IMP-LSR)."
+      },
+      {
+        "slug": "plc-control-panels",
+        "name": "PLC Automation Systems",
+        "code": "IMP-PLC",
+        "tagline": "German-engineered modular PLC & HMI systems",
+        "image": "/images/machinery.png",
+        "desc": "High-performance modular Programmable Logic Controller (PLC) systems and human-machine interface (HMI) control panels imported from leading European automation brands. Designed to automate and manage complex manufacturing lines, sensor arrays, and factory metrics with high reliability.",
+        "benefits": [
+          "Modular I/O expandability to support hundreds of field connections.",
+          "High-speed processor cycle times, perfect for packaging and printing synchronization.",
+          "Vibrant touch-screen HMI displays with scratch-resistant protective layers.",
+          "Supported protocols include Profinet, Modbus TCP/IP, and OPC-UA."
+        ],
+        "health": [
+          "Engineered with dust-proof IP65 rated front panel bezels.",
+          "Low-voltage DC control architecture to protect floor operators.",
+          "RoHS compliant circuitry with no hazardous flame retardants.",
+          "Built-in overcurrent and surge protection safety relays."
+        ],
+        "waMsg": "Hi Mahima Global Entrepreneurs, I am interested in getting a quote for Imported PLC Automation Systems (Code: IMP-PLC)."
       }
     ]
   },
