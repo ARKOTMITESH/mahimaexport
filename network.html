@@ -143,7 +143,8 @@
             <a href="/network.html" class="nav-link active">Network <span class="nav-arrow">▾</span></a>
             <ul class="dropdown-menu">
               <li><a href="/network.html#global-network">Global Network</a></li>
-              <li><a href="/network.html#process">Export Process</a></li>
+              <li><a href="/network.html#export-flow">Export Process</a></li>
+              <li><a href="/network.html#import-flow">Import Process</a></li>
               <li><a href="/network.html#certifications">Certifications</a></li>
               <li><a href="/network.html#faq">FAQs</a></li>
             </ul>
@@ -172,7 +173,8 @@
           <li><a href="/products.html" class="mob-link">Products</a></li>
           <li><a href="/network.html" class="mob-link active">Global Network</a></li>
           <li><a href="/why-us.html" class="mob-link">Why Choose Us</a></li>
-          <li><a href="/network.html#process" class="mob-link">Export Process</a></li>
+          <li><a href="/network.html#export-flow" class="mob-link">Export Process</a></li>
+          <li><a href="/network.html#import-flow" class="mob-link">Import Process</a></li>
           <li><a href="/partners.html" class="mob-link">Partnerships</a></li>
           <li><a href="/contact.html" class="mob-link">Contact</a></li>
         </ul>
@@ -716,7 +718,8 @@
             <ul>
               <li><a href="/about.html">About Us</a></li>
               <li><a href="/why-us.html">Why Choose Us</a></li>
-              <li><a href="/network.html#process">Export Process</a></li>
+              <li><a href="/network.html#export-flow">Export Process</a></li>
+              <li><a href="/network.html#import-flow">Import Process</a></li>
               <li><a href="/network.html#certifications">Certifications</a></li>
               <li><a href="/index.html#blog">Insights Blog</a></li>
               <li><a href="/network.html#faq">Frequently Asked Questions</a></li>
@@ -1011,23 +1014,45 @@
         const tabBtns = document.querySelectorAll('.tab-btn');
         const tabContents = document.querySelectorAll('.tab-content');
         
+        const switchTab = (target) => {
+          tabBtns.forEach(b => {
+            if (b.getAttribute('data-target') === target) {
+              b.classList.add('active');
+            } else {
+              b.classList.remove('active');
+            }
+          });
+          tabContents.forEach(c => {
+            if (c.getAttribute('id') === target) {
+              c.classList.add('active');
+            } else {
+              c.classList.remove('active');
+            }
+          });
+          ScrollTrigger.refresh();
+        };
+
         tabBtns.forEach(btn => {
           btn.addEventListener('click', () => {
             const target = btn.getAttribute('data-target');
-            
-            tabBtns.forEach(b => b.classList.remove('active'));
-            tabContents.forEach(c => c.classList.remove('active'));
-            
-            btn.classList.add('active');
-            const activeContent = document.getElementById(target);
-            if (activeContent) {
-              activeContent.classList.add('active');
-            }
-            
-            // Refresh ScrollTrigger so positions are recalculated
-            ScrollTrigger.refresh();
+            switchTab(target);
           });
         });
+
+        // Check URL hash for tab activation
+        const checkHash = () => {
+          const hash = window.location.hash;
+          if (hash === '#export-flow' || hash === '#import-flow') {
+            switchTab(hash.replace('#', ''));
+            setTimeout(() => {
+              const sec = document.getElementById('process');
+              if (sec) sec.scrollIntoView({ behavior: 'smooth' });
+            }, 150);
+          }
+        };
+
+        window.addEventListener('load', checkHash);
+        window.addEventListener('hashchange', checkHash);
 
         // Timeline progress animation for Export
         const exportBar = document.getElementById('process-bar-export');
