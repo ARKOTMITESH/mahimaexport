@@ -897,15 +897,45 @@ function initTestiCarousel() {
 /*  CERT CARD 3D TILT                                            */
 /* ════════════════════════════════════════════════════════════ */
 function initTilt() {
-  document.querySelectorAll('[data-tilt]').forEach(card => {
+  const cards = document.querySelectorAll('[data-tilt], .prod-card, .why-card, .testi-card, .cert-card');
+  cards.forEach(card => {
     card.addEventListener('mousemove', e => {
       const r = card.getBoundingClientRect();
       const x = (e.clientX - r.left) / r.width  - .5;
       const y = (e.clientY - r.top)  / r.height - .5;
-      gsap.to(card, { rotateY: x*14, rotateX: -y*14, duration: .35, ease: 'power2.out', transformPerspective: 700 });
+      
+      gsap.to(card, { 
+        rotateY: x * 10, 
+        rotateX: -y * 10, 
+        y: -5,
+        duration: .35, 
+        ease: 'power2.out', 
+        transformPerspective: 800 
+      });
+
+      const borderGlow = card.querySelector('.pc-border-glow');
+      if (borderGlow) {
+        const mx = e.clientX - r.left;
+        const my = e.clientY - r.top;
+        borderGlow.style.background = `radial-gradient(circle 120px at ${mx}px ${my}px, rgba(212,175,55,0.4), transparent)`;
+        borderGlow.style.opacity = '1';
+      }
     });
+
     card.addEventListener('mouseleave', () => {
-      gsap.to(card, { rotateY: 0, rotateX: 0, duration: .5, ease: 'power2.out' });
+      gsap.to(card, { 
+        rotateY: 0, 
+        rotateX: 0, 
+        y: 0,
+        duration: .5, 
+        ease: 'power2.out' 
+      });
+
+      const borderGlow = card.querySelector('.pc-border-glow');
+      if (borderGlow) {
+        borderGlow.style.background = '';
+        borderGlow.style.opacity = '';
+      }
     });
   });
 }
