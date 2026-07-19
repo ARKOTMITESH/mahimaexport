@@ -798,7 +798,7 @@ function initReveal() {
 /*  COUNTER ANIMATION                                            */
 /* ════════════════════════════════════════════════════════════ */
 function initCounters() {
-  document.querySelectorAll('.nstat-num[data-count]').forEach(el => {
+  document.querySelectorAll('.nstat-num[data-count], .hstat-num[data-count]').forEach(el => {
     const target = parseInt(el.dataset.count);
     const suffix = el.dataset.suffix || '';
 

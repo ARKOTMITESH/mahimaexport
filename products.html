@@ -177,9 +177,31 @@
         </div>
       </section>
 
+      <!-- SEARCH CONTROL -->
+      <section class="search-section" style="padding: 10px 0; margin-bottom: 30px; position: relative; z-index: 10;">
+        <div class="container" style="max-width: 500px; margin: 0 auto; padding: 0 20px;">
+          <div style="position: relative; display: flex; align-items: center; border: 1px solid rgba(212, 175, 55, 0.2); border-radius: 40px; background: rgba(255, 255, 255, 0.02); overflow: hidden; transition: all 0.3s ease; box-shadow: 0 4px 20px rgba(0,0,0,0.25);" id="search-container">
+            <span style="position: absolute; left: 20px; color: var(--gold); display: flex; align-items: center; pointer-events: none;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            </span>
+            <input type="text" id="product-search" placeholder="Search products (e.g. Cumin, Polymers, Rice)..." style="width: 100%; padding: 14px 20px 14px 50px; background: transparent; border: none; outline: none; color: var(--white); font-family: 'Inter', sans-serif; font-size: 0.9rem; letter-spacing: 0.03em;" />
+            <button id="clear-search" style="position: absolute; right: 20px; background: none; border: none; color: var(--white-40); cursor: pointer; display: none; align-items: center; justify-content: center; padding: 0;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+          </div>
+        </div>
+      </section>
+
       <!-- PRODUCTS SHOWCASE GRID -->
       <section class="products-list-section" style="padding-bottom: 100px;">
         <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+          <!-- NO PRODUCTS MSG -->
+          <div id="no-products-msg" style="text-align: center; padding: 60px 20px; display: none; width: 100%;">
+            <span style="font-size: 3rem; display: block; margin-bottom: 16px;">🔍</span>
+            <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: var(--gold); font-weight: 400; margin-bottom: 8px;">No Products Found</h3>
+            <p style="color: var(--white-40); font-size: 0.9rem; max-width: 400px; margin: 0 auto;">We couldn't find any products matching your search criteria. Try adjusting your filters or search term.</p>
+          </div>
+          
           <div class="products-grid" id="products-grid-container">
 
             <!-- VETIVER PRODUCTS -->
@@ -500,6 +522,11 @@
       .prod-card {
         transition: transform .4s var(--ease), box-shadow .4s ease, opacity 0.3s ease, scale 0.3s ease !important;
       }
+      #search-container:focus-within {
+        border-color: var(--gold) !important;
+        box-shadow: 0 4px 25px rgba(212, 175, 55, 0.15) !important;
+        background: rgba(255, 255, 255, 0.04) !important;
+      }
       @media(max-width: 768px) {
         .filter-section .container {
           gap: 8px;
@@ -516,24 +543,33 @@
       document.addEventListener('DOMContentLoaded', () => {
         const filterButtons = document.querySelectorAll('.filter-btn');
         const productCards = document.querySelectorAll('.products-grid .prod-card');
+        const searchInput = document.getElementById('product-search');
+        const clearSearchBtn = document.getElementById('clear-search');
+        const noProductsMsg = document.getElementById('no-products-msg');
 
-        // Function to filter products
-        const filterProducts = (filterValue) => {
-          // Update active class on buttons
-          filterButtons.forEach(btn => {
-            if (btn.getAttribute('data-filter') === filterValue) {
-              btn.classList.add('active');
-            } else {
-              btn.classList.remove('active');
-            }
-          });
+        let activeFilter = 'all';
+        let searchQuery = '';
 
-          // Show/hide cards with animation
+        // Unified Filter Function
+        const applyFilters = () => {
+          let visibleCount = 0;
+          
           productCards.forEach(card => {
-            const cardCat = card.getAttribute('data-cat');
+            const cardCat = card.getAttribute('data-cat') || '';
             const cardTrade = card.getAttribute('data-trade') || 'export';
-            if (filterValue === 'all' || cardCat === filterValue || cardTrade === filterValue) {
+            const cardName = card.querySelector('.pc-name')?.textContent?.toLowerCase() || '';
+            const cardDesc = card.querySelector('.pc-desc')?.textContent?.toLowerCase() || '';
+
+            // Match active category/division
+            const matchesFilter = activeFilter === 'all' || cardCat === activeFilter || cardTrade === activeFilter;
+            // Match search text
+            const matchesSearch = searchQuery === '' || 
+                                  cardName.includes(searchQuery) || 
+                                  cardDesc.includes(searchQuery);
+
+            if (matchesFilter && matchesSearch) {
               card.style.display = 'block';
+              visibleCount++;
               setTimeout(() => {
                 card.style.opacity = '1';
                 card.style.transform = 'scale(1)';
@@ -546,35 +582,109 @@
               }, 300);
             }
           });
+
+          // Toggle "No Products Found" message
+          if (visibleCount === 0) {
+            noProductsMsg.style.display = 'block';
+            setTimeout(() => { noProductsMsg.style.opacity = '1'; }, 10);
+          } else {
+            noProductsMsg.style.display = 'none';
+            noProductsMsg.style.opacity = '0';
+          }
         };
 
-        // Click listeners on buttons
+        // Update active class on filter buttons
+        const updateActiveButtonClass = () => {
+          filterButtons.forEach(btn => {
+            if (btn.getAttribute('data-filter') === activeFilter) {
+              btn.classList.add('active');
+            } else {
+              btn.classList.remove('active');
+            }
+          });
+        };
+
+        // Click listeners on filter buttons
         filterButtons.forEach(btn => {
           btn.addEventListener('click', () => {
-            const filterValue = btn.getAttribute('data-filter');
-            // Update URL query parameters without reloading
+            activeFilter = btn.getAttribute('data-filter') || 'all';
+            
+            // Sync URL query params
             const url = new URL(window.location);
-            if (filterValue === 'all') {
+            if (activeFilter === 'all') {
               url.searchParams.delete('filter');
             } else {
-              url.searchParams.set('filter', filterValue);
+              url.searchParams.set('filter', activeFilter);
             }
             window.history.pushState({}, '', url);
 
-            filterProducts(filterValue);
+            updateActiveButtonClass();
+            applyFilters();
           });
         });
 
-        // Initialize filter from URL parameter
+        // Search Input listener
+        if (searchInput) {
+          searchInput.addEventListener('input', (e) => {
+            searchQuery = e.target.value.toLowerCase().trim();
+            
+            // Toggle clear button visibility
+            if (searchQuery.length > 0) {
+              clearSearchBtn.style.display = 'flex';
+            } else {
+              clearSearchBtn.style.display = 'none';
+            }
+
+            // Sync URL search query
+            const url = new URL(window.location);
+            if (searchQuery === '') {
+              url.searchParams.delete('q');
+            } else {
+              url.searchParams.set('q', searchQuery);
+            }
+            window.history.pushState({}, '', url);
+
+            applyFilters();
+          });
+        }
+
+        // Clear Search listener
+        if (clearSearchBtn) {
+          clearSearchBtn.addEventListener('click', () => {
+            searchInput.value = '';
+            searchQuery = '';
+            clearSearchBtn.style.display = 'none';
+
+            const url = new URL(window.location);
+            url.searchParams.delete('q');
+            window.history.pushState({}, '', url);
+
+            applyFilters();
+          });
+        }
+
+        // Initialize state from URL parameters (e.g. from schema searches or bookmarks)
         const urlParams = new URLSearchParams(window.location.search);
         const urlFilter = urlParams.get('filter');
+        const urlSearch = urlParams.get('q');
+
         if (urlFilter) {
-          // Check if filter exists
           const validFilters = ['vetiver', 'rice', 'spices', 'meat', 'seafood', 'fresh', 'beverages', 'industrial', 'polymers', 'chemicals', 'machinery', 'agricultural-imports', 'export', 'import'];
           if (validFilters.includes(urlFilter)) {
-            filterProducts(urlFilter);
+            activeFilter = urlFilter;
           }
         }
+        
+        if (urlSearch) {
+          searchQuery = urlSearch.toLowerCase().trim();
+          if (searchInput) {
+            searchInput.value = urlSearch;
+            clearSearchBtn.style.display = 'flex';
+          }
+        }
+
+        updateActiveButtonClass();
+        applyFilters();
       });
     </script>
   
