@@ -8,6 +8,7 @@ import * as THREE from 'three';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Lenis from 'lenis';
+import { initLanguageSwitcher } from './lang-switcher.js';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -1209,6 +1210,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initColorTransitions();
   initAnchorLinks();
   initInvestorCards();
+  initLanguageSwitcher();
 
   // Delay map init to let DOM fully layout
   setTimeout(initWorldMap, 400);

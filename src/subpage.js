@@ -1,10 +1,12 @@
 import './style.css';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { initLanguageSwitcher } from './lang-switcher.js';
 
 gsap.registerPlugin(ScrollTrigger);
 
 document.addEventListener('DOMContentLoaded', () => {
+  initLanguageSwitcher();
   // ── CUSTOM CURSOR SYSTEM ──
   const dot  = document.getElementById('cursor');
   const ring = document.getElementById('cursor-follower');

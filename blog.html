@@ -182,8 +182,10 @@
   <script type="module">
     import './src/style.css';
     import { gsap } from 'gsap';
+    import { initLanguageSwitcher } from './src/lang-switcher.js';
 
     document.addEventListener('DOMContentLoaded', async () => {
+      initLanguageSwitcher();
       // ── CUSTOM CURSOR ──
       const dot = document.getElementById('cursor');
       const ring = document.getElementById('cursor-follower');
