@@ -4,24 +4,49 @@
 /* ═══════════════════════════════════════════════════════════════ */
 
 export const supportedLanguages = [
-  { code: 'en', name: 'English', flag: '🇬🇧', label: 'English' },
-  { code: 'hi', name: 'हिन्दी', flag: '🇮🇳', label: 'Hindi' },
-  { code: 'te', name: 'తెలుగు', flag: '🇮🇳', label: 'Telugu' },
-  { code: 'ta', name: 'தமிழ்', flag: '🇮🇳', label: 'Tamil' },
-  { code: 'ar', name: 'العربية', flag: '🇦🇪', label: 'Arabic' },
-  { code: 'es', name: 'Español', flag: '🇪🇸', label: 'Spanish' },
-  { code: 'fr', name: 'Français', flag: '🇫🇷', label: 'French' },
-  { code: 'de', name: 'Deutsch', flag: '🇩🇪', label: 'German' },
-  { code: 'zh-CN', name: '简体中文', flag: '🇨🇳', label: 'Chinese' },
-  { code: 'ja', name: '日本語', flag: '🇯🇵', label: 'Japanese' },
-  { code: 'ru', name: 'Русский', flag: '🇷🇺', label: 'Russian' },
-  { code: 'it', name: 'Italiano', flag: '🇮🇹', label: 'Italian' },
-  { code: 'vi', name: 'Tiếng Việt', flag: '🇻🇳', label: 'Vietnamese' },
-  { code: 'id', name: 'Bahasa Indonesia', flag: '🇮🇩', label: 'Indonesian' },
+  // Global & Americas
+  { code: 'en', name: 'English', flag: '🇬🇧', label: 'English', region: 'Global' },
+  { code: 'es', name: 'Español', flag: '🇪🇸', label: 'Spanish (Spain & Americas)', region: 'Americas / Europe' },
+  { code: 'pt', name: 'Português', flag: '🇧🇷', label: 'Portuguese (Brazil & Portugal)', region: 'Americas / Europe' },
+  { code: 'fr', name: 'Français', flag: '🇫🇷', label: 'French (France & Africa)', region: 'Europe / Africa' },
+  { code: 'de', name: 'Deutsch', flag: '🇩🇪', label: 'German (Germany, DACH)', region: 'Europe' },
+  { code: 'it', name: 'Italiano', flag: '🇮🇹', label: 'Italian', region: 'Europe' },
+  { code: 'nl', name: 'Nederlands', flag: '🇳🇱', label: 'Dutch (Rotterdam Hub)', region: 'Europe' },
+  { code: 'pl', name: 'Polski', flag: '🇵🇱', label: 'Polish', region: 'Europe' },
+  { code: 'el', name: 'Ελληνικά', flag: '🇬🇷', label: 'Greek (Maritime Fleet)', region: 'Europe' },
+  { code: 'tr', name: 'Türkçe', flag: '🇹🇷', label: 'Turkish (Eurasia Corridor)', region: 'Eurasia' },
+  { code: 'ru', name: 'Русский', flag: '🇷🇺', label: 'Russian', region: 'Eurasia' },
+  { code: 'uk', name: 'Українська', flag: '🇺🇦', label: 'Ukrainian', region: 'Eurasia' },
+
+  // Middle East & Africa
+  { code: 'ar', name: 'العربية', flag: '🇦🇪', label: 'Arabic (GCC & MENA)', region: 'Middle East' },
+  { code: 'fa', name: 'فارسی', flag: '🇮🇷', label: 'Persian (Farsi)', region: 'Middle East' },
+  { code: 'iw', name: 'עברית', flag: '🇮🇱', label: 'Hebrew', region: 'Middle East' },
+  { code: 'sw', name: 'Kiswahili', flag: '🇰🇪', label: 'Swahili (East Africa)', region: 'Africa' },
+  { code: 'af', name: 'Afrikaans', flag: '🇿🇦', label: 'Afrikaans (South Africa)', region: 'Africa' },
+
+  // East & Southeast Asia
+  { code: 'zh-CN', name: '简体中文', flag: '🇨🇳', label: 'Chinese (Simplified)', region: 'East Asia' },
+  { code: 'zh-TW', name: '繁體中文', flag: '🇹🇼', label: 'Chinese (Traditional)', region: 'East Asia' },
+  { code: 'ja', name: '日本語', flag: '🇯🇵', label: 'Japanese', region: 'East Asia' },
+  { code: 'ko', name: '한국어', flag: '🇰🇷', label: 'Korean', region: 'East Asia' },
+  { code: 'vi', name: 'Tiếng Việt', flag: '🇻🇳', label: 'Vietnamese', region: 'Southeast Asia' },
+  { code: 'id', name: 'Bahasa Indonesia', flag: '🇮🇩', label: 'Indonesian', region: 'Southeast Asia' },
+  { code: 'th', name: 'ไทย', flag: '🇹🇭', label: 'Thai', region: 'Southeast Asia' },
+  { code: 'ms', name: 'Bahasa Melayu', flag: '🇲🇾', label: 'Malay (Malaysia & Singapore)', region: 'Southeast Asia' },
+  { code: 'tl', name: 'Filipino', flag: '🇵🇭', label: 'Tagalog (Philippines)', region: 'Southeast Asia' },
+
+  // South Asia
+  { code: 'hi', name: 'हिन्दी', flag: '🇮🇳', label: 'Hindi', region: 'South Asia' },
+  { code: 'te', name: 'తెలుగు', flag: '🇮🇳', label: 'Telugu', region: 'South Asia' },
+  { code: 'ta', name: 'தமிழ்', flag: '🇮🇳', label: 'Tamil', region: 'South Asia' },
+  { code: 'bn', name: 'বাংলা', flag: '🇧🇩', label: 'Bengali (India & Bangladesh)', region: 'South Asia' },
+  { code: 'gu', name: 'ગુજરાતી', flag: '🇮🇳', label: 'Gujarati', region: 'South Asia' },
+  { code: 'mr', name: 'मराठी', flag: '🇮🇳', label: 'Marathi', region: 'South Asia' },
+  { code: 'ur', name: 'اردو', flag: '🇵🇰', label: 'Urdu', region: 'South Asia' }
 ];
 
 export function getSavedLanguage() {
-  // Check cookie or localStorage
   const match = document.cookie.match(/(?:^|;\s*)googtrans=([^;]+)/);
   if (match) {
     const val = decodeURIComponent(match[1]).replace(/^\/en\//, '').replace(/^\//, '');
@@ -33,7 +58,6 @@ export function getSavedLanguage() {
 export function setLanguage(langCode) {
   localStorage.setItem('mge_user_lang', langCode);
   
-  // Set google translate cookie for current domain and root path
   const hostname = window.location.hostname;
   const cookieVal = `/en/${langCode}`;
   
@@ -43,7 +67,6 @@ export function setLanguage(langCode) {
     document.cookie = `googtrans=${cookieVal}; path=/; domain=.${hostname};`;
   }
 
-  // Trigger select change if google combo exists
   const select = document.querySelector('.goog-te-combo');
   if (select) {
     select.value = langCode;
@@ -54,7 +77,6 @@ export function setLanguage(langCode) {
 }
 
 export function initLanguageSwitcher() {
-  // 1. Inject hidden Google Translate container
   if (!document.getElementById('google_translate_element')) {
     const gtDiv = document.createElement('div');
     gtDiv.id = 'google_translate_element';
@@ -62,7 +84,6 @@ export function initLanguageSwitcher() {
     document.body.appendChild(gtDiv);
   }
 
-  // 2. Load Google Translate script if not loaded
   if (!window.googleTranslateElementInit) {
     window.googleTranslateElementInit = function () {
       if (window.google && window.google.translate) {
@@ -85,11 +106,9 @@ export function initLanguageSwitcher() {
     }
   }
 
-  // 3. Inject Language Switcher into Navbars (Desktop & Mobile)
   const currentLangCode = getSavedLanguage();
   const currentLang = supportedLanguages.find(l => l.code === currentLangCode) || supportedLanguages[0];
 
-  // Desktop Navbar injection
   const navInner = document.querySelector('.nav-inner, .header-inner');
   const navLinks = document.querySelector('.nav-links, .main-nav');
   
@@ -105,11 +124,14 @@ export function initLanguageSwitcher() {
       </button>
       <div class="lang-dropdown" id="lang-dropdown">
         <div class="lang-dropdown-header">
-          <span>Global Trade Languages</span>
+          <span>Global Trade Languages (${supportedLanguages.length})</span>
         </div>
-        <div class="lang-list">
+        <div class="lang-search-wrap">
+          <input type="text" class="lang-search-input" id="lang-search" placeholder="Search language or country..." />
+        </div>
+        <div class="lang-list" id="lang-list-container">
           ${supportedLanguages.map(lang => `
-            <button class="lang-option ${lang.code === currentLangCode ? 'active' : ''}" data-code="${lang.code}">
+            <button class="lang-option ${lang.code === currentLangCode ? 'active' : ''}" data-code="${lang.code}" data-search="${(lang.name + ' ' + lang.label + ' ' + lang.region).toLowerCase()}">
               <span class="opt-flag">${lang.flag}</span>
               <div class="opt-text">
                 <span class="opt-name">${lang.name}</span>
@@ -122,7 +144,6 @@ export function initLanguageSwitcher() {
       </div>
     `;
 
-    // Place before CTA or at end of nav
     const ctaBtn = navInner.querySelector('.nav-cta, #nav-cta-btn');
     if (ctaBtn) {
       navInner.insertBefore(switcher, ctaBtn);
@@ -130,17 +151,36 @@ export function initLanguageSwitcher() {
       navInner.appendChild(switcher);
     }
 
-    // Toggle dropdown
     const btn = switcher.querySelector('#lang-btn');
     const dropdown = switcher.querySelector('#lang-dropdown');
+    const searchInput = switcher.querySelector('#lang-search');
+    const listContainer = switcher.querySelector('#lang-list-container');
 
     btn.addEventListener('click', (e) => {
       e.stopPropagation();
-      dropdown.classList.toggle('open');
+      const isOpen = dropdown.classList.toggle('open');
       btn.classList.toggle('active');
+      if (isOpen && searchInput) {
+        setTimeout(() => searchInput.focus(), 100);
+      }
     });
 
-    // Option select
+    if (searchInput) {
+      searchInput.addEventListener('click', (e) => e.stopPropagation());
+      searchInput.addEventListener('input', (e) => {
+        const query = e.target.value.toLowerCase().trim();
+        const options = listContainer.querySelectorAll('.lang-option');
+        options.forEach(opt => {
+          const searchData = opt.dataset.search || '';
+          if (!query || searchData.includes(query)) {
+            opt.style.display = 'flex';
+          } else {
+            opt.style.display = 'none';
+          }
+        });
+      });
+    }
+
     dropdown.addEventListener('click', (e) => {
       const opt = e.target.closest('.lang-option');
       if (!opt) return;
@@ -158,13 +198,12 @@ export function initLanguageSwitcher() {
     });
   }
 
-  // Mobile Menu injection
   const mobInner = document.querySelector('.mobile-menu-inner, .mobile-menu');
   if (mobInner && !document.querySelector('.mobile-lang-section')) {
     const mobLang = document.createElement('div');
     mobLang.className = 'mobile-lang-section';
     mobLang.innerHTML = `
-      <div class="mob-lang-title">🌐 Select Language</div>
+      <div class="mob-lang-title">🌐 International Languages (${supportedLanguages.length})</div>
       <div class="mob-lang-grid">
         ${supportedLanguages.map(lang => `
           <button class="mob-lang-btn ${lang.code === currentLangCode ? 'active' : ''}" data-code="${lang.code}">

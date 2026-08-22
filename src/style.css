@@ -2336,6 +2336,32 @@ html.lenis, html.lenis body { height: auto; }
   margin-bottom: 4px;
 }
 
+.lang-search-wrap {
+  padding: 4px 6px 8px;
+}
+
+.lang-search-input {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 6px;
+  padding: 6px 10px;
+  color: var(--white);
+  font-size: 0.75rem;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.lang-search-input:focus {
+  border-color: var(--gold);
+  background: rgba(212, 175, 55, 0.08);
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.15);
+}
+
+.lang-search-input::placeholder {
+  color: rgba(255, 255, 255, 0.35);
+}
+
 .lang-list {
   max-height: 320px;
   overflow-y: auto;
