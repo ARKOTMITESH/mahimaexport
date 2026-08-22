@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog — Insights & Trade Intelligence | Mahima Global Entrepreneurs</title>
+  <meta name="description" content="Expert insights on international trade, agricultural commodity markets, export documentation, and global sourcing strategies from Mahima Global Entrepreneurs." />
+  <meta name="keywords" content="export blog, trade insights, agricultural commodities, Indian exports, international trade, basmati rice market, spices export" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://mahimaglobalentrepreneurs.com/blog.html" />
+  <meta property="og:title" content="Blog — Trade Intelligence | Mahima Global Entrepreneurs" />
+  <meta property="og:description" content="Expert insights on international trade, agricultural commodities, and global sourcing strategies." />
+  <meta property="og:url" content="https://mahimaglobalentrepreneurs.com/blog.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://mahimaglobalentrepreneurs.com/images/logo-emblem.png" />
+  <link rel="icon" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://mahimaglobalentrepreneurs.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://mahimaglobalentrepreneurs.com/blog.html"}
+    ]
+  }
+  </script>
+</head>
+<body>
+  <!-- CURSOR -->
+  <div id="cursor"></div>
+  <div id="cursor-follower"></div>
+
+  <!-- HEADER -->
+  <header class="site-header glass-header">
+    <div class="container header-inner">
+      <a href="/" class="logo-link">
+        <img src="/images/logo-emblem.png" alt="Mahima Global" class="logo-img">
+        <span class="logo-text">Mahima<span class="gold"> Global</span></span>
+      </a>
+      <nav class="main-nav">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/about.html" class="nav-link">About</a>
+        <a href="/products.html" class="nav-link">Products</a>
+        <a href="/network.html" class="nav-link">Network</a>
+        <a href="/blog.html" class="nav-link active">Blog</a>
+        <a href="/contact.html" class="nav-link">Contact</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="/" class="mob-link">Home</a>
+    <a href="/about.html" class="mob-link">About</a>
+    <a href="/products.html" class="mob-link">Products</a>
+    <a href="/network.html" class="mob-link">Network</a>
+    <a href="/blog.html" class="mob-link active">Blog</a>
+    <a href="/contact.html" class="mob-link">Contact</a>
+  </div>
+
+  <!-- HERO SECTION -->
+  <section class="blog-hero" style="position:relative; padding: 140px 0 60px; background: linear-gradient(135deg, #0a0a05 0%, #1a1200 50%, #0a0a05 100%); overflow: hidden;">
+    <div class="hero-bg-effect" style="position:absolute;inset:0;background:radial-gradient(ellipse at 30% 60%, rgba(212,175,55,0.08) 0%, transparent 60%);pointer-events:none;"></div>
+    <div class="container" style="position:relative;z-index:2;text-align:center;">
+      <p class="sec-sub gold" style="letter-spacing:4px;text-transform:uppercase;margin-bottom:12px;">Insights & Intelligence</p>
+      <h1 class="sec-title" style="font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,5vw,3.5rem);color:#fff;margin-bottom:16px;">Trade <span class="gold">Blog</span></h1>
+      <p style="color:rgba(255,255,255,0.6);max-width:600px;margin:0 auto;font-size:1rem;line-height:1.7;">Expert insights on international trade, agricultural commodity markets, export documentation, and global sourcing strategies.</p>
+    </div>
+  </section>
+
+  <!-- BLOG GRID -->
+  <section style="padding:60px 0 100px;background:var(--charcoal-2);">
+    <div class="container">
+      <!-- Filter Tags -->
+      <div id="blog-tags" style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:40px;justify-content:center;">
+        <button class="blog-tag active" data-tag="all" style="padding:8px 20px;border-radius:30px;border:1px solid rgba(212,175,55,0.3);background:rgba(212,175,55,0.1);color:#d4af37;cursor:pointer;font-size:0.85rem;transition:all .3s ease;">All Posts</button>
+      </div>
+
+      <!-- Blog Posts Grid -->
+      <div id="blog-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:28px;">
+        <!-- Posts loaded dynamically by JS -->
+      </div>
+
+      <!-- Empty State -->
+      <div id="blog-empty" style="display:none;text-align:center;padding:80px 20px;">
+        <p style="font-size:3rem;margin-bottom:16px;">📝</p>
+        <h3 style="color:#fff;font-family:'Cormorant Garamond',serif;font-size:1.5rem;margin-bottom:8px;">No Blog Posts Yet</h3>
+        <p style="color:rgba(255,255,255,0.5);font-size:0.95rem;">Check back soon for trade insights and industry updates.</p>
+      </div>
+
+      <!-- Loading -->
+      <div id="blog-loading" style="text-align:center;padding:60px 20px;">
+        <div style="width:40px;height:40px;border:3px solid rgba(212,175,55,0.2);border-top-color:#d4af37;border-radius:50%;animation:spin 1s linear infinite;margin:0 auto;"></div>
+        <p style="color:rgba(255,255,255,0.5);margin-top:16px;font-size:0.9rem;">Loading posts...</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="/images/logo-emblem.png" alt="Mahima Global" style="width:40px;height:40px;margin-bottom:12px;">
+        <p class="footer-tagline">Premium Indian Exports & Strategic Imports</p>
+        <p class="footer-copy">&copy; 2026 Mahima Global Entrepreneurs OPC Pvt Ltd. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <style>
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .blog-card {
+      background: rgba(26,26,26,0.8);
+      border: 1px solid rgba(212,175,55,0.1);
+      border-radius: 10px;
+      overflow: hidden;
+      transition: transform .4s ease, box-shadow .4s ease, border-color .4s ease;
+      cursor: pointer;
+      text-decoration: none;
+      display: block;
+    }
+    .blog-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 60px rgba(0,0,0,.5), 0 0 30px rgba(212,175,55,0.08);
+      border-color: rgba(212,175,55,0.3);
+    }
+    .blog-card-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      background: linear-gradient(135deg, #1a1200, #0a0900);
+    }
+    .blog-card-body {
+      padding: 24px;
+    }
+    .blog-card-date {
+      font-size: 0.75rem;
+      color: rgba(212,175,55,0.7);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+    }
+    .blog-card-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      color: #fff;
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+    .blog-card-excerpt {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.6;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .blog-card-tags {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+    .blog-card-tag {
+      font-size: 0.7rem;
+      padding: 3px 10px;
+      border-radius: 20px;
+      background: rgba(212,175,55,0.08);
+      color: rgba(212,175,55,0.7);
+      border: 1px solid rgba(212,175,55,0.1);
+    }
+  </style>
+
+  <script type="module">
+    import './src/style.css';
+    import { gsap } from 'gsap';
+
+    document.addEventListener('DOMContentLoaded', async () => {
+      // ── CUSTOM CURSOR ──
+      const dot = document.getElementById('cursor');
+      const ring = document.getElementById('cursor-follower');
+      if (dot && ring) {
+        let mx = 0, my = 0, fx = 0, fy = 0;
+        document.addEventListener('mousemove', e => {
+          mx = e.clientX; my = e.clientY;
+          gsap.to(dot, { x: mx, y: my, duration: 0.08, ease: 'none' });
+        });
+        (function follow() {
+          fx += (mx - fx) * 0.11; fy += (my - fy) * 0.11;
+          gsap.set(ring, { x: fx, y: fy });
+          requestAnimationFrame(follow);
+        })();
+      }
+
+      // ── MOBILE MENU ──
+      const ham = document.getElementById('hamburger');
+      const menu = document.getElementById('mobile-menu');
+      if (ham && menu) {
+        ham.addEventListener('click', () => {
+          ham.classList.toggle('open');
+          menu.classList.toggle('open');
+        });
+      }
+
+      // ── LOAD BLOG POSTS ──
+      const grid = document.getElementById('blog-grid');
+      const emptyState = document.getElementById('blog-empty');
+      const loading = document.getElementById('blog-loading');
+      const tagsContainer = document.getElementById('blog-tags');
+
+      try {
+        const res = await fetch('/api/blogs/published/list');
+        const posts = await res.json();
+        loading.style.display = 'none';
+
+        if (!posts || posts.length === 0) {
+          emptyState.style.display = 'block';
+          return;
+        }
+
+        // Build tags
+        const allTags = new Set();
+        posts.forEach(p => {
+          if (p.tags) p.tags.split(',').forEach(t => allTags.add(t.trim()));
+        });
+        allTags.forEach(tag => {
+          const btn = document.createElement('button');
+          btn.className = 'blog-tag';
+          btn.dataset.tag = tag;
+          btn.textContent = tag;
+          btn.style.cssText = 'padding:8px 20px;border-radius:30px;border:1px solid rgba(212,175,55,0.15);background:transparent;color:rgba(255,255,255,0.5);cursor:pointer;font-size:0.85rem;transition:all .3s ease;';
+          tagsContainer.appendChild(btn);
+        });
+
+        // Render posts
+        function renderPosts(filter = 'all') {
+          grid.innerHTML = '';
+          const filtered = filter === 'all' ? posts : posts.filter(p => p.tags && p.tags.includes(filter));
+          
+          if (filtered.length === 0) {
+            emptyState.style.display = 'block';
+            return;
+          }
+          emptyState.style.display = 'none';
+
+          filtered.forEach((post, i) => {
+            const card = document.createElement('a');
+            card.href = `/blog-post.html?slug=${post.slug}`;
+            card.className = 'blog-card';
+            card.innerHTML = `
+              ${post.thumbnail ? `<img class="blog-card-img" src="${post.thumbnail}" alt="${post.title}">` : `<div class="blog-card-img" style="display:flex;align-items:center;justify-content:center;font-size:3rem;color:rgba(212,175,55,0.3);">📰</div>`}
+              <div class="blog-card-body">
+                <p class="blog-card-date">${new Date(post.created_at).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+                <h3 class="blog-card-title">${post.title}</h3>
+                <p class="blog-card-excerpt">${post.excerpt || ''}</p>
+                ${post.tags ? `<div class="blog-card-tags">${post.tags.split(',').map(t => `<span class="blog-card-tag">${t.trim()}</span>`).join('')}</div>` : ''}
+              </div>
+            `;
+            grid.appendChild(card);
+
+            gsap.from(card, {
+              opacity: 0, y: 30,
+              duration: 0.6,
+              delay: i * 0.08,
+              ease: 'power3.out'
+            });
+          });
+        }
+
+        renderPosts();
+
+        // Tag filtering
+        tagsContainer.addEventListener('click', e => {
+          if (e.target.classList.contains('blog-tag')) {
+            tagsContainer.querySelectorAll('.blog-tag').forEach(b => {
+              b.classList.remove('active');
+              b.style.background = 'transparent';
+              b.style.color = 'rgba(255,255,255,0.5)';
+              b.style.borderColor = 'rgba(212,175,55,0.15)';
+            });
+            e.target.classList.add('active');
+            e.target.style.background = 'rgba(212,175,55,0.1)';
+            e.target.style.color = '#d4af37';
+            e.target.style.borderColor = 'rgba(212,175,55,0.3)';
+            renderPosts(e.target.dataset.tag);
+          }
+        });
+
+      } catch (err) {
+        loading.style.display = 'none';
+        emptyState.style.display = 'block';
+      }
+    });
+  </script>
+</body>
+</html>

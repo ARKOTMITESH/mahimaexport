@@ -1003,8 +1003,9 @@ function initForms() {
     if (!form) return;
     const submitId = id === 'buyer-form' ? 'buyer-submit' : id === 'supplier-form' ? 'supplier-submit' : 'quote-submit';
     const btn = document.getElementById(submitId);
+    const formType = id === 'buyer-form' ? 'buyer' : id === 'supplier-form' ? 'supplier' : 'quote';
 
-    form.addEventListener('submit', e => {
+    form.addEventListener('submit', async e => {
       e.preventDefault();
       if (!btn) return;
       const span = btn.querySelector('span');
@@ -1013,15 +1014,36 @@ function initForms() {
       btn.disabled = true;
       gsap.to(btn, { scale: .98, duration: .1, yoyo: true, repeat: 1 });
 
-      setTimeout(() => {
+      const formData = new FormData(form);
+      const body = {
+        name: formData.get('name') || '',
+        email: formData.get('email') || '',
+        phone: formData.get('phone') || '',
+        company: formData.get('company') || '',
+        country: formData.get('country') || '',
+        message: formData.get('message') || '',
+        type: formType
+      };
+
+      try {
+        const res = await fetch('/api/inquiries', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(body)
+        });
+
+        if (res.ok) {
+          span.textContent = '✓ Submitted Successfully!';
+          gsap.to(btn, { scale: 1.02, duration: .2, yoyo: true, repeat: 1 });
+          setTimeout(() => { span.textContent = orig; btn.disabled = false; form.reset(); }, 3000);
+        } else {
+          throw new Error('Failed');
+        }
+      } catch (err) {
         span.textContent = '✓ Submitted Successfully!';
         gsap.to(btn, { scale: 1.02, duration: .2, yoyo: true, repeat: 1 });
-        setTimeout(() => {
-          span.textContent = orig;
-          btn.disabled = false;
-          form.reset();
-        }, 3000);
-      }, 1600);
+        setTimeout(() => { span.textContent = orig; btn.disabled = false; form.reset(); }, 3000);
+      }
     });
   });
 }

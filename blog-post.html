@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="page-title">Blog Post | Mahima Global Entrepreneurs</title>
+  <meta name="description" id="meta-desc" content="" />
+  <meta name="robots" content="index, follow" />
+  <link rel="icon" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/style.css">
+</head>
+<body>
+  <!-- CURSOR -->
+  <div id="cursor"></div>
+  <div id="cursor-follower"></div>
+
+  <!-- HEADER -->
+  <header class="site-header glass-header">
+    <div class="container header-inner">
+      <a href="/" class="logo-link">
+        <img src="/images/logo-emblem.png" alt="Mahima Global" class="logo-img">
+        <span class="logo-text">Mahima<span class="gold"> Global</span></span>
+      </a>
+      <nav class="main-nav">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/about.html" class="nav-link">About</a>
+        <a href="/products.html" class="nav-link">Products</a>
+        <a href="/network.html" class="nav-link">Network</a>
+        <a href="/blog.html" class="nav-link active">Blog</a>
+        <a href="/contact.html" class="nav-link">Contact</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="/" class="mob-link">Home</a>
+    <a href="/about.html" class="mob-link">About</a>
+    <a href="/products.html" class="mob-link">Products</a>
+    <a href="/network.html" class="mob-link">Network</a>
+    <a href="/blog.html" class="mob-link active">Blog</a>
+    <a href="/contact.html" class="mob-link">Contact</a>
+  </div>
+
+  <!-- ARTICLE -->
+  <article id="blog-article" style="display:none;">
+    <!-- Hero Banner -->
+    <div id="article-hero" style="position:relative;padding:160px 0 60px;background:linear-gradient(135deg,#0a0a05,#1a1200,#0a0a05);overflow:hidden;">
+      <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 30% 60%,rgba(212,175,55,0.08) 0%,transparent 60%);pointer-events:none;"></div>
+      <div class="container" style="position:relative;z-index:2;max-width:800px;">
+        <!-- Breadcrumb -->
+        <nav style="margin-bottom:20px;">
+          <a href="/" style="color:rgba(212,175,55,0.6);text-decoration:none;font-size:0.85rem;">Home</a>
+          <span style="color:rgba(255,255,255,0.3);margin:0 8px;">›</span>
+          <a href="/blog.html" style="color:rgba(212,175,55,0.6);text-decoration:none;font-size:0.85rem;">Blog</a>
+          <span style="color:rgba(255,255,255,0.3);margin:0 8px;">›</span>
+          <span id="bc-title" style="color:rgba(255,255,255,0.5);font-size:0.85rem;"></span>
+        </nav>
+        <div id="article-tags" style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px;"></div>
+        <h1 id="article-title" style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,4vw,3rem);color:#fff;line-height:1.2;margin-bottom:16px;"></h1>
+        <p id="article-date" style="color:rgba(212,175,55,0.6);font-size:0.85rem;letter-spacing:2px;text-transform:uppercase;"></p>
+      </div>
+    </div>
+
+    <!-- Featured Image -->
+    <div id="article-img-wrap" style="display:none;max-width:900px;margin:-30px auto 0;padding:0 20px;position:relative;z-index:3;">
+      <img id="article-img" style="width:100%;border-radius:12px;border:1px solid rgba(212,175,55,0.15);box-shadow:0 20px 60px rgba(0,0,0,.5);" alt="">
+    </div>
+
+    <!-- Content Body -->
+    <div style="padding:50px 0 80px;background:var(--charcoal-2);">
+      <div class="container" style="max-width:800px;">
+        <div id="article-content" style="color:rgba(255,255,255,0.8);font-size:1.05rem;line-height:1.85;"></div>
+
+        <!-- Share Bar -->
+        <div style="margin-top:50px;padding-top:30px;border-top:1px solid rgba(212,175,55,0.1);display:flex;align-items:center;gap:16px;">
+          <span style="color:rgba(255,255,255,0.5);font-size:0.85rem;">Share:</span>
+          <a id="share-twitter" href="#" target="_blank" style="color:#d4af37;text-decoration:none;font-size:0.9rem;transition:opacity .3s;" onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='1'">𝕏 Twitter</a>
+          <a id="share-linkedin" href="#" target="_blank" style="color:#d4af37;text-decoration:none;font-size:0.9rem;transition:opacity .3s;" onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='1'">LinkedIn</a>
+          <a id="share-whatsapp" href="#" target="_blank" style="color:#d4af37;text-decoration:none;font-size:0.9rem;transition:opacity .3s;" onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='1'">WhatsApp</a>
+        </div>
+
+        <!-- Back Link -->
+        <div style="margin-top:40px;">
+          <a href="/blog.html" style="color:#d4af37;text-decoration:none;font-size:0.9rem;display:inline-flex;align-items:center;gap:8px;transition:opacity .3s;" onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='1'">← Back to Blog</a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- LOADING -->
+  <div id="blog-loading" style="min-height:100vh;display:flex;align-items:center;justify-content:center;background:#0a0a0a;">
+    <div style="text-align:center;">
+      <div style="width:40px;height:40px;border:3px solid rgba(212,175,55,0.2);border-top-color:#d4af37;border-radius:50%;animation:spin 1s linear infinite;margin:0 auto;"></div>
+      <p style="color:rgba(255,255,255,0.5);margin-top:16px;font-size:0.9rem;">Loading article...</p>
+    </div>
+  </div>
+
+  <!-- NOT FOUND -->
+  <div id="blog-404" style="display:none;min-height:100vh;display:none;align-items:center;justify-content:center;background:#0a0a0a;">
+    <div style="text-align:center;padding:40px;">
+      <p style="font-size:4rem;margin-bottom:16px;">📄</p>
+      <h2 style="color:#fff;font-family:'Cormorant Garamond',serif;font-size:2rem;margin-bottom:12px;">Post Not Found</h2>
+      <p style="color:rgba(255,255,255,0.5);margin-bottom:24px;">The article you're looking for doesn't exist or has been removed.</p>
+      <a href="/blog.html" style="display:inline-block;padding:12px 30px;background:linear-gradient(135deg,#d4af37,#b8960c);color:#0a0a0a;text-decoration:none;border-radius:6px;font-weight:600;font-size:0.9rem;">Browse All Posts</a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="/images/logo-emblem.png" alt="Mahima Global" style="width:40px;height:40px;margin-bottom:12px;">
+        <p class="footer-tagline">Premium Indian Exports & Strategic Imports</p>
+        <p class="footer-copy">&copy; 2026 Mahima Global Entrepreneurs OPC Pvt Ltd. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <style>
+    @keyframes spin { to { transform: rotate(360deg); } }
+    #article-content h1, #article-content h2, #article-content h3 {
+      font-family: 'Cormorant Garamond', serif;
+      color: #fff;
+      margin: 32px 0 16px;
+    }
+    #article-content h2 { font-size: 1.6rem; }
+    #article-content h3 { font-size: 1.3rem; }
+    #article-content p { margin-bottom: 18px; }
+    #article-content img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin: 20px 0;
+      border: 1px solid rgba(212,175,55,0.1);
+    }
+    #article-content a { color: #d4af37; }
+    #article-content blockquote {
+      border-left: 3px solid #d4af37;
+      padding: 12px 20px;
+      margin: 20px 0;
+      background: rgba(212,175,55,0.05);
+      border-radius: 0 6px 6px 0;
+      color: rgba(255,255,255,0.7);
+      font-style: italic;
+    }
+    #article-content ul, #article-content ol {
+      padding-left: 24px;
+      margin-bottom: 18px;
+    }
+    #article-content li { margin-bottom: 8px; }
+    #article-content pre {
+      background: rgba(0,0,0,0.4);
+      padding: 16px;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 20px 0;
+      border: 1px solid rgba(212,175,55,0.1);
+    }
+    #article-content code {
+      font-family: 'Courier New', monospace;
+      font-size: 0.9em;
+    }
+  </style>
+
+  <script type="module">
+    import './src/style.css';
+    import { gsap } from 'gsap';
+
+    document.addEventListener('DOMContentLoaded', async () => {
+      // ── CUSTOM CURSOR ──
+      const dot = document.getElementById('cursor');
+      const ring = document.getElementById('cursor-follower');
+      if (dot && ring) {
+        let mx = 0, my = 0, fx = 0, fy = 0;
+        document.addEventListener('mousemove', e => {
+          mx = e.clientX; my = e.clientY;
+          gsap.to(dot, { x: mx, y: my, duration: 0.08, ease: 'none' });
+        });
+        (function follow() {
+          fx += (mx - fx) * 0.11; fy += (my - fy) * 0.11;
+          gsap.set(ring, { x: fx, y: fy });
+          requestAnimationFrame(follow);
+        })();
+      }
+
+      // ── MOBILE MENU ──
+      const ham = document.getElementById('hamburger');
+      const menu = document.getElementById('mobile-menu');
+      if (ham && menu) {
+        ham.addEventListener('click', () => {
+          ham.classList.toggle('open');
+          menu.classList.toggle('open');
+        });
+      }
+
+      // ── LOAD BLOG POST ──
+      const slug = new URLSearchParams(window.location.search).get('slug');
+      const loadingEl = document.getElementById('blog-loading');
+      const articleEl = document.getElementById('blog-article');
+      const notFoundEl = document.getElementById('blog-404');
+
+      if (!slug) {
+        loadingEl.style.display = 'none';
+        notFoundEl.style.display = 'flex';
+        return;
+      }
+
+      try {
+        const res = await fetch(`/api/blogs/${slug}`);
+        if (!res.ok) throw new Error('Not found');
+        const post = await res.json();
+
+        // Update page meta
+        document.getElementById('page-title').textContent = `${post.meta_title || post.title} | Mahima Global Entrepreneurs`;
+        document.getElementById('meta-desc').content = post.meta_description || post.excerpt || '';
+
+        // Populate article
+        document.getElementById('article-title').textContent = post.title;
+        document.getElementById('bc-title').textContent = post.title;
+        document.getElementById('article-date').textContent = new Date(post.created_at).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+        document.getElementById('article-content').innerHTML = post.content || '';
+
+        // Tags
+        if (post.tags) {
+          const tagsEl = document.getElementById('article-tags');
+          post.tags.split(',').forEach(t => {
+            const span = document.createElement('span');
+            span.textContent = t.trim();
+            span.style.cssText = 'font-size:0.7rem;padding:3px 12px;border-radius:20px;background:rgba(212,175,55,0.1);color:rgba(212,175,55,0.7);border:1px solid rgba(212,175,55,0.15);';
+            tagsEl.appendChild(span);
+          });
+        }
+
+        // Featured Image
+        if (post.thumbnail) {
+          const imgWrap = document.getElementById('article-img-wrap');
+          document.getElementById('article-img').src = post.thumbnail;
+          imgWrap.style.display = 'block';
+        }
+
+        // Share links
+        const url = encodeURIComponent(window.location.href);
+        const title = encodeURIComponent(post.title);
+        document.getElementById('share-twitter').href = `https://twitter.com/intent/tweet?text=${title}&url=${url}`;
+        document.getElementById('share-linkedin').href = `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;
+        document.getElementById('share-whatsapp').href = `https://wa.me/?text=${title}%20${url}`;
+
+        // Show article, hide loading
+        loadingEl.style.display = 'none';
+        articleEl.style.display = 'block';
+
+        // Animate entrance
+        gsap.from('#article-title', { opacity: 0, y: 20, duration: 0.7, ease: 'power3.out' });
+        gsap.from('#article-content', { opacity: 0, y: 20, duration: 0.7, delay: 0.2, ease: 'power3.out' });
+
+      } catch (err) {
+        loadingEl.style.display = 'none';
+        notFoundEl.style.display = 'flex';
+      }
+    });
+  </script>
+</body>
+</html>
