@@ -1566,5 +1566,122 @@ export const products = [
         "waMsg": "Hi Mahima Global Entrepreneurs, I am interested in getting a quote for Imported Yellow Peas (Code: IMP-YPE)."
       }
     ]
+  },
+  {
+    "id": 16,
+    "slug": "quartz",
+    "name": "High-Purity Quartz & Silica Minerals",
+    "tagline": "Industrial Grade Quartz, HPQ Silica Sand & Engineered Slabs",
+    "icon": "💎",
+    "image": "/images/quartz.png",
+    "desc": "Premier direct-mine sourcing of natural quartz minerals, high-purity quartz (HPQ) grains (99.9% SiO2), engineered stone grit, snow-white lumps, and micronized silica flour from India's mineral-rich belts (Andhra Pradesh, Rajasthan). Serving global semiconductor, solar photovoltaic, quartz countertops, optical glass, ceramic, and refractory industries with certified purity and customized mesh grain sizing.",
+    "specs": {
+      "Origin": "India (Andhra Pradesh, Rajasthan, Gujarat)",
+      "Purity": "99.0% – 99.9% SiO2 (Low Iron < 50-100 ppm)",
+      "Grades": "HPQ Granules, Snow White Lumps, Mesh Powder, Engineered Grit",
+      "Packaging": "1 MT Jumbo Bags, 50kg HDPE Bags, or Bulk Sea Liner Containers",
+      "Key Markets": "USA, Germany, Japan, South Korea, UAE, Italy, Turkey, Vietnam"
+    },
+    "benefits": [
+      "Exceptionally high silica content (up to 99.9% SiO2) with minimal trace metal contamination.",
+      "Direct mine-mouth quality grading and automated magnetic separation.",
+      "Custom particle size distributions available from 300 mesh powder up to 200mm boulders.",
+      "Reliable ocean freight supply from Chennai, Krishnapatnam, and Mundra ports."
+    ],
+    "health": [
+      "Natural inert mineral composition, free from toxic organic additives.",
+      "High thermal stability and low electrical conductivity for green energy applications.",
+      "Zero radiation and eco-friendly sustainable extraction practices.",
+      "Strict occupational health and dust-suppression safety standards maintained."
+    ],
+    "waMsg": "Hi Mahima Global Entrepreneurs, I am interested in getting a quote for High-Purity Quartz and Silica Minerals.",
+    "tradeType": "export",
+    "varieties": [
+      {
+        "slug": "high-purity-quartz-granules",
+        "name": "High Purity Quartz (HPQ) Granules (99.9% SiO2)",
+        "code": "QTZ-HPQ",
+        "tagline": "Semiconductor & solar PV crucible grade ultra-pure quartz sand",
+        "image": "/images/quartz-hpq.png",
+        "desc": "Premium processed High Purity Quartz (HPQ) granules with silica purity exceeding 99.9%. Acid-washed, magnetically separated, and thermal-treated to minimize iron, aluminum, and titanium impurities. Ideal for manufacturing quartz crucibles for silicon crystal pulling in semiconductor and solar photovoltaic wafer production.",
+        "benefits": [
+          "Ultra-low iron oxide content (Fe2O3 < 15 ppm) and trace alkaline metals.",
+          "High fusion temperature with exceptional thermal shock resistance.",
+          "Uniform grain size distribution (available in 30-100 mesh).",
+          "Packaged in double-sealed moisture-proof export jumbo bags."
+        ],
+        "health": [
+          "Crucial raw material powering global clean solar photovoltaic energy.",
+          "Chemically inert and biologically harmless under standard handling.",
+          "Processed in ISO 9001 and cleanroom compliant mineral processing plants.",
+          "Non-reactive with standard industrial acids and solvents."
+        ],
+        "waMsg": "Hi Mahima Global Entrepreneurs, I am interested in getting a quote for High Purity Quartz Granules (Code: QTZ-HPQ)."
+      },
+      {
+        "slug": "snow-white-quartz-lumps",
+        "name": "Snow White Quartz Lumps & Boulders",
+        "code": "QTZ-LMP",
+        "tagline": "Grade-A milky & snow-white quartz stones for ferrosilicon & glass",
+        "image": "/images/quartz-lumps.png",
+        "desc": "Hand-picked and sorted Grade-A Snow White Quartz lumps extracted from prime pegmatite veins in Andhra Pradesh and Rajasthan. Sized from 25mm to 200mm, with high compressive strength and low moisture. Widely used in ferrosilicon manufacturing, optical glass melting, ceramic frits, and silicon metal smelting.",
+        "benefits": [
+          "Purity of 99.2% to 99.8% SiO2 with brilliant snow-white color.",
+          "Low iron (<0.02%) ensuring crystal-clear glass and high-grade ceramics.",
+          "Hand-sorted to eliminate feldspar, mica, and extraneous rock matrices.",
+          "Available in bulk break-bulk vessel shipments or 20ft container loads."
+        ],
+        "health": [
+          "100% natural, unadulterated mined crystalline mineral.",
+          "Safe and inert raw material for long-term industrial handling.",
+          "Zero toxic volatile compounds or chemical coatings.",
+          "Complies with global export environmental safety directives."
+        ],
+        "waMsg": "Hi Mahima Global Entrepreneurs, I am interested in getting a quote for Snow White Quartz Lumps (Code: QTZ-LMP)."
+      },
+      {
+        "slug": "engineered-quartz-slabs-grit",
+        "name": "Engineered Quartz Slabs & Grit",
+        "code": "QTZ-SLB",
+        "tagline": "Luxury countertop stone slabs & graded filler grit for surface manufacturing",
+        "image": "/images/quartz-slabs.png",
+        "desc": "Premium export-ready engineered quartz slabs and calibrated quartz grains (0.1mm - 2.5mm) for composite stone manufacturing. Engineered slabs feature stunning Calacatta marble veins, diamond-hard surface scratch resistance (Mohs hardness 7), and non-porous antimicrobial properties for luxury kitchens, bathrooms, and commercial architecture.",
+        "benefits": [
+          "Non-porous, highly stain-resistant, and zero-maintenance surface.",
+          "Mohs hardness rating of 7, superior to natural granite and marble.",
+          "Precision thickness calibration (15mm, 20mm, 30mm) with polished finishes.",
+          "Bulk export crating in reinforced steel A-frames with foam cushioning."
+        ],
+        "health": [
+          "NSF certified food-contact safe and non-porous antimicrobial surface.",
+          "Zero radon emissions and low VOC certification for indoor air quality.",
+          "Resistant to bacterial growth and mold without chemical sealers.",
+          "Easy to sanitize with standard warm water and mild soap."
+        ],
+        "waMsg": "Hi Mahima Global Entrepreneurs, I am interested in getting a quote for Engineered Quartz Slabs & Grit (Code: QTZ-SLB)."
+      },
+      {
+        "slug": "micronized-quartz-silica-powder",
+        "name": "Micronized Quartz Powder (Silica Flour)",
+        "code": "QTZ-PWD",
+        "tagline": "300 to 500 mesh ultra-fine silica powder for paint, rubber & ceramics",
+        "image": "/images/quartz-powder.png",
+        "desc": "High-whiteness micronized quartz powder milled to precise micron mesh sizes (300 mesh, 400 mesh, 500 mesh). Manufactured using ceramic ball mills to prevent metallic contamination. Widely used as a functional extender in premium industrial coatings, epoxy flooring, rubber compounding, adhesives, sanitaryware, and electrical insulators.",
+        "benefits": [
+          "Exceptional whiteness index (>95%) and high brightness.",
+          "Imparts high abrasion resistance and durability in paints and polymers.",
+          "Consistent particle size distribution with zero oversize grit.",
+          "Packaged in 25kg or 50kg moisture-barrier laminated bags."
+        ],
+        "health": [
+          "Inert non-reactive mineral filler enhancing product longevity.",
+          "Supplied with standard Material Safety Data Sheets (MSDS).",
+          "Eco-friendly functional mineral replacing synthetic fillers.",
+          "Zero organic solvent emissions in final cured formulations."
+        ],
+        "waMsg": "Hi Mahima Global Entrepreneurs, I am interested in getting a quote for Micronized Quartz Powder (Code: QTZ-PWD)."
+      }
+    ]
   }
 ];
+

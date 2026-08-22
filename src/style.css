@@ -1021,6 +1021,7 @@ input, textarea, select { font-family: 'Inter', sans-serif; }
 #pc-bg-13 { background: url('/images/chemicals.png') center/cover no-repeat; }
 #pc-bg-14 { background: url('/images/machinery.png') center/cover no-repeat; }
 #pc-bg-15 { background: url('/images/fruits.png') center/cover no-repeat; }
+#pc-bg-16 { background: url('/images/quartz.png') center/cover no-repeat; }
 
 .pc-overlay {
   position: absolute; inset: 0;
