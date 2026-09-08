@@ -3,11 +3,14 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { initLanguageSwitcher } from './lang-switcher.js';
 import { initMobileNav } from './nav-mobile.js';
+import { initAllFormsVerification, initContactForms } from './verify-human.js';
 
 gsap.registerPlugin(ScrollTrigger);
 
 document.addEventListener('DOMContentLoaded', () => {
   initLanguageSwitcher();
+  initAllFormsVerification();
+  initContactForms();
   // ── CUSTOM CURSOR SYSTEM ──
   const dot  = document.getElementById('cursor');
   const ring = document.getElementById('cursor-follower');

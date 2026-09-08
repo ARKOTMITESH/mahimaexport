@@ -1694,16 +1694,16 @@
                   <div class="form-panel-right">
                     <form class="contact-form" id="buyer-form" novalidate>
                       <div class="fg-row">
-                        <div class="fg"><label for="b-name">Full Name *</label><input id="b-name" type="text" placeholder="John Morrison" required /></div>
-                        <div class="fg"><label for="b-company">Company Name</label><input id="b-company" type="text" placeholder="Your Company Ltd." /></div>
+                        <div class="fg"><label for="b-name">Full Name *</label><input id="b-name" name="name" type="text" placeholder="John Morrison" required /></div>
+                        <div class="fg"><label for="b-company">Company Name</label><input id="b-company" name="company" type="text" placeholder="Your Company Ltd." /></div>
                       </div>
                       <div class="fg-row">
-                        <div class="fg"><label for="b-email">Email Address *</label><input id="b-email" type="email" placeholder="john@company.com" required /></div>
-                        <div class="fg"><label for="b-phone">Phone / WhatsApp</label><input id="b-phone" type="tel" placeholder="+1 234 567 890" /></div>
+                        <div class="fg"><label for="b-email">Email Address *</label><input id="b-email" name="email" type="email" placeholder="john@company.com" required /></div>
+                        <div class="fg"><label for="b-phone">Phone / WhatsApp</label><input id="b-phone" name="phone" type="tel" placeholder="+1 234 567 890" /></div>
                       </div>
                       <div class="fg-row">
                         <div class="fg"><label for="b-country">Country *</label>
-                          <select id="b-country" required>
+                          <select id="b-country" name="country" required>
                             <option value="">Select Country</option>
                             <option>United States</option><option>Canada</option>
                             <option>United Kingdom</option><option>Germany</option>
@@ -1715,7 +1715,7 @@
                           </select>
                         </div>
                         <div class="fg"><label for="b-product">Product Interest</label>
-                          <select id="b-product">
+                          <select id="b-product" name="product">
                             <option value="">Select Category</option>
                             <option>Vetiver Roots</option><option>Vetiver Oil</option>
                             <option>Vetiver Planting Material</option>
@@ -1726,8 +1726,33 @@
                           </select>
                         </div>
                       </div>
-                      <div class="fg"><label for="b-volume">Estimated Annual Volume</label><input id="b-volume" type="text" placeholder="e.g. 10 MT / 5 FCL per year" /></div>
-                      <div class="fg"><label for="b-msg">Message *</label><textarea id="b-msg" rows="4" placeholder="Tell us about your business, target products, quality requirements, and destination port..." required></textarea></div>
+                      <div class="fg"><label for="b-volume">Estimated Annual Volume</label><input id="b-volume" name="volume" type="text" placeholder="e.g. 10 MT / 5 FCL per year" /></div>
+                      <div class="fg"><label for="b-msg">Message *</label><textarea id="b-msg" name="message" rows="4" placeholder="Tell us about your business, target products, quality requirements, and destination port..." required></textarea></div>
+                      
+                      <!-- VERIFY HUMAN CHECK -->
+                      <div class="verify-human-wrap">
+                        <div class="verify-human-box" role="button" tabindex="0" aria-label="Verify you are human">
+                          <label class="verify-human-label">
+                            <input type="checkbox" name="verify_human" class="verify-human-input" tabindex="-1" />
+                            <span class="verify-human-custom-check">
+                              <svg class="verify-human-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                              </svg>
+                              <span class="verify-human-spinner"></span>
+                            </span>
+                            <span class="verify-human-text">Verify you are human</span>
+                          </label>
+                          <div class="verify-human-badge">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            </svg>
+                            <span class="verify-badge-sub">Mahima Security</span>
+                          </div>
+                        </div>
+                        <p class="verify-human-error-msg">⚠️ Please verify you are human before submitting.</p>
+                        <input type="text" name="_bot_gotcha" style="display:none !important;" tabindex="-1" autocomplete="off" />
+                      </div>
+
                       <button type="submit" class="btn btn-primary btn-full submit-btn" id="buyer-submit">
                         <span>Submit Buyer Application</span>
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2L15 22l-4-9-9-4 19-7z"/></svg>
@@ -1753,17 +1778,17 @@
                   <div class="form-panel-right">
                     <form class="contact-form" id="supplier-form" novalidate>
                       <div class="fg-row">
-                        <div class="fg"><label for="s-name">Contact Name *</label><input id="s-name" type="text" placeholder="Your Full Name" required /></div>
-                        <div class="fg"><label for="s-company">Company / Farm Name *</label><input id="s-company" type="text" placeholder="Your Company" required /></div>
+                        <div class="fg"><label for="s-name">Contact Name *</label><input id="s-name" name="name" type="text" placeholder="Your Full Name" required /></div>
+                        <div class="fg"><label for="s-company">Company / Farm Name *</label><input id="s-company" name="company" type="text" placeholder="Your Company" required /></div>
                       </div>
                       <div class="fg-row">
-                        <div class="fg"><label for="s-email">Email *</label><input id="s-email" type="email" placeholder="you@company.com" required /></div>
-                        <div class="fg"><label for="s-phone">Phone *</label><input id="s-phone" type="tel" placeholder="+91 98765 43210" required /></div>
+                        <div class="fg"><label for="s-email">Email *</label><input id="s-email" name="email" type="email" placeholder="you@company.com" required /></div>
+                        <div class="fg"><label for="s-phone">Phone *</label><input id="s-phone" name="phone" type="tel" placeholder="+91 98765 43210" required /></div>
                       </div>
                       <div class="fg-row">
-                        <div class="fg"><label for="s-state">State / Location</label><input id="s-state" type="text" placeholder="e.g. Rajasthan, India" /></div>
+                        <div class="fg"><label for="s-state">State / Location</label><input id="s-state" name="location" type="text" placeholder="e.g. Rajasthan, India" /></div>
                         <div class="fg"><label for="s-product">Product You Supply</label>
-                          <select id="s-product">
+                          <select id="s-product" name="product">
                             <option value="">Select Product</option>
                             <option>Vetiver (Khus)</option><option>Agricultural Commodities</option>
                             <option>Spices & Herbs</option><option>Minerals</option>
@@ -1771,8 +1796,33 @@
                           </select>
                         </div>
                       </div>
-                      <div class="fg"><label for="s-capacity">Annual Supply Capacity</label><input id="s-capacity" type="text" placeholder="e.g. 500 MT per year" /></div>
-                      <div class="fg"><label for="s-msg">Additional Information</label><textarea id="s-msg" rows="4" placeholder="Tell us about your product quality, certifications, current clients, and supply capabilities..."></textarea></div>
+                      <div class="fg"><label for="s-capacity">Annual Supply Capacity</label><input id="s-capacity" name="capacity" type="text" placeholder="e.g. 500 MT per year" /></div>
+                      <div class="fg"><label for="s-msg">Additional Information</label><textarea id="s-msg" name="message" rows="4" placeholder="Tell us about your product quality, certifications, current clients, and supply capabilities..."></textarea></div>
+                      
+                      <!-- VERIFY HUMAN CHECK -->
+                      <div class="verify-human-wrap">
+                        <div class="verify-human-box" role="button" tabindex="0" aria-label="Verify you are human">
+                          <label class="verify-human-label">
+                            <input type="checkbox" name="verify_human" class="verify-human-input" tabindex="-1" />
+                            <span class="verify-human-custom-check">
+                              <svg class="verify-human-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                              </svg>
+                              <span class="verify-human-spinner"></span>
+                            </span>
+                            <span class="verify-human-text">Verify you are human</span>
+                          </label>
+                          <div class="verify-human-badge">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            </svg>
+                            <span class="verify-badge-sub">Mahima Security</span>
+                          </div>
+                        </div>
+                        <p class="verify-human-error-msg">⚠️ Please verify you are human before submitting.</p>
+                        <input type="text" name="_bot_gotcha" style="display:none !important;" tabindex="-1" autocomplete="off" />
+                      </div>
+
                       <button type="submit" class="btn btn-primary btn-full submit-btn" id="supplier-submit">
                         <span>Submit Supplier Application</span>
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2L15 22l-4-9-9-4 19-7z"/></svg>
@@ -1798,13 +1848,13 @@
                   <div class="form-panel-right">
                     <form class="contact-form" id="quote-form" novalidate>
                       <div class="fg-row">
-                        <div class="fg"><label for="q-name">Name *</label><input id="q-name" type="text" placeholder="Your Name" required /></div>
-                        <div class="fg"><label for="q-company">Company</label><input id="q-company" type="text" placeholder="Company Name" /></div>
+                        <div class="fg"><label for="q-name">Name *</label><input id="q-name" name="name" type="text" placeholder="Your Name" required /></div>
+                        <div class="fg"><label for="q-company">Company</label><input id="q-company" name="company" type="text" placeholder="Company Name" /></div>
                       </div>
                       <div class="fg-row">
-                        <div class="fg"><label for="q-email">Email *</label><input id="q-email" type="email" placeholder="email@company.com" required /></div>
+                        <div class="fg"><label for="q-email">Email *</label><input id="q-email" name="email" type="email" placeholder="email@company.com" required /></div>
                         <div class="fg"><label for="q-country">Destination Country *</label>
-                          <select id="q-country" required>
+                          <select id="q-country" name="country" required>
                             <option value="">Select Country</option>
                             <option>United States</option><option>Canada</option>
                             <option>United Kingdom</option><option>Germany</option>
@@ -1817,7 +1867,7 @@
                       </div>
                       <div class="fg-row">
                         <div class="fg"><label for="q-product">Product Required *</label>
-                          <select id="q-product" required>
+                          <select id="q-product" name="product" required>
                             <option value="">Select Product</option>
                             <option>Vetiver Roots</option><option>Vetiver Oil</option>
                             <option>Vetiver Planting Material</option>
@@ -1826,18 +1876,43 @@
                             <option>Eco-Friendly Products</option><option>Industrial Raw Materials</option>
                           </select>
                         </div>
-                        <div class="fg"><label for="q-qty">Quantity / Volume *</label><input id="q-qty" type="text" placeholder="e.g. 10 MT, 1 FCL" required /></div>
+                        <div class="fg"><label for="q-qty">Quantity / Volume *</label><input id="q-qty" name="quantity" type="text" placeholder="e.g. 10 MT, 1 FCL" required /></div>
                       </div>
                       <div class="fg-row">
                         <div class="fg"><label for="q-inco">Incoterm Preference</label>
-                          <select id="q-inco">
+                          <select id="q-inco" name="incoterm">
                             <option value="">Select Incoterm</option>
                             <option>FOB</option><option>CIF</option><option>CFR</option><option>EXW</option><option>DDP</option>
                           </select>
                         </div>
-                        <div class="fg"><label for="q-port">Destination Port</label><input id="q-port" type="text" placeholder="e.g. Port of Los Angeles" /></div>
+                        <div class="fg"><label for="q-port">Destination Port</label><input id="q-port" name="port" type="text" placeholder="e.g. Port of Los Angeles" /></div>
                       </div>
-                      <div class="fg"><label for="q-specs">Product Specifications / Standards</label><textarea id="q-specs" rows="3" placeholder="Quality grade, moisture content, certifications required, packaging preferences, etc."></textarea></div>
+                      <div class="fg"><label for="q-specs">Product Specifications / Standards</label><textarea id="q-specs" name="message" rows="3" placeholder="Quality grade, moisture content, certifications required, packaging preferences, etc."></textarea></div>
+                      
+                      <!-- VERIFY HUMAN CHECK -->
+                      <div class="verify-human-wrap">
+                        <div class="verify-human-box" role="button" tabindex="0" aria-label="Verify you are human">
+                          <label class="verify-human-label">
+                            <input type="checkbox" name="verify_human" class="verify-human-input" tabindex="-1" />
+                            <span class="verify-human-custom-check">
+                              <svg class="verify-human-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                              </svg>
+                              <span class="verify-human-spinner"></span>
+                            </span>
+                            <span class="verify-human-text">Verify you are human</span>
+                          </label>
+                          <div class="verify-human-badge">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            </svg>
+                            <span class="verify-badge-sub">Mahima Security</span>
+                          </div>
+                        </div>
+                        <p class="verify-human-error-msg">⚠️ Please verify you are human before submitting.</p>
+                        <input type="text" name="_bot_gotcha" style="display:none !important;" tabindex="-1" autocomplete="off" />
+                      </div>
+
                       <button type="submit" class="btn btn-primary btn-full submit-btn" id="quote-submit">
                         <span>Request Quotation</span>
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2L15 22l-4-9-9-4 19-7z"/></svg>
@@ -1971,6 +2046,29 @@
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </button>
           </div>
+          <!-- VERIFY HUMAN CHECK -->
+          <div class="verify-human-wrap">
+            <div class="verify-human-box" role="button" tabindex="0" aria-label="Verify you are human">
+              <label class="verify-human-label">
+                <input type="checkbox" name="verify_human" class="verify-human-input" tabindex="-1" />
+                <span class="verify-human-custom-check">
+                  <svg class="verify-human-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span class="verify-human-spinner"></span>
+                </span>
+                <span class="verify-human-text">Verify you are human</span>
+              </label>
+              <div class="verify-human-badge">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+                <span class="verify-badge-sub">Mahima Security</span>
+              </div>
+            </div>
+            <p class="verify-human-error-msg">⚠️ Please verify you are human before submitting.</p>
+            <input type="text" name="_bot_gotcha" style="display:none !important;" tabindex="-1" autocomplete="off" />
+          </div>
           <label class="nf-consent">
             <input type="checkbox" id="nf-consent" name="consent" required />
             <span>I agree to receive trade insights and market updates. I can unsubscribe at any time. View our <a href="/compliance.html" target="_blank">Privacy Policy</a>.</span>
@@ -1990,6 +2088,19 @@
         const name = document.getElementById('nf-name').value.trim();
         const consent = document.getElementById('nf-consent').checked;
         const msg = document.getElementById('nf-msg');
+        
+        // Human verification check
+        if (form.dataset.humanVerified !== 'true') {
+          msg.textContent = '⚠ Please verify you are human before subscribing.';
+          msg.className = 'nf-msg nf-error';
+          const box = form.querySelector('.verify-human-box');
+          if (box) {
+            box.classList.add('error');
+            setTimeout(() => box.classList.remove('error'), 600);
+          }
+          return;
+        }
+
         if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
           msg.textContent = '⚠ Please enter a valid email address.';
           msg.className = 'nf-msg nf-error';

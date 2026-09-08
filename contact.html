@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -281,16 +281,16 @@
                   <div class="form-panel-right">
                     <form class="contact-form" id="buyer-form" style="display: flex; flex-direction: column; gap: 20px;">
                       <div class="fg-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
-                        <div class="fg"><label style="display:block; font-size: 0.76rem; color: var(--gold); text-transform: uppercase; margin-bottom: 8px; font-weight: 600;">Full Name *</label><input type="text" placeholder="John Morrison" required style="width: 100%; padding: 14px 16px; background: rgba(8,8,8,0.5); border: 1px solid var(--glass-border); border-radius: 4px; color: var(--white); font-size: 0.88rem;" /></div>
-                        <div class="fg"><label style="display:block; font-size: 0.76rem; color: var(--gold); text-transform: uppercase; margin-bottom: 8px; font-weight: 600;">Company Name</label><input type="text" placeholder="Your Company Ltd." style="width: 100%; padding: 14px 16px; background: rgba(8,8,8,0.5); border: 1px solid var(--glass-border); border-radius: 4px; color: var(--white); font-size: 0.88rem;" /></div>
+                        <div class="fg"><label style="display:block; font-size: 0.76rem; color: var(--gold); text-transform: uppercase; margin-bottom: 8px; font-weight: 600;">Full Name *</label><input type="text" name="name" placeholder="John Morrison" required style="width: 100%; padding: 14px 16px; background: rgba(8,8,8,0.5); border: 1px solid var(--glass-border); border-radius: 4px; color: var(--white); font-size: 0.88rem;" /></div>
+                        <div class="fg"><label style="display:block; font-size: 0.76rem; color: var(--gold); text-transform: uppercase; margin-bottom: 8px; font-weight: 600;">Company Name</label><input type="text" name="company" placeholder="Your Company Ltd." style="width: 100%; padding: 14px 16px; background: rgba(8,8,8,0.5); border: 1px solid var(--glass-border); border-radius: 4px; color: var(--white); font-size: 0.88rem;" /></div>
                       </div>
                       <div class="fg-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
-                        <div class="fg"><label style="display:block; font-size: 0.76rem; color: var(--gold); text-transform: uppercase; margin-bottom: 8px; font-weight: 600;">Email Address *</label><input type="email" placeholder="john@company.com" required style="width: 100%; padding: 14px 16px; background: rgba(8,8,8,0.5); border: 1px solid var(--glass-border); border-radius: 4px; color: var(--white); font-size: 0.88rem;" /></div>
-                        <div class="fg"><label style="display:block; font-size: 0.76rem; color: var(--gold); text-transform: uppercase; margin-bottom: 8px; font-weight: 600;">Phone / WhatsApp</label><input type="tel" placeholder="+1 234 567 890" style="width: 100%; padding: 14px 16px; background: rgba(8,8,8,0.5); border: 1px solid var(--glass-border); border-radius: 4px; color: var(--white); font-size: 0.88rem;" /></div>
+                        <div class="fg"><label style="display:block; font-size: 0.76rem; color: var(--gold); text-transform: uppercase; margin-bottom: 8px; font-weight: 600;">Email Address *</label><input type="email" name="email" placeholder="john@company.com" required style="width: 100%; padding: 14px 16px; background: rgba(8,8,8,0.5); border: 1px solid var(--glass-border); border-radius: 4px; color: var(--white); font-size: 0.88rem;" /></div>
+                        <div class="fg"><label style="display:block; font-size: 0.76rem; color: var(--gold); text-transform: uppercase; margin-bottom: 8px; font-weight: 600;">Phone / WhatsApp</label><input type="tel" name="phone" placeholder="+1 234 567 890" style="width: 100%; padding: 14px 16px; background: rgba(8,8,8,0.5); border: 1px solid var(--glass-border); border-radius: 4px; color: var(--white); font-size: 0.88rem;" /></div>
                       </div>
 
                       <div class="fg"><label style="display:block; font-size: 0.76rem; color: var(--gold); text-transform: uppercase; margin-bottom: 8px; font-weight: 600;">Trade Query Type *</label>
-                        <select required style="width: 100%; padding: 14px 16px; background: rgba(8,8,8,0.5); border: 1px solid var(--glass-border); border-radius: 4px; color: var(--white-70); font-size: 0.88rem; outline: none;">
+                        <select name="trade_type" required style="width: 100%; padding: 14px 16px; background: rgba(8,8,8,0.5); border: 1px solid var(--glass-border); border-radius: 4px; color: var(--white-70); font-size: 0.88rem; outline: none;">
                           <option value="export">Export Inquiry (Buy from India)</option>
                           <option value="import">Import Inquiry (Supply to India / Customs Clearing)</option>
                         </select>
@@ -298,7 +298,7 @@
 
                       <div class="fg-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
                         <div class="fg"><label style="display:block; font-size: 0.76rem; color: var(--gold); text-transform: uppercase; margin-bottom: 8px; font-weight: 600;">Country *</label>
-                          <select required style="width: 100%; padding: 14px 16px; background: rgba(8,8,8,0.5); border: 1px solid var(--glass-border); border-radius: 4px; color: var(--white-70); font-size: 0.88rem; outline: none;">
+                          <select name="country" required style="width: 100%; padding: 14px 16px; background: rgba(8,8,8,0.5); border: 1px solid var(--glass-border); border-radius: 4px; color: var(--white-70); font-size: 0.88rem; outline: none;">
                             <option value="">Select Country</option>
                             <option>United States</option><option>Canada</option>
                             <option>United Kingdom</option><option>Germany</option>
@@ -310,7 +310,7 @@
                           </select>
                         </div>
                         <div class="fg"><label style="display:block; font-size: 0.76rem; color: var(--gold); text-transform: uppercase; margin-bottom: 8px; font-weight: 600;">Product Interest</label>
-                          <select style="width: 100%; padding: 14px 16px; background: rgba(8,8,8,0.5); border: 1px solid var(--glass-border); border-radius: 4px; color: var(--white-70); font-size: 0.88rem; outline: none;">
+                          <select name="product" style="width: 100%; padding: 14px 16px; background: rgba(8,8,8,0.5); border: 1px solid var(--glass-border); border-radius: 4px; color: var(--white-70); font-size: 0.88rem; outline: none;">
                             <option value="">Select Category</option>
                             <option>Vetiver Roots</option><option>Vetiver Oil</option>
                             <option>Premium Basmati Rice</option><option>Non-Basmati Rice</option>
@@ -324,9 +324,33 @@
                           </select>
                         </div>
                       </div>
-                      <div class="fg"><label style="display:block; font-size: 0.76rem; color: var(--gold); text-transform: uppercase; margin-bottom: 8px; font-weight: 600;">Estimated Annual Volume</label><input type="text" placeholder="e.g. 10 MT / 5 FCL per year" style="width: 100%; padding: 14px 16px; background: rgba(8,8,8,0.5); border: 1px solid var(--glass-border); border-radius: 4px; color: var(--white); font-size: 0.88rem;" /></div>
-                      <div class="fg"><label style="display:block; font-size: 0.76rem; color: var(--gold); text-transform: uppercase; margin-bottom: 8px; font-weight: 600;">Message *</label><textarea rows="4" placeholder="Tell us about your business, quality specs, and target ports..." required style="width: 100%; padding: 14px 16px; background: rgba(8,8,8,0.5); border: 1px solid var(--glass-border); border-radius: 4px; color: var(--white); font-size: 0.88rem; font-family: inherit; resize: vertical;"></textarea></div>
+                      <div class="fg"><label style="display:block; font-size: 0.76rem; color: var(--gold); text-transform: uppercase; margin-bottom: 8px; font-weight: 600;">Estimated Annual Volume</label><input type="text" name="volume" placeholder="e.g. 10 MT / 5 FCL per year" style="width: 100%; padding: 14px 16px; background: rgba(8,8,8,0.5); border: 1px solid var(--glass-border); border-radius: 4px; color: var(--white); font-size: 0.88rem;" /></div>
+                      <div class="fg"><label style="display:block; font-size: 0.76rem; color: var(--gold); text-transform: uppercase; margin-bottom: 8px; font-weight: 600;">Message *</label><textarea name="message" rows="4" placeholder="Tell us about your business, quality specs, and target ports..." required style="width: 100%; padding: 14px 16px; background: rgba(8,8,8,0.5); border: 1px solid var(--glass-border); border-radius: 4px; color: var(--white); font-size: 0.88rem; font-family: inherit; resize: vertical;"></textarea></div>
                       
+                      <!-- VERIFY HUMAN CHECK -->
+                      <div class="verify-human-wrap">
+                        <div class="verify-human-box" role="button" tabindex="0" aria-label="Verify you are human">
+                          <label class="verify-human-label">
+                            <input type="checkbox" name="verify_human" class="verify-human-input" tabindex="-1" />
+                            <span class="verify-human-custom-check">
+                              <svg class="verify-human-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                              </svg>
+                              <span class="verify-human-spinner"></span>
+                            </span>
+                            <span class="verify-human-text">Verify you are human</span>
+                          </label>
+                          <div class="verify-human-badge">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            </svg>
+                            <span class="verify-badge-sub">Mahima Security</span>
+                          </div>
+                        </div>
+                        <p class="verify-human-error-msg">⚠️ Please verify you are human before submitting.</p>
+                        <input type="text" name="_bot_gotcha" style="display:none !important;" tabindex="-1" autocomplete="off" />
+                      </div>
+
                       <button type="submit" class="btn btn-primary btn-full submit-btn" style="width: 100%; padding: 16px 20px; border-radius: 4px; display: inline-flex; align-items: center; justify-content: center; gap: 10px; font-weight: 600; cursor: pointer; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.05em; background: var(--gold); color: var(--black);">
                         <span>Submit Buyer Application</span>
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2L15 22l-4-9-9-4 19-7z"/></svg>
@@ -352,17 +376,17 @@
                   <div class="form-panel-right">
                     <form class="contact-form" id="supplier-form" style="display: flex; flex-direction: column; gap: 20px;">
                       <div class="fg-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
-                        <div class="fg"><label style="display:block; font-size: 0.76rem; color: var(--gold); text-transform: uppercase; margin-bottom: 8px; font-weight: 600;">Contact Name *</label><input type="text" placeholder="Your Full Name" required style="width: 100%; padding: 14px 16px; background: rgba(8,8,8,0.5); border: 1px solid var(--glass-border); border-radius: 4px; color: var(--white); font-size: 0.88rem;" /></div>
-                        <div class="fg"><label style="display:block; font-size: 0.76rem; color: var(--gold); text-transform: uppercase; margin-bottom: 8px; font-weight: 600;">Company / Farm Name *</label><input type="text" placeholder="Your Company / Farm" required style="width: 100%; padding: 14px 16px; background: rgba(8,8,8,0.5); border: 1px solid var(--glass-border); border-radius: 4px; color: var(--white); font-size: 0.88rem;" /></div>
+                        <div class="fg"><label style="display:block; font-size: 0.76rem; color: var(--gold); text-transform: uppercase; margin-bottom: 8px; font-weight: 600;">Contact Name *</label><input type="text" name="name" placeholder="Your Full Name" required style="width: 100%; padding: 14px 16px; background: rgba(8,8,8,0.5); border: 1px solid var(--glass-border); border-radius: 4px; color: var(--white); font-size: 0.88rem;" /></div>
+                        <div class="fg"><label style="display:block; font-size: 0.76rem; color: var(--gold); text-transform: uppercase; margin-bottom: 8px; font-weight: 600;">Company / Farm Name *</label><input type="text" name="company" placeholder="Your Company / Farm" required style="width: 100%; padding: 14px 16px; background: rgba(8,8,8,0.5); border: 1px solid var(--glass-border); border-radius: 4px; color: var(--white); font-size: 0.88rem;" /></div>
                       </div>
                       <div class="fg-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
-                        <div class="fg"><label style="display:block; font-size: 0.76rem; color: var(--gold); text-transform: uppercase; margin-bottom: 8px; font-weight: 600;">Email Address *</label><input type="email" placeholder="you@company.com" required style="width: 100%; padding: 14px 16px; background: rgba(8,8,8,0.5); border: 1px solid var(--glass-border); border-radius: 4px; color: var(--white); font-size: 0.88rem;" /></div>
-                        <div class="fg"><label style="display:block; font-size: 0.76rem; color: var(--gold); text-transform: uppercase; margin-bottom: 8px; font-weight: 600;">Phone Number *</label><input type="tel" placeholder="+91 98765 43210" required style="width: 100%; padding: 14px 16px; background: rgba(8,8,8,0.5); border: 1px solid var(--glass-border); border-radius: 4px; color: var(--white); font-size: 0.88rem;" /></div>
+                        <div class="fg"><label style="display:block; font-size: 0.76rem; color: var(--gold); text-transform: uppercase; margin-bottom: 8px; font-weight: 600;">Email Address *</label><input type="email" name="email" placeholder="you@company.com" required style="width: 100%; padding: 14px 16px; background: rgba(8,8,8,0.5); border: 1px solid var(--glass-border); border-radius: 4px; color: var(--white); font-size: 0.88rem;" /></div>
+                        <div class="fg"><label style="display:block; font-size: 0.76rem; color: var(--gold); text-transform: uppercase; margin-bottom: 8px; font-weight: 600;">Phone Number *</label><input type="tel" name="phone" placeholder="+91 98765 43210" required style="width: 100%; padding: 14px 16px; background: rgba(8,8,8,0.5); border: 1px solid var(--glass-border); border-radius: 4px; color: var(--white); font-size: 0.88rem;" /></div>
                       </div>
                       <div class="fg-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
-                        <div class="fg"><label style="display:block; font-size: 0.76rem; color: var(--gold); text-transform: uppercase; margin-bottom: 8px; font-weight: 600;">State / Location</label><input type="text" placeholder="e.g. Andhra Pradesh, India" style="width: 100%; padding: 14px 16px; background: rgba(8,8,8,0.5); border: 1px solid var(--glass-border); border-radius: 4px; color: var(--white); font-size: 0.88rem;" /></div>
+                        <div class="fg"><label style="display:block; font-size: 0.76rem; color: var(--gold); text-transform: uppercase; margin-bottom: 8px; font-weight: 600;">State / Location</label><input type="text" name="location" placeholder="e.g. Andhra Pradesh, India" style="width: 100%; padding: 14px 16px; background: rgba(8,8,8,0.5); border: 1px solid var(--glass-border); border-radius: 4px; color: var(--white); font-size: 0.88rem;" /></div>
                         <div class="fg"><label style="display:block; font-size: 0.76rem; color: var(--gold); text-transform: uppercase; margin-bottom: 8px; font-weight: 600;">Product Sourcing</label>
-                          <select style="width: 100%; padding: 14px 16px; background: rgba(8,8,8,0.5); border: 1px solid var(--glass-border); border-radius: 4px; color: var(--white-70); font-size: 0.88rem; outline: none;">
+                          <select name="product" style="width: 100%; padding: 14px 16px; background: rgba(8,8,8,0.5); border: 1px solid var(--glass-border); border-radius: 4px; color: var(--white-70); font-size: 0.88rem; outline: none;">
                             <option value="">Select Sourcing Option</option>
                             <option>Basmati Rice</option><option>Non-Basmati Rice</option>
                             <option>Spices</option><option>Vetiver Roots</option>
@@ -371,9 +395,33 @@
                           </select>
                         </div>
                       </div>
-                      <div class="fg"><label style="display:block; font-size: 0.76rem; color: var(--gold); text-transform: uppercase; margin-bottom: 8px; font-weight: 600;">Annual Supply Capacity</label><input type="text" placeholder="e.g. 500 MT per year" style="width: 100%; padding: 14px 16px; background: rgba(8,8,8,0.5); border: 1px solid var(--glass-border); border-radius: 4px; color: var(--white); font-size: 0.88rem;" /></div>
-                      <div class="fg"><label style="display:block; font-size: 0.76rem; color: var(--gold); text-transform: uppercase; margin-bottom: 8px; font-weight: 600;">Description of Capabilities</label><textarea rows="4" placeholder="Tell us about your quality processes, certificates, and current clients..." style="width: 100%; padding: 14px 16px; background: rgba(8,8,8,0.5); border: 1px solid var(--glass-border); border-radius: 4px; color: var(--white); font-size: 0.88rem; font-family: inherit; resize: vertical;"></textarea></div>
+                      <div class="fg"><label style="display:block; font-size: 0.76rem; color: var(--gold); text-transform: uppercase; margin-bottom: 8px; font-weight: 600;">Annual Supply Capacity</label><input type="text" name="capacity" placeholder="e.g. 500 MT per year" style="width: 100%; padding: 14px 16px; background: rgba(8,8,8,0.5); border: 1px solid var(--glass-border); border-radius: 4px; color: var(--white); font-size: 0.88rem;" /></div>
+                      <div class="fg"><label style="display:block; font-size: 0.76rem; color: var(--gold); text-transform: uppercase; margin-bottom: 8px; font-weight: 600;">Description of Capabilities</label><textarea name="message" rows="4" placeholder="Tell us about your quality processes, certificates, and current clients..." style="width: 100%; padding: 14px 16px; background: rgba(8,8,8,0.5); border: 1px solid var(--glass-border); border-radius: 4px; color: var(--white); font-size: 0.88rem; font-family: inherit; resize: vertical;"></textarea></div>
                       
+                      <!-- VERIFY HUMAN CHECK -->
+                      <div class="verify-human-wrap">
+                        <div class="verify-human-box" role="button" tabindex="0" aria-label="Verify you are human">
+                          <label class="verify-human-label">
+                            <input type="checkbox" name="verify_human" class="verify-human-input" tabindex="-1" />
+                            <span class="verify-human-custom-check">
+                              <svg class="verify-human-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                              </svg>
+                              <span class="verify-human-spinner"></span>
+                            </span>
+                            <span class="verify-human-text">Verify you are human</span>
+                          </label>
+                          <div class="verify-human-badge">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            </svg>
+                            <span class="verify-badge-sub">Mahima Security</span>
+                          </div>
+                        </div>
+                        <p class="verify-human-error-msg">⚠️ Please verify you are human before submitting.</p>
+                        <input type="text" name="_bot_gotcha" style="display:none !important;" tabindex="-1" autocomplete="off" />
+                      </div>
+
                       <button type="submit" class="btn btn-primary btn-full submit-btn" style="width: 100%; padding: 16px 20px; border-radius: 4px; display: inline-flex; align-items: center; justify-content: center; gap: 10px; font-weight: 600; cursor: pointer; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.05em; background: var(--gold); color: var(--black);">
                         <span>Submit Supplier Application</span>
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2L15 22l-4-9-9-4 19-7z"/></svg>
@@ -399,13 +447,13 @@
                   <div class="form-panel-right">
                     <form class="contact-form" id="quote-form" style="display: flex; flex-direction: column; gap: 20px;">
                       <div class="fg-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
-                        <div class="fg"><label style="display:block; font-size: 0.76rem; color: var(--gold); text-transform: uppercase; margin-bottom: 8px; font-weight: 600;">Name *</label><input type="text" placeholder="Your Name" required style="width: 100%; padding: 14px 16px; background: rgba(8,8,8,0.5); border: 1px solid var(--glass-border); border-radius: 4px; color: var(--white); font-size: 0.88rem;" /></div>
-                        <div class="fg"><label style="display:block; font-size: 0.76rem; color: var(--gold); text-transform: uppercase; margin-bottom: 8px; font-weight: 600;">Company</label><input type="text" placeholder="Company Name" style="width: 100%; padding: 14px 16px; background: rgba(8,8,8,0.5); border: 1px solid var(--glass-border); border-radius: 4px; color: var(--white); font-size: 0.88rem;" /></div>
+                        <div class="fg"><label style="display:block; font-size: 0.76rem; color: var(--gold); text-transform: uppercase; margin-bottom: 8px; font-weight: 600;">Name *</label><input type="text" name="name" placeholder="Your Name" required style="width: 100%; padding: 14px 16px; background: rgba(8,8,8,0.5); border: 1px solid var(--glass-border); border-radius: 4px; color: var(--white); font-size: 0.88rem;" /></div>
+                        <div class="fg"><label style="display:block; font-size: 0.76rem; color: var(--gold); text-transform: uppercase; margin-bottom: 8px; font-weight: 600;">Company</label><input type="text" name="company" placeholder="Company Name" style="width: 100%; padding: 14px 16px; background: rgba(8,8,8,0.5); border: 1px solid var(--glass-border); border-radius: 4px; color: var(--white); font-size: 0.88rem;" /></div>
                       </div>
                       <div class="fg-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
-                        <div class="fg"><label style="display:block; font-size: 0.76rem; color: var(--gold); text-transform: uppercase; margin-bottom: 8px; font-weight: 600;">Email *</label><input type="email" placeholder="email@company.com" required style="width: 100%; padding: 14px 16px; background: rgba(8,8,8,0.5); border: 1px solid var(--glass-border); border-radius: 4px; color: var(--white); font-size: 0.88rem;" /></div>
+                        <div class="fg"><label style="display:block; font-size: 0.76rem; color: var(--gold); text-transform: uppercase; margin-bottom: 8px; font-weight: 600;">Email *</label><input type="email" name="email" placeholder="email@company.com" required style="width: 100%; padding: 14px 16px; background: rgba(8,8,8,0.5); border: 1px solid var(--glass-border); border-radius: 4px; color: var(--white); font-size: 0.88rem;" /></div>
                         <div class="fg"><label style="display:block; font-size: 0.76rem; color: var(--gold); text-transform: uppercase; margin-bottom: 8px; font-weight: 600;">Destination Country *</label>
-                          <select required style="width: 100%; padding: 14px 16px; background: rgba(8,8,8,0.5); border: 1px solid var(--glass-border); border-radius: 4px; color: var(--white-70); font-size: 0.88rem; outline: none;">
+                          <select name="country" required style="width: 100%; padding: 14px 16px; background: rgba(8,8,8,0.5); border: 1px solid var(--glass-border); border-radius: 4px; color: var(--white-70); font-size: 0.88rem; outline: none;">
                             <option value="">Select Country</option>
                             <option>United States</option><option>Canada</option>
                             <option>United Kingdom</option><option>Germany</option>
@@ -417,7 +465,7 @@
                       </div>
 
                       <div class="fg"><label style="display:block; font-size: 0.76rem; color: var(--gold); text-transform: uppercase; margin-bottom: 8px; font-weight: 600;">Trade Query Type *</label>
-                        <select required style="width: 100%; padding: 14px 16px; background: rgba(8,8,8,0.5); border: 1px solid var(--glass-border); border-radius: 4px; color: var(--white-70); font-size: 0.88rem; outline: none;">
+                        <select name="trade_type" required style="width: 100%; padding: 14px 16px; background: rgba(8,8,8,0.5); border: 1px solid var(--glass-border); border-radius: 4px; color: var(--white-70); font-size: 0.88rem; outline: none;">
                           <option value="export">Export Inquiry (Buy from India)</option>
                           <option value="import">Import Inquiry (Supply to India / Customs Clearing)</option>
                         </select>
@@ -425,7 +473,7 @@
 
                       <div class="fg-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
                         <div class="fg"><label style="display:block; font-size: 0.76rem; color: var(--gold); text-transform: uppercase; margin-bottom: 8px; font-weight: 600;">Product Required *</label>
-                          <select required style="width: 100%; padding: 14px 16px; background: rgba(8,8,8,0.5); border: 1px solid var(--glass-border); border-radius: 4px; color: var(--white-70); font-size: 0.88rem; outline: none;">
+                          <select name="product" required style="width: 100%; padding: 14px 16px; background: rgba(8,8,8,0.5); border: 1px solid var(--glass-border); border-radius: 4px; color: var(--white-70); font-size: 0.88rem; outline: none;">
                             <option value="">Select Product</option>
                             <option>Vetiver Roots</option><option>Vetiver Oil</option>
                             <option>Basmati Rice</option><option>Non-Basmati Rice</option>
@@ -436,18 +484,42 @@
                             <option>Agricultural Imports</option>
                           </select>
                         </div>
-                        <div class="fg"><label style="display:block; font-size: 0.76rem; color: var(--gold); text-transform: uppercase; margin-bottom: 8px; font-weight: 600;">Quantity / Volume *</label><input type="text" placeholder="e.g. 10 MT, 1 FCL" required style="width: 100%; padding: 14px 16px; background: rgba(8,8,8,0.5); border: 1px solid var(--glass-border); border-radius: 4px; color: var(--white); font-size: 0.88rem;" /></div>
+                        <div class="fg"><label style="display:block; font-size: 0.76rem; color: var(--gold); text-transform: uppercase; margin-bottom: 8px; font-weight: 600;">Quantity / Volume *</label><input type="text" name="quantity" placeholder="e.g. 10 MT, 1 FCL" required style="width: 100%; padding: 14px 16px; background: rgba(8,8,8,0.5); border: 1px solid var(--glass-border); border-radius: 4px; color: var(--white); font-size: 0.88rem;" /></div>
                       </div>
                       <div class="fg-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
                         <div class="fg"><label style="display:block; font-size: 0.76rem; color: var(--gold); text-transform: uppercase; margin-bottom: 8px; font-weight: 600;">Incoterm Preference</label>
-                          <select style="width: 100%; padding: 14px 16px; background: rgba(8,8,8,0.5); border: 1px solid var(--glass-border); border-radius: 4px; color: var(--white-70); font-size: 0.88rem; outline: none;">
+                          <select name="incoterm" style="width: 100%; padding: 14px 16px; background: rgba(8,8,8,0.5); border: 1px solid var(--glass-border); border-radius: 4px; color: var(--white-70); font-size: 0.88rem; outline: none;">
                             <option value="">Select Incoterm</option>
                             <option>FOB</option><option>CIF</option><option>CFR</option><option>EXW</option>
                           </select>
                         </div>
-                        <div class="fg"><label style="display:block; font-size: 0.76rem; color: var(--gold); text-transform: uppercase; margin-bottom: 8px; font-weight: 600;">Destination Port</label><input type="text" placeholder="e.g. Port of Los Angeles" style="width: 100%; padding: 14px 16px; background: rgba(8,8,8,0.5); border: 1px solid var(--glass-border); border-radius: 4px; color: var(--white); font-size: 0.88rem;" /></div>
+                        <div class="fg"><label style="display:block; font-size: 0.76rem; color: var(--gold); text-transform: uppercase; margin-bottom: 8px; font-weight: 600;">Destination Port</label><input type="text" name="port" placeholder="e.g. Port of Los Angeles" style="width: 100%; padding: 14px 16px; background: rgba(8,8,8,0.5); border: 1px solid var(--glass-border); border-radius: 4px; color: var(--white); font-size: 0.88rem;" /></div>
                       </div>
                       
+                      <!-- VERIFY HUMAN CHECK -->
+                      <div class="verify-human-wrap">
+                        <div class="verify-human-box" role="button" tabindex="0" aria-label="Verify you are human">
+                          <label class="verify-human-label">
+                            <input type="checkbox" name="verify_human" class="verify-human-input" tabindex="-1" />
+                            <span class="verify-human-custom-check">
+                              <svg class="verify-human-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                              </svg>
+                              <span class="verify-human-spinner"></span>
+                            </span>
+                            <span class="verify-human-text">Verify you are human</span>
+                          </label>
+                          <div class="verify-human-badge">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            </svg>
+                            <span class="verify-badge-sub">Mahima Security</span>
+                          </div>
+                        </div>
+                        <p class="verify-human-error-msg">⚠️ Please verify you are human before submitting.</p>
+                        <input type="text" name="_bot_gotcha" style="display:none !important;" tabindex="-1" autocomplete="off" />
+                      </div>
+
                       <button type="submit" class="btn btn-primary btn-full submit-btn" style="width: 100%; padding: 16px 20px; border-radius: 4px; display: inline-flex; align-items: center; justify-content: center; gap: 10px; font-weight: 600; cursor: pointer; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.05em; background: var(--gold); color: var(--black);">
                         <span>Submit Quotation Request</span>
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2L15 22l-4-9-9-4 19-7z"/></svg>
