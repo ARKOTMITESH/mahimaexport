@@ -6,7 +6,6 @@
   "scripts": {
     "dev": "node scripts/generate-pages.js && vite",
     "build": "node scripts/generate-pages.js && vite build",
-    "postbuild": "node -e \"const fs=require('fs');if(fs.existsSync('_headers'))fs.copyFileSync('_headers','dist/_headers');\"",
     "preview": "vite preview",
     "admin": "node server/index.js",
     "seed": "node server/seed.js"
