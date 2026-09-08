@@ -2654,3 +2654,110 @@ body {
   color: #f87171;
 }
 
+/* ═══════════════════════════════════════════════════════════════ */
+/*  MOBILE NEAT & CLEAN OPTIMIZATION (BUTTONS, SERVICES & CARDS)   */
+/* ═══════════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  /* Clean up duplicate floating WhatsApp button */
+  .float-wa-btn {
+    display: none !important;
+  }
+  
+  .whatsapp-float {
+    bottom: 20px !important;
+    right: 20px !important;
+    width: 50px !important;
+    height: 50px !important;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4), 0 0 0 1.5px var(--gold) !important;
+  }
+  .whatsapp-float-icon {
+    width: 24px !important;
+    height: 24px !important;
+  }
+
+  /* Make filter buttons wrap neatly on mobile */
+  .filter-section .container {
+    gap: 8px !important;
+    padding: 0 14px !important;
+  }
+  .filter-btn {
+    padding: 8px 14px !important;
+    font-size: 0.76rem !important;
+    border-radius: 20px !important;
+    letter-spacing: 0.04em !important;
+  }
+
+  /* Service cards and product cards clean mobile touch spacing */
+  .products-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+    padding: 0 4px !important;
+  }
+  .prod-card {
+    min-height: 240px !important;
+    border-radius: 12px !important;
+  }
+  .pc-content {
+    padding: 24px 20px !important;
+  }
+  .pc-name {
+    font-size: 1.4rem !important;
+    margin-bottom: 6px !important;
+  }
+  .pc-desc {
+    font-size: 0.84rem !important;
+    line-height: 1.55 !important;
+  }
+
+  /* Variety cards in overview pages */
+  .varieties-grid {
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+  }
+  .vc-body {
+    padding: 20px 16px !important;
+  }
+  .vc-footer {
+    flex-direction: row !important;
+    gap: 8px !important;
+  }
+  .vc-btn {
+    padding: 10px 8px !important;
+    font-size: 0.72rem !important;
+  }
+
+  /* Buttons & CTA touch targets */
+  .btn, .btn-primary, .btn-secondary, .btn-gold {
+    padding: 12px 24px !important;
+    font-size: 0.85rem !important;
+    border-radius: 6px !important;
+  }
+
+  /* Newsletter section on mobile */
+  .newsletter-section {
+    padding: 50px 16px !important;
+  }
+  .newsletter-title {
+    font-size: 1.8rem !important;
+  }
+  .newsletter-sub {
+    font-size: 0.85rem !important;
+    margin-bottom: 20px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-h1 {
+    font-size: 2.2rem !important;
+    line-height: 1.15 !important;
+  }
+  .sec-title {
+    font-size: 2rem !important;
+  }
+  .filter-btn {
+    padding: 7px 11px !important;
+    font-size: 0.72rem !important;
+  }
+}
+
+

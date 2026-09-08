@@ -1,4 +1,4 @@
-import { getDb } from './db.js';
+﻿import { getDb } from './db.js';
 import bcrypt from 'bcryptjs';
 import fs from 'fs';
 import path from 'path';
@@ -99,7 +99,7 @@ async function seed() {
   const settings = [
     { key: 'company_name', value: 'Mahima Global Entrepreneurs OPC Private Limited' },
     { key: 'phone', value: '+91 93817 06785' },
-    { key: 'email', value: 'mahimaagrofarm@gmail.com' },
+    { key: 'email', value: 'mahimaglobalenterpreneursopcpr@gmail.com' },
     { key: 'whatsapp', value: '919381706785' },
     { key: 'address', value: '1st Floor, 26/680, Revenue Ward 26-1, Bhaktha Vatsala Nagar, Nellore, Andhra Pradesh 524004' }
   ];
