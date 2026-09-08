@@ -196,30 +196,23 @@ export function initLanguageSwitcher() {
         btn.classList.remove('active');
       }
     });
-  }
 
-  const mobInner = document.querySelector('.mobile-menu-inner, .mobile-menu');
-  if (mobInner && !document.querySelector('.mobile-lang-section')) {
-    const mobLang = document.createElement('div');
-    mobLang.className = 'mobile-lang-section';
-    mobLang.innerHTML = `
-      <div class="mob-lang-title">🌐 International Languages (${supportedLanguages.length})</div>
-      <div class="mob-lang-grid">
-        ${supportedLanguages.map(lang => `
-          <button class="mob-lang-btn ${lang.code === currentLangCode ? 'active' : ''}" data-code="${lang.code}">
-            <span>${lang.flag}</span>
-            <span>${lang.name}</span>
-          </button>
-        `).join('')}
-      </div>
-    `;
+    // Close lang dropdown when mobile menu opens
+    const ham = document.getElementById('hamburger');
+    if (ham) {
+      ham.addEventListener('click', () => {
+        dropdown.classList.remove('open');
+        btn.classList.remove('active');
+      });
+    }
 
-    mobLang.addEventListener('click', (e) => {
-      const b = e.target.closest('.mob-lang-btn');
-      if (!b) return;
-      setLanguage(b.dataset.code);
+    // Close mobile menu when lang dropdown opens
+    btn.addEventListener('click', () => {
+      const menu = document.getElementById('mobile-menu');
+      if (menu && menu.classList.contains('open')) {
+        menu.classList.remove('open');
+        if (ham) ham.classList.remove('open');
+      }
     });
-
-    mobInner.appendChild(mobLang);
   }
 }

@@ -1577,7 +1577,7 @@ export const products = [
     "desc": "Premier direct-mine sourcing of natural quartz minerals, high-purity quartz (HPQ) grains (99.9% SiO2), engineered stone grit, snow-white lumps, and micronized silica flour from India's mineral-rich belts (Andhra Pradesh, Rajasthan). Serving global semiconductor, solar photovoltaic, quartz countertops, optical glass, ceramic, and refractory industries with certified purity and customized mesh grain sizing.",
     "specs": {
       "Origin": "India (Andhra Pradesh, Rajasthan, Gujarat)",
-      "Purity": "99.0% – 99.9% SiO2 (Low Iron < 50-100 ppm)",
+      "Purity": "99.0% – 99.9% SiO2 (Low Iron &lt; 50-100 ppm)",
       "Grades": "HPQ Granules, Snow White Lumps, Mesh Powder, Engineered Grit",
       "Packaging": "1 MT Jumbo Bags, 50kg HDPE Bags, or Bulk Sea Liner Containers",
       "Key Markets": "USA, Germany, Japan, South Korea, UAE, Italy, Turkey, Vietnam"
@@ -1605,7 +1605,7 @@ export const products = [
         "image": "/images/quartz-hpq.png",
         "desc": "Premium processed High Purity Quartz (HPQ) granules with silica purity exceeding 99.9%. Acid-washed, magnetically separated, and thermal-treated to minimize iron, aluminum, and titanium impurities. Ideal for manufacturing quartz crucibles for silicon crystal pulling in semiconductor and solar photovoltaic wafer production.",
         "benefits": [
-          "Ultra-low iron oxide content (Fe2O3 < 15 ppm) and trace alkaline metals.",
+          "Ultra-low iron oxide content (Fe2O3 &lt; 15 ppm) and trace alkaline metals.",
           "High fusion temperature with exceptional thermal shock resistance.",
           "Uniform grain size distribution (available in 30-100 mesh).",
           "Packaged in double-sealed moisture-proof export jumbo bags."
@@ -1627,7 +1627,7 @@ export const products = [
         "desc": "Hand-picked and sorted Grade-A Snow White Quartz lumps extracted from prime pegmatite veins in Andhra Pradesh and Rajasthan. Sized from 25mm to 200mm, with high compressive strength and low moisture. Widely used in ferrosilicon manufacturing, optical glass melting, ceramic frits, and silicon metal smelting.",
         "benefits": [
           "Purity of 99.2% to 99.8% SiO2 with brilliant snow-white color.",
-          "Low iron (<0.02%) ensuring crystal-clear glass and high-grade ceramics.",
+          "Low iron (&lt;0.02%) ensuring crystal-clear glass and high-grade ceramics.",
           "Hand-sorted to eliminate feldspar, mica, and extraneous rock matrices.",
           "Available in bulk break-bulk vessel shipments or 20ft container loads."
         ],

@@ -9,6 +9,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Lenis from 'lenis';
 import { initLanguageSwitcher } from './lang-switcher.js';
+import { initMobileNav } from './nav-mobile.js';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -739,25 +740,7 @@ function initLenis() {
 /*  NAVBAR                                                       */
 /* ════════════════════════════════════════════════════════════ */
 function initNavbar() {
-  const navbar = document.getElementById('navbar');
-  const ham    = document.getElementById('hamburger');
-  const menu   = document.getElementById('mobile-menu');
-  if (!navbar) return;
-
-  window.addEventListener('scroll', () => {
-    navbar.classList.toggle('scrolled', window.scrollY > 50);
-  }, { passive: true });
-
-  if (ham && menu) {
-    ham.addEventListener('click', () => {
-      ham.classList.toggle('open');
-      menu.classList.toggle('open');
-    });
-
-    document.querySelectorAll('.mob-link').forEach(l => {
-      l.addEventListener('click', () => { ham.classList.remove('open'); menu.classList.remove('open'); });
-    });
-  }
+  initMobileNav();
 }
 
 /* ════════════════════════════════════════════════════════════ */

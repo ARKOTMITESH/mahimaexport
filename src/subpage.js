@@ -2,6 +2,7 @@ import './style.css';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { initLanguageSwitcher } from './lang-switcher.js';
+import { initMobileNav } from './nav-mobile.js';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -74,21 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ── MOBILE MENU SYSTEM ──
-  const ham  = document.getElementById('hamburger');
-  const menu = document.getElementById('mobile-menu');
-  if (ham && menu) {
-    ham.addEventListener('click', () => {
-      ham.classList.toggle('open');
-      menu.classList.toggle('open');
-    });
-
-    document.querySelectorAll('.mob-link').forEach(l => {
-      l.addEventListener('click', () => {
-        ham.classList.remove('open');
-        menu.classList.remove('open');
-      });
-    });
-  }
+  initMobileNav();
 
   // ── DYNAMIC 3D TILT & GLOW EFFECTS ──
   const cards = document.querySelectorAll('.prod-card, .why-card, .testi-card, .cert-card');
