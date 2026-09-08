@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -196,7 +196,7 @@
       <!-- SOURCING & PHILOSOPHY SECTION -->
       <section style="padding: 80px 0; background: #080808; position: relative; border-top: 1px solid rgba(212,175,55,0.08);">
         <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
-          <div class="about-grid-custom" style="grid-template-columns: 0.95fr 1.05fr; align-items: start;">
+          <div class="about-grid-custom philosophy-grid">
             
             <div class="reveal">
               <span class="sec-label" style="display: block; font-family: 'Inter', sans-serif; font-size: 0.8rem; letter-spacing: 0.2em; color: var(--gold); margin-bottom: 12px; font-weight: 600; text-transform: uppercase;">Bilateral Trade Philosophy</span>
@@ -209,7 +209,7 @@
               </p>
             </div>
             
-            <div class="reveal" style="border: 1px solid var(--glass-border); padding: 40px; background: var(--charcoal-2); border-radius: 6px;">
+            <div class="reveal metrics-card" style="border: 1px solid var(--glass-border); padding: 40px; background: var(--charcoal-2); border-radius: 6px;">
               <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: var(--white); margin-bottom: 24px; font-weight: 500;">Sustainable Supply Metrics</h3>
               
               <div style="display: flex; flex-direction: column; gap: 20px;">
@@ -497,6 +497,10 @@
         gap: 50px;
         align-items: center;
       }
+      .philosophy-grid {
+        grid-template-columns: 0.95fr 1.05fr;
+        align-items: start;
+      }
       .about-mini-pillars {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -511,6 +515,7 @@
       .amp-icon {
         font-size: 1.5rem;
         margin-top: 2px;
+        flex-shrink: 0;
       }
       .amp-item strong {
         display: block;
@@ -537,18 +542,191 @@
         transform: translateY(-6px);
         border-color: var(--gold);
       }
+
+      /* Tablet & Small Screens */
       @media(max-width: 991px) {
-        .about-grid-custom, .leader-grid {
-          grid-template-columns: 1fr;
-          gap: 40px;
+        .about-grid-custom,
+        .philosophy-grid,
+        .leader-grid {
+          grid-template-columns: 1fr !important;
+          gap: 40px !important;
         }
         .pillars-grid-custom {
           grid-template-columns: 1fr !important;
-          gap: 24px;
+          gap: 24px !important;
         }
         .quality-timeline-grid {
           grid-template-columns: 1fr !important;
-          gap: 20px;
+          gap: 20px !important;
+        }
+      }
+
+      /* Mobile Screens (<= 768px) */
+      @media (max-width: 768px) {
+        /* Section Spacing */
+        .about-hero-section {
+          padding: 50px 0 35px !important;
+        }
+        .about-hero-section .sec-title {
+          font-size: 2.2rem !important;
+          line-height: 1.18 !important;
+          word-break: break-word;
+          margin-bottom: 16px !important;
+        }
+        .about-hero-section p {
+          font-size: 0.95rem !important;
+          line-height: 1.65 !important;
+        }
+        .gold-bar {
+          margin: 0 auto 20px !important;
+        }
+
+        /* Video Frame */
+        .about-visual-frame {
+          height: 250px !important;
+        }
+        .avf-play {
+          width: 56px !important;
+          height: 56px !important;
+          margin-bottom: 12px !important;
+        }
+        .avf-inner span {
+          font-size: 1.1rem !important;
+          text-align: center;
+          padding: 0 16px;
+        }
+
+        /* Bio & Right Column */
+        .about-right-col h2 {
+          font-size: 1.85rem !important;
+          line-height: 1.25 !important;
+          margin-bottom: 16px !important;
+        }
+        .about-right-col p {
+          font-size: 0.88rem !important;
+          line-height: 1.65 !important;
+        }
+        .corporate-divisions {
+          gap: 16px !important;
+        }
+        .division-item {
+          padding-left: 14px !important;
+          border-left-width: 2px !important;
+        }
+        .division-item strong {
+          font-size: 0.95rem !important;
+        }
+
+        /* Mini Pillars */
+        .about-mini-pillars {
+          grid-template-columns: 1fr !important;
+          gap: 16px !important;
+          margin-top: 24px !important;
+        }
+
+        /* Philosophy & Metrics */
+        .philosophy-grid .sec-label {
+          margin-bottom: 8px !important;
+        }
+        .philosophy-grid h2 {
+          font-size: 1.85rem !important;
+          line-height: 1.25 !important;
+          margin-bottom: 16px !important;
+        }
+        .philosophy-grid p {
+          font-size: 0.88rem !important;
+          line-height: 1.65 !important;
+        }
+        .metrics-card {
+          padding: 24px 18px !important;
+        }
+        .metrics-card h3 {
+          font-size: 1.5rem !important;
+          margin-bottom: 18px !important;
+        }
+
+        /* Leadership Section */
+        .leader-card .lc-inner {
+          padding: 24px 18px !important;
+        }
+        .lc-header {
+          gap: 14px !important;
+          margin-bottom: 18px !important;
+          padding-bottom: 16px !important;
+        }
+        .lc-header h3 {
+          font-size: 1.4rem !important;
+        }
+        .leader-card p {
+          font-size: 0.86rem !important;
+          line-height: 1.65 !important;
+        }
+
+        /* Corporate Registration Table - Stacked for Mobile Cleanliness */
+        .corporate-details h2 {
+          font-size: 1.75rem !important;
+          margin-bottom: 18px !important;
+        }
+        .corporate-details table,
+        .corporate-details tbody,
+        .corporate-details tr,
+        .corporate-details td {
+          display: block !important;
+          width: 100% !important;
+          text-align: left !important;
+          box-sizing: border-box !important;
+        }
+        .corporate-details tr {
+          padding: 12px 0 !important;
+          border-bottom: 1px solid rgba(212, 175, 55, 0.1) !important;
+        }
+        .corporate-details td:first-child {
+          padding: 0 0 4px 0 !important;
+          font-size: 0.72rem !important;
+          letter-spacing: 0.08em !important;
+          width: 100% !important;
+        }
+        .corporate-details td:last-child {
+          padding: 0 !important;
+          font-size: 0.88rem !important;
+          line-height: 1.55 !important;
+          width: 100% !important;
+        }
+
+        /* Quality Standards & Core Principles */
+        .sec-title {
+          font-size: 2.1rem !important;
+          line-height: 1.2 !important;
+        }
+        .sec-sub,
+        .quality-timeline-grid + p,
+        section p[style*="max-width: 800px"] {
+          font-size: 0.9rem !important;
+          line-height: 1.6 !important;
+          margin-bottom: 32px !important;
+        }
+        .quality-timeline-grid > div {
+          padding: 20px 18px !important;
+        }
+        .pillars-grid-custom .value-card {
+          padding: 24px 18px !important;
+        }
+      }
+
+      /* Extra Small Mobile Screens (<= 480px) */
+      @media (max-width: 480px) {
+        .about-hero-section .sec-title {
+          font-size: 1.85rem !important;
+        }
+        .about-right-col h2,
+        .philosophy-grid h2 {
+          font-size: 1.65rem !important;
+        }
+        .sec-title {
+          font-size: 1.85rem !important;
+        }
+        .about-visual-frame {
+          height: 220px !important;
         }
       }
     </style>
