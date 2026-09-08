@@ -28,8 +28,23 @@ export default defineConfig({
     }
   },
   build: {
+    chunkSizeWarningLimit: 1000,
+    cssMinify: true,
     rollupOptions: {
       input: getHtmlEntries(),
+      output: {
+        manualChunks(id) {
+          if (id.includes('node_modules/three')) {
+            return 'three-vendor';
+          }
+          if (id.includes('node_modules/gsap')) {
+            return 'gsap-vendor';
+          }
+          if (id.includes('node_modules/lenis')) {
+            return 'lenis-vendor';
+          }
+        }
+      }
     },
   },
 });

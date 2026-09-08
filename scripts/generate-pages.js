@@ -26,6 +26,9 @@ const staticPages = [
   { url: '/why-us.html', priority: '0.7', changefreq: 'monthly' },
   { url: '/partners.html', priority: '0.7', changefreq: 'monthly' },
   { url: '/contact.html', priority: '0.8', changefreq: 'monthly' },
+  { url: '/blog.html', priority: '0.8', changefreq: 'weekly' },
+  { url: '/blog-post.html', priority: '0.6', changefreq: 'weekly' },
+  { url: '/compliance.html', priority: '0.6', changefreq: 'monthly' },
 ];
 staticPages.forEach(p => sitemapUrls.push(p));
 
@@ -235,6 +238,7 @@ products.forEach(product => {
     .replaceAll('{{metaDescription}}', overviewMetaDesc)
     .replaceAll('{{metaKeywords}}', overviewKeywords)
     .replaceAll('{{schemaMarkup}}', overviewSchemaMarkup)
+    .replaceAll('{{catOgImage}}', product.image || '/images/logo-emblem.png')
     .replaceAll('{{tradeTypeLabel}}', tradeTypeLabel);
 
   fs.writeFileSync(path.resolve(rootDir, `${product.slug}-overview.html`), overviewHtml, 'utf8');
@@ -282,6 +286,7 @@ products.forEach(product => {
         .replaceAll('{{metaKeywords}}', detailKeywords)
         .replaceAll('{{schemaMarkup}}', detailSchemaMarkup)
         .replaceAll('{{canonicalSlug}}', canonicalSlug)
+        .replaceAll('{{varOgImage}}', varImage || '/images/logo-emblem.png')
         .replaceAll('{{tradeTypeLabel}}', tradeTypeLabel);
 
       const filename = `${product.slug}-${variety.slug}.html`;

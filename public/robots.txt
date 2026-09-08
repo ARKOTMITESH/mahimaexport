@@ -8,9 +8,13 @@ Disallow: /src/
 Disallow: /scripts/
 Disallow: /templates/
 Disallow: /dist/
+Disallow: /admin.html
+Disallow: /api/
+Disallow: /uploads/
+Disallow: /server/
 
 # Sitemaps
 Sitemap: https://mahimaglobalentrepreneurs.com/sitemap.xml
 
-# Crawl-delay (optional, for well-behaved bots)
+# Crawl-delay
 Crawl-delay: 1

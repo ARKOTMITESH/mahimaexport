@@ -8,6 +8,7 @@ import jwt from 'jsonwebtoken';
 import multer from 'multer';
 import { getDb } from './db.js';
 import { syncProductsAndRebuild } from './sync.js';
+import { rateLimit } from 'express-rate-limit';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -15,7 +16,7 @@ const rootDir = path.join(__dirname, '..');
 
 const app = express();
 const port = process.env.PORT || 3001;
-const JWT_SECRET = 'mahima-admin-secret-2025';
+const JWT_SECRET = process.env.JWT_SECRET || 'mahima-admin-secret-2025';
 
 // Directories
 const uploadsDir = path.join(rootDir, 'uploads');
@@ -25,7 +26,31 @@ if (!fs.existsSync(uploadsDir)) {
 
 // Middleware
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: [
+    'http://localhost:5173',
+    'http://localhost:3001',
+    'https://mahimaglobalentrepreneurs.com',
+    /\.mahimaglobalentrepreneurs\.com$/
+  ],
+  credentials: true
+}));
+
+// Rate limiting
+const loginLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 10,
+  message: { error: 'Too many login attempts. Please try again in 15 minutes.' },
+  standardHeaders: true,
+  legacyHeaders: false,
+});
+const apiLimiter = rateLimit({
+  windowMs: 60 * 1000,
+  max: 200,
+  standardHeaders: true,
+  legacyHeaders: false,
+});
+app.use('/api/', apiLimiter);
 app.use(express.static(path.join(rootDir, 'public')));
 app.use('/uploads', express.static(uploadsDir));
 
@@ -75,7 +100,7 @@ const db = getDb();
 // --- ROUTES ---
 
 // Auth
-app.post('/api/auth/login', async (req, res) => {
+app.post('/api/auth/login', loginLimiter, async (req, res) => {
   try {
     const { username, password } = req.body;
     if (!username || !password) return res.status(400).json({ error: 'Username and password required' });
@@ -107,8 +132,10 @@ app.get('/api/dashboard/stats', authMiddleware, (req, res) => {
     const inquiries = db.prepare('SELECT COUNT(*) as count FROM inquiries').get().count;
     const unreadInquiries = db.prepare('SELECT COUNT(*) as count FROM inquiries WHERE is_read = 0').get().count;
     const media = db.prepare('SELECT COUNT(*) as count FROM media').get().count;
-
-    res.json({ products, varieties, blogs, publishedBlogs, inquiries, unreadInquiries, media });
+    const subscribers = db.prepare('SELECT COUNT(*) as count FROM subscribers').get().count;
+    const faqs = db.prepare('SELECT COUNT(*) as count FROM faqs').get().count;
+    const recentInquiries = db.prepare('SELECT * FROM inquiries ORDER BY created_at DESC LIMIT 5').all();
+    res.json({ products, varieties, blogs, publishedBlogs, inquiries, unreadInquiries, media, subscribers, faqs, recentInquiries });
   } catch (error) {
     res.status(500).json({ error: 'Server error' });
   }
@@ -449,6 +476,100 @@ app.put('/api/settings', authMiddleware, (req, res) => {
   }
 });
 
+// ── FAQs ────────────────────────────────────────────────────────
+app.get('/api/faqs', (req, res) => {
+  try {
+    const page = req.query.page || null;
+    const faqs = page
+      ? db.prepare("SELECT * FROM faqs WHERE page = ? AND active = 1 ORDER BY sort_order ASC, id ASC").all(page)
+      : db.prepare('SELECT * FROM faqs ORDER BY sort_order ASC, id ASC').all();
+    res.json(faqs);
+  } catch (error) { res.status(500).json({ error: 'Server error' }); }
+});
+
+app.post('/api/faqs', authMiddleware, (req, res) => {
+  try {
+    const { question, answer, page, sort_order } = req.body;
+    if (!question || !answer) return res.status(400).json({ error: 'Question and answer required' });
+    const result = db.prepare('INSERT INTO faqs (question, answer, page, sort_order) VALUES (?, ?, ?, ?)').run(
+      question.trim(), answer.trim(), page || 'general', sort_order || 0
+    );
+    res.status(201).json({ id: result.lastInsertRowid });
+  } catch (error) { res.status(500).json({ error: 'Server error' }); }
+});
+
+app.put('/api/faqs/:id', authMiddleware, (req, res) => {
+  try {
+    const { question, answer, page, sort_order, active } = req.body;
+    db.prepare('UPDATE faqs SET question=?, answer=?, page=?, sort_order=?, active=? WHERE id=?').run(
+      question, answer, page || 'general', sort_order || 0, active !== undefined ? (active ? 1 : 0) : 1, req.params.id
+    );
+    res.json({ success: true });
+  } catch (error) { res.status(500).json({ error: 'Server error' }); }
+});
+
+app.delete('/api/faqs/:id', authMiddleware, (req, res) => {
+  try {
+    db.prepare('DELETE FROM faqs WHERE id = ?').run(req.params.id);
+    res.json({ success: true });
+  } catch (error) { res.status(500).json({ error: 'Server error' }); }
+});
+
+// ── Subscribers ──────────────────────────────────────────────────
+const subscriberLimiter = rateLimit({ windowMs: 60 * 60 * 1000, max: 3, standardHeaders: true, legacyHeaders: false });
+
+app.post('/api/newsletter', subscriberLimiter, (req, res) => {
+  try {
+    const { email, name, source, consent } = req.body;
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return res.status(400).json({ error: 'Valid email required' });
+    if (!consent) return res.status(400).json({ error: 'Consent required' });
+    db.prepare('INSERT OR IGNORE INTO subscribers (email, name, source, consent) VALUES (?, ?, ?, ?)').run(
+      email.toLowerCase().trim(), name ? name.trim() : null, source || 'website', consent ? 1 : 0
+    );
+    res.status(201).json({ success: true, message: 'Successfully subscribed!' });
+  } catch (error) { res.status(500).json({ error: 'Server error' }); }
+});
+
+app.get('/api/subscribers', authMiddleware, (req, res) => {
+  try {
+    const subscribers = db.prepare('SELECT id, email, name, source, consent, created_at FROM subscribers ORDER BY created_at DESC').all();
+    res.json(subscribers);
+  } catch (error) { res.status(500).json({ error: 'Server error' }); }
+});
+
+app.delete('/api/subscribers/:id', authMiddleware, (req, res) => {
+  try {
+    db.prepare('DELETE FROM subscribers WHERE id = ?').run(req.params.id);
+    res.json({ success: true });
+  } catch (error) { res.status(500).json({ error: 'Server error' }); }
+});
+
+// ── SEO Settings ─────────────────────────────────────────────────
+app.get('/api/seo-settings', authMiddleware, (req, res) => {
+  try {
+    const settings = db.prepare('SELECT * FROM seo_settings ORDER BY page ASC').all();
+    res.json(settings);
+  } catch (error) { res.status(500).json({ error: 'Server error' }); }
+});
+
+app.put('/api/seo-settings/:page', authMiddleware, (req, res) => {
+  try {
+    const { title, description, keywords, og_image } = req.body;
+    db.prepare(`
+      INSERT INTO seo_settings (page, title, description, keywords, og_image, updated_at)
+      VALUES (?, ?, ?, ?, ?, CURRENT_TIMESTAMP)
+      ON CONFLICT(page) DO UPDATE SET
+        title = excluded.title,
+        description = excluded.description,
+        keywords = excluded.keywords,
+        og_image = excluded.og_image,
+        updated_at = CURRENT_TIMESTAMP
+    `).run(req.params.page, title, description, keywords, og_image);
+    res.json({ success: true });
+  } catch (error) { res.status(500).json({ error: 'Server error' }); }
+});
+
+// ── Enhanced Dashboard Stats ────────────────────────────────────
 // Rebuild
 app.post('/api/rebuild', authMiddleware, (req, res) => {
   const result = syncProductsAndRebuild();

@@ -71,12 +71,32 @@ function router() {
   if (hash === '#login') return renderLogin();
 
   document.querySelectorAll('#sidebar-nav .nav-link').forEach(l => l.classList.toggle('active', l.getAttribute('href') === hash));
-  const titles = { '#dashboard': 'Dashboard', '#products': 'Products', '#blogs': 'Blogs', '#media': 'Media Gallery', '#inquiries': 'Inquiries', '#settings': 'Settings' };
+  const titles = { 
+    '#dashboard': 'Dashboard', 
+    '#products': 'Products', 
+    '#blogs': 'Blogs', 
+    '#media': 'Media Gallery', 
+    '#inquiries': 'Inquiries', 
+    '#faqs': 'FAQ Management', 
+    '#subscribers': 'Subscribers & Leads', 
+    '#seo': 'SEO Settings', 
+    '#settings': 'Settings' 
+  };
   document.getElementById('page-title').textContent = titles[hash] || 'Dashboard';
 
   const c = document.getElementById('app-content');
   c.innerHTML = '<div class="spinner"></div>';
-  const routeMap = { '#dashboard': renderDashboard, '#products': renderProducts, '#blogs': renderBlogs, '#media': renderMedia, '#inquiries': renderInquiries, '#settings': renderSettings };
+  const routeMap = { 
+    '#dashboard': renderDashboard, 
+    '#products': renderProducts, 
+    '#blogs': renderBlogs, 
+    '#media': renderMedia, 
+    '#inquiries': renderInquiries, 
+    '#faqs': renderFaqs, 
+    '#subscribers': renderSubscribers, 
+    '#seo': renderSeoSettings, 
+    '#settings': renderSettings 
+  };
   (routeMap[hash] || renderDashboard)(c);
 }
 
@@ -88,6 +108,9 @@ function initNav() {
     <a href="#blogs" class="nav-link">📝 Blogs</a>
     <a href="#media" class="nav-link">🖼️ Media</a>
     <a href="#inquiries" class="nav-link">✉️ Inquiries</a>
+    <a href="#faqs" class="nav-link">❓ FAQs</a>
+    <a href="#subscribers" class="nav-link">📬 Subscribers</a>
+    <a href="#seo" class="nav-link">🎯 SEO Settings</a>
     <a href="#settings" class="nav-link">⚙️ Settings</a>
   `;
   document.getElementById('logout-btn').addEventListener('click', () => { clearToken(); window.location.hash = '#login'; });
@@ -138,6 +161,8 @@ async function renderDashboard(c) {
       <div class="stat-card"><div class="stat-icon">🖼️</div><div class="stat-value">${s.media||0}</div><div class="stat-label">Media Files</div></div>
       <div class="stat-card"><div class="stat-icon">✉️</div><div class="stat-value">${s.inquiries||0}</div><div class="stat-label">Total Inquiries</div></div>
       <div class="stat-card highlight"><div class="stat-icon">🔔</div><div class="stat-value">${s.unreadInquiries||0}</div><div class="stat-label">Unread Inquiries</div></div>
+      <div class="stat-card"><div class="stat-icon">📬</div><div class="stat-value">${s.subscribers||0}</div><div class="stat-label">Newsletter Subscribers</div></div>
+      <div class="stat-card"><div class="stat-icon">❓</div><div class="stat-value">${s.faqs||0}</div><div class="stat-label">Configured FAQs</div></div>
     </div>`;
   } catch { c.innerHTML = '<div class="empty-state">⚠️ Failed to load dashboard</div>'; }
 }
@@ -527,6 +552,268 @@ async function renderSettings(c) {
     fd.forEach((v, k) => { body[k] = v; });
     try { await api('/api/settings', { method: 'PUT', body }); showToast('Settings saved!', 'success'); } catch { showToast('Failed to save', 'error'); }
   });
+}
+
+/* ═══════════════════════════════════════════════════════════════ */
+/*  FAQS MANAGEMENT                                               */
+/* ═══════════════════════════════════════════════════════════════ */
+async function renderFaqs(c) {
+  let faqs = [];
+  try { faqs = await api('/api/faqs'); } catch { faqs = []; }
+
+  c.innerHTML = `
+    <div class="toolbar">
+      <button class="btn btn-primary" id="add-faq-btn">+ Add FAQ</button>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Question</th><th>Page</th><th>Status</th><th>Order</th><th style="width:120px">Actions</th></tr></thead>
+        <tbody id="faq-tbody"></tbody>
+      </table>
+    </div>`;
+
+  const tbody = document.getElementById('faq-tbody');
+  if (faqs.length === 0) {
+    tbody.innerHTML = '<tr><td colspan="5" style="text-align:center;padding:30px;color:rgba(255,255,255,.4)">No FAQs configured yet. Click "+ Add FAQ" to create one.</td></tr>';
+  } else {
+    faqs.forEach(f => {
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td><strong>${esc(f.question)}</strong></td>
+        <td><span class="badge badge-info">${esc(f.page || 'general')}</span></td>
+        <td><span class="badge ${f.active ? 'badge-success' : 'badge-danger'}">${f.active ? 'Active' : 'Hidden'}</span></td>
+        <td>${f.sort_order || 0}</td>
+        <td>
+          <button class="btn-sm btn-edit edit-faq" data-id="${f.id}">Edit</button>
+          <button class="btn-sm btn-danger del-faq" data-id="${f.id}">Del</button>
+        </td>`;
+      tbody.appendChild(tr);
+    });
+  }
+
+  const openFaqModal = (faq = {}) => {
+    const isEdit = !!faq.id;
+    openModal(isEdit ? 'Edit FAQ' : 'Add New FAQ', `
+      <form id="faq-form">
+        <div class="form-group">
+          <label class="form-label">Target Page</label>
+          <select class="form-control" name="page">
+            <option value="general" ${faq.page === 'general' ? 'selected' : ''}>General / Home</option>
+            <option value="products" ${faq.page === 'products' ? 'selected' : ''}>Products</option>
+            <option value="network" ${faq.page === 'network' ? 'selected' : ''}>Network & Shipping</option>
+            <option value="why-us" ${faq.page === 'why-us' ? 'selected' : ''}>Why Choose Us</option>
+            <option value="partners" ${faq.page === 'partners' ? 'selected' : ''}>Partnership</option>
+            <option value="contact" ${faq.page === 'contact' ? 'selected' : ''}>Contact</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Question</label>
+          <input class="form-control" name="question" required value="${esc(faq.question || '')}">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Answer</label>
+          <textarea class="form-control" name="answer" rows="4" required>${esc(faq.answer || '')}</textarea>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Sort Order</label>
+            <input class="form-control" type="number" name="sort_order" value="${faq.sort_order || 0}">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Status</label>
+            <select class="form-control" name="active">
+              <option value="1" ${faq.active !== 0 ? 'selected' : ''}>Active</option>
+              <option value="0" ${faq.active === 0 ? 'selected' : ''}>Hidden</option>
+            </select>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary" style="margin-top:16px">${isEdit ? 'Update FAQ' : 'Create FAQ'}</button>
+      </form>
+    `);
+
+    document.getElementById('faq-form').addEventListener('submit', async e => {
+      e.preventDefault();
+      const fd = new FormData(e.target);
+      const body = {
+        question: fd.get('question'),
+        answer: fd.get('answer'),
+        page: fd.get('page'),
+        sort_order: parseInt(fd.get('sort_order')) || 0,
+        active: fd.get('active') === '1'
+      };
+      try {
+        if (isEdit) {
+          await api(`/api/faqs/${faq.id}`, { method: 'PUT', body });
+          showToast('FAQ updated!', 'success');
+        } else {
+          await api('/api/faqs', { method: 'POST', body });
+          showToast('FAQ created!', 'success');
+        }
+        closeModal();
+        renderFaqs(c);
+      } catch (err) {
+        showToast(err.message || 'Operation failed', 'error');
+      }
+    });
+  };
+
+  document.getElementById('add-faq-btn').addEventListener('click', () => openFaqModal());
+
+  tbody.addEventListener('click', async e => {
+    const btn = e.target.closest('button');
+    if (!btn) return;
+    const id = parseInt(btn.dataset.id);
+    const faq = faqs.find(f => f.id === id);
+    if (btn.classList.contains('edit-faq') && faq) {
+      openFaqModal(faq);
+    } else if (btn.classList.contains('del-faq')) {
+      if (confirm('Delete this FAQ entry?')) {
+        try {
+          await api(`/api/faqs/${id}`, { method: 'DELETE' });
+          showToast('FAQ deleted', 'success');
+          renderFaqs(c);
+        } catch {
+          showToast('Failed to delete', 'error');
+        }
+      }
+    }
+  });
+}
+
+/* ═══════════════════════════════════════════════════════════════ */
+/*  SUBSCRIBERS & LEADS                                           */
+/* ═══════════════════════════════════════════════════════════════ */
+async function renderSubscribers(c) {
+  let subscribers = [];
+  try { subscribers = await api('/api/subscribers'); } catch { subscribers = []; }
+
+  c.innerHTML = `
+    <div class="toolbar">
+      <div style="color:rgba(255,255,255,.6);font-size:.9rem;">
+        Total Subscribers: <strong>${subscribers.length}</strong>
+      </div>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Email</th><th>Name</th><th>Source</th><th>Consent</th><th>Date</th><th style="width:80px">Action</th></tr></thead>
+        <tbody id="sub-tbody"></tbody>
+      </table>
+    </div>`;
+
+  const tbody = document.getElementById('sub-tbody');
+  if (subscribers.length === 0) {
+    tbody.innerHTML = '<tr><td colspan="6" style="text-align:center;padding:30px;color:rgba(255,255,255,.4)">No newsletter subscribers yet. Submissions from the website footer will appear here.</td></tr>';
+  } else {
+    subscribers.forEach(s => {
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td><strong>${esc(s.email)}</strong></td>
+        <td>${esc(s.name || '—')}</td>
+        <td><span class="badge badge-info">${esc(s.source || 'website')}</span></td>
+        <td><span class="badge ${s.consent ? 'badge-success' : 'badge-danger'}">${s.consent ? 'Opted In' : 'No'}</span></td>
+        <td>${formatDate(s.created_at)}</td>
+        <td><button class="btn-sm btn-danger del-sub" data-id="${s.id}">Del</button></td>`;
+      tbody.appendChild(tr);
+    });
+  }
+
+  tbody.addEventListener('click', async e => {
+    const btn = e.target.closest('.del-sub');
+    if (!btn) return;
+    const id = btn.dataset.id;
+    if (confirm('Delete this subscriber?')) {
+      try {
+        await api(`/api/subscribers/${id}`, { method: 'DELETE' });
+        showToast('Subscriber removed', 'success');
+        renderSubscribers(c);
+      } catch {
+        showToast('Failed to delete', 'error');
+      }
+    }
+  });
+}
+
+/* ═══════════════════════════════════════════════════════════════ */
+/*  SEO SETTINGS                                                  */
+/* ═══════════════════════════════════════════════════════════════ */
+async function renderSeoSettings(c) {
+  let settings = [];
+  try { settings = await api('/api/seo-settings'); } catch { settings = []; }
+
+  const pages = [
+    { slug: 'home', label: 'Home Page (/)' },
+    { slug: 'about', label: 'About Us (/about.html)' },
+    { slug: 'products', label: 'Products Catalog (/products.html)' },
+    { slug: 'network', label: 'Global Network (/network.html)' },
+    { slug: 'why-us', label: 'Why Choose Us (/why-us.html)' },
+    { slug: 'partners', label: 'Partners (/partners.html)' },
+    { slug: 'compliance', label: 'Trade Compliance (/compliance.html)' },
+    { slug: 'blog', label: 'Trade Blog (/blog.html)' },
+    { slug: 'contact', label: 'Contact Us (/contact.html)' },
+  ];
+
+  c.innerHTML = `
+    <div style="max-width:800px">
+      <div style="background:rgba(212,175,55,.08);border:1px solid rgba(212,175,55,.2);border-radius:8px;padding:16px;margin-bottom:24px;font-size:.88rem;color:rgba(255,255,255,.8);">
+        💡 <strong>SEO & Metadata Management:</strong> Configure page-specific titles, meta descriptions, and Open Graph settings. Changes take effect on rebuild.
+      </div>
+      <div class="form-group">
+        <label class="form-label">Select Page to Edit</label>
+        <select class="form-control" id="seo-page-select">
+          ${pages.map(p => `<option value="${p.slug}">${p.label}</option>`).join('')}
+        </select>
+      </div>
+      <div id="seo-form-container"></div>
+    </div>`;
+
+  const renderFormForPage = (pageSlug) => {
+    const existing = settings.find(s => s.page === pageSlug) || {};
+    const container = document.getElementById('seo-form-container');
+    container.innerHTML = `
+      <form id="seo-form" style="margin-top:20px;">
+        <div class="form-group">
+          <label class="form-label">Meta Title (50-60 characters)</label>
+          <input class="form-control" name="title" value="${esc(existing.title || '')}" placeholder="Title tag for search results">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Meta Description (150-160 characters)</label>
+          <textarea class="form-control" name="description" rows="3" placeholder="Brief summary displayed in Google snippets">${esc(existing.description || '')}</textarea>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Target Keywords (comma-separated)</label>
+          <input class="form-control" name="keywords" value="${esc(existing.keywords || '')}" placeholder="export, spices, basmati rice, India">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Open Graph / Social Share Image URL</label>
+          <input class="form-control" name="og_image" value="${esc(existing.og_image || '')}" placeholder="/images/logo-emblem.png">
+        </div>
+        <button type="submit" class="btn btn-primary" style="margin-top:16px">Save SEO Settings</button>
+      </form>`;
+
+    document.getElementById('seo-form').addEventListener('submit', async e => {
+      e.preventDefault();
+      const fd = new FormData(e.target);
+      const body = {
+        title: fd.get('title'),
+        description: fd.get('description'),
+        keywords: fd.get('keywords'),
+        og_image: fd.get('og_image')
+      };
+      try {
+        await api(`/api/seo-settings/${pageSlug}`, { method: 'PUT', body });
+        showToast(`SEO settings for "${pageSlug}" saved!`, 'success');
+        const updated = settings.find(s => s.page === pageSlug);
+        if (updated) Object.assign(updated, body);
+        else settings.push({ page: pageSlug, ...body });
+      } catch (err) {
+        showToast(err.message || 'Failed to save', 'error');
+      }
+    });
+  };
+
+  const select = document.getElementById('seo-page-select');
+  select.addEventListener('change', () => renderFormForPage(select.value));
+  renderFormForPage(select.value);
 }
 
 /* ═══════════════════════════════════════════════════════════════ */

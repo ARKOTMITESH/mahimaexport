@@ -105,6 +105,35 @@ export function getDb() {
       key TEXT PRIMARY KEY,
       value TEXT
     );
+
+    CREATE TABLE IF NOT EXISTS subscribers (
+      id INTEGER PRIMARY KEY,
+      email TEXT UNIQUE NOT NULL,
+      name TEXT,
+      source TEXT DEFAULT 'website',
+      consent INTEGER DEFAULT 1,
+      created_at TEXT DEFAULT CURRENT_TIMESTAMP
+    );
+
+    CREATE TABLE IF NOT EXISTS faqs (
+      id INTEGER PRIMARY KEY,
+      question TEXT NOT NULL,
+      answer TEXT NOT NULL,
+      page TEXT DEFAULT 'general',
+      sort_order INTEGER DEFAULT 0,
+      active INTEGER DEFAULT 1,
+      created_at TEXT DEFAULT CURRENT_TIMESTAMP
+    );
+
+    CREATE TABLE IF NOT EXISTS seo_settings (
+      id INTEGER PRIMARY KEY,
+      page TEXT UNIQUE NOT NULL,
+      title TEXT,
+      description TEXT,
+      keywords TEXT,
+      og_image TEXT,
+      updated_at TEXT DEFAULT CURRENT_TIMESTAMP
+    );
   `);
 
   return dbInstance;

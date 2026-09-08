@@ -36,23 +36,50 @@
       "@context": "https://schema.org",
       "@type": "Corporation",
       "name": "Mahima Global Entrepreneurs OPC Private Limited",
-      "alternateName": "Mahima Global Entrepreneurs",
+      "alternateName": ["Mahima Global Entrepreneurs", "Mahima Global", "Mahima Agro Farm"],
       "url": "https://mahimaglobalentrepreneurs.com",
-      "logo": "https://mahimaglobalentrepreneurs.com/images/logo-emblem.png",
-      "description": "Mahima Global Entrepreneurs — trusted import & export corporation. Sourcing premium agricultural commodities from India, and importing specialty polymers, chemicals, and industrial machinery into India.",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://mahimaglobalentrepreneurs.com/images/logo-emblem.png",
+        "width": 400,
+        "height": 400
+      },
+      "description": "Mahima Global Entrepreneurs OPC Private Limited is a premium Indian import and export corporation headquartered in Nellore, Andhra Pradesh. We specialize in agricultural commodities, spices, basmati rice, vetiver products, seafood, meat, and industrial raw materials for global markets.",
       "foundingDate": "2025-01-10",
       "address": {
         "@type": "PostalAddress",
+        "streetAddress": "1st Floor, 26/680, Revenue Ward 26-1, Bhaktha Vatsala Nagar",
+        "addressLocality": "Nellore",
+        "addressRegion": "Andhra Pradesh",
+        "postalCode": "524004",
         "addressCountry": "IN"
       },
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+91-93817-06785",
+          "contactType": "sales",
+          "availableLanguage": ["English", "Hindi", "Telugu", "Tamil"],
+          "areaServed": "Worldwide",
+          "contactOption": "TollFree"
+        },
+        {
+          "@type": "ContactPoint",
+          "email": "mahimaagrofarm@gmail.com",
+          "contactType": "customer service",
+          "availableLanguage": ["English", "Hindi"]
+        }
+      ],
+      "telephone": "+91-93817-06785",
+      "email": "mahimaagrofarm@gmail.com",
+      "areaServed": ["US", "AE", "SG", "AU", "GB", "DE", "FR", "JP", "SA", "QA", "IN", "ZA", "KE", "NG"],
+      "knowsAbout": ["Basmati Rice Export", "Vetiver Oil", "Indian Spices", "Agricultural Commodities", "Meat Export", "Seafood Export", "Industrial Raw Materials", "High-Purity Quartz", "Polymers Import", "Chemicals Import"],
       "sameAs": [],
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "contactType": "sales",
-        "availableLanguage": ["English", "Hindi", "Tamil"]
-      },
-      "areaServed": ["US", "AE", "SG", "AU", "GB", "DE", "FR", "JP", "SA", "QA"],
-      "knowsAbout": ["Basmati Rice Export", "Vetiver Oil", "Indian Spices", "Agricultural Commodities", "Meat Export", "Seafood Export", "Industrial Raw Materials"]
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Mahima Global Export Products",
+        "url": "https://mahimaglobalentrepreneurs.com/products.html"
+      }
     }
     </script>
 
@@ -68,6 +95,119 @@
         "target": "https://mahimaglobalentrepreneurs.com/products.html?q={search_term_string}",
         "query-input": "required name=search_term_string"
       }
+    }
+    </script>
+
+    <!-- JSON-LD: Service Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "International Export & Import",
+      "name": "Premium Indian Export & Import Services",
+      "provider": {
+        "@type": "Organization",
+        "name": "Mahima Global Entrepreneurs OPC Private Limited"
+      },
+      "description": "Full-service international trade solutions: export of Indian agricultural commodities, spices, basmati rice, vetiver products, seafood, meat, and minerals; import of specialty polymers, chemicals, and industrial machinery into India.",
+      "areaServed": [
+        {"@type": "Country", "name": "United States"},
+        {"@type": "Country", "name": "United Arab Emirates"},
+        {"@type": "Country", "name": "Singapore"},
+        {"@type": "Country", "name": "United Kingdom"},
+        {"@type": "Country", "name": "Germany"},
+        {"@type": "Country", "name": "Australia"},
+        {"@type": "Country", "name": "Saudi Arabia"},
+        {"@type": "Country", "name": "Japan"},
+        {"@type": "Country", "name": "South Africa"},
+        {"@type": "Country", "name": "Kenya"}
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Export Products",
+        "itemListElement": [
+          {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Premium Basmati Rice"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Vetiver Oil & Roots"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Indian Spices"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Seafood & Marine Products"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "High-Purity Quartz & Silica"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Fresh Fruits & Vegetables"}}
+        ]
+      }
+    }
+    </script>
+
+    <!-- JSON-LD: FAQPage Schema (AEO) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What products does Mahima Global Entrepreneurs export from India?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Mahima Global Entrepreneurs exports premium basmati rice, non-basmati rice, vetiver roots and essential oil, Indian spices (black pepper, turmeric, cumin, cardamom, red chilli), fresh fruits and vegetables, chicken, meat, seafood, coffee, tea, industrial raw materials, high-purity quartz and silica minerals."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which countries does Mahima Global supply to?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We supply to buyers across USA, UAE, Saudi Arabia, Qatar, United Kingdom, Germany, France, Singapore, Australia, Japan, South Africa, Kenya, and other international markets across 5 continents."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the minimum order quantity for export?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Minimum order quantities vary by product. Rice and spices typically start from 1 MT (metric ton), vetiver oil from 5 kg, seafood from 500 kg, and industrial materials from 1 MT. Contact us for exact MOQ and bulk pricing."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Mahima Global Entrepreneurs a certified exporter?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Mahima Global Entrepreneurs is a registered OPC Private Limited company in India. Our products comply with FSSAI, APEDA, PHYTO, and international food safety standards. We provide full documentation including phytosanitary certificates, quality certificates, and certificates of origin."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can I request a bulk price quote?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can request a quote by filling out the inquiry form on our Contact page, sending an email to mahimaagrofarm@gmail.com, or messaging us directly on WhatsApp at +91 93817 06785. We respond within 24 business hours."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What payment terms do you accept for international trade?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We accept Letter of Credit (LC), Telegraphic Transfer (TT/Wire Transfer), and other standard international payment terms. Payment terms are negotiated on a per-order basis depending on order value and buyer history."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Mahima Global handle shipping and logistics?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. We offer FOB, CIF, and CFR shipping terms. Our logistics team coordinates with freight forwarders, ships through major Indian ports (Krishnapatnam, Vizag, Chennai), and handles all export documentation including commercial invoice, packing list, bill of lading, and customs clearance."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where is Mahima Global Entrepreneurs located?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Mahima Global Entrepreneurs OPC Private Limited is headquartered at 1st Floor, 26/680, Revenue Ward 26-1, Bhaktha Vatsala Nagar, Nellore, Andhra Pradesh 524004, India. Phone: +91 93817 06785. Email: mahimaagrofarm@gmail.com."
+          }
+        }
+      ]
     }
     </script>
   </head>
@@ -1759,6 +1899,79 @@
         </div>
       </div>
     </footer>
+
+    <!-- ═══ NEWSLETTER / LEAD CAPTURE ════════════════════════════════ -->
+    <section class="newsletter-section" id="newsletter">
+      <div class="newsletter-inner">
+        <div class="newsletter-badge">📬 Trade Intelligence</div>
+        <h2 class="newsletter-title">Stay Ahead of Global Markets</h2>
+        <p class="newsletter-sub">Get weekly insights on commodity prices, trade regulations, and export opportunities delivered to your inbox. Join 500+ trade professionals.</p>
+        <form class="newsletter-form" id="newsletter-form" novalidate>
+          <div class="nf-row">
+            <input type="text" name="name" id="nf-name" placeholder="Your Name" class="nf-input" autocomplete="given-name" />
+            <input type="email" name="email" id="nf-email" placeholder="Business Email *" class="nf-input" required autocomplete="email" />
+            <button type="submit" class="nf-btn" aria-label="Subscribe to newsletter">
+              <span class="nf-btn-text">Subscribe</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+          </div>
+          <label class="nf-consent">
+            <input type="checkbox" id="nf-consent" name="consent" required />
+            <span>I agree to receive trade insights and market updates. I can unsubscribe at any time. View our <a href="/compliance.html" target="_blank">Privacy Policy</a>.</span>
+          </label>
+          <p class="nf-msg" id="nf-msg" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <script>
+    (function(){
+      const form = document.getElementById('newsletter-form');
+      if (!form) return;
+      form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const email = document.getElementById('nf-email').value.trim();
+        const name = document.getElementById('nf-name').value.trim();
+        const consent = document.getElementById('nf-consent').checked;
+        const msg = document.getElementById('nf-msg');
+        if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+          msg.textContent = '⚠ Please enter a valid email address.';
+          msg.className = 'nf-msg nf-error';
+          return;
+        }
+        if (!consent) {
+          msg.textContent = '⚠ Please accept the privacy policy to subscribe.';
+          msg.className = 'nf-msg nf-error';
+          return;
+        }
+        const btn = form.querySelector('.nf-btn');
+        btn.disabled = true;
+        btn.querySelector('.nf-btn-text').textContent = 'Subscribing...';
+        try {
+          const res = await fetch('/api/newsletter', {
+            method: 'POST',
+            headers: {'Content-Type':'application/json'},
+            body: JSON.stringify({ email, name, source: 'homepage', consent: true })
+          });
+          const data = await res.json();
+          if (res.ok) {
+            msg.textContent = '✅ Successfully subscribed! Welcome to our trade community.';
+            msg.className = 'nf-msg nf-success';
+            form.reset();
+          } else {
+            msg.textContent = '⚠ ' + (data.error || 'Something went wrong. Please try again.');
+            msg.className = 'nf-msg nf-error';
+          }
+        } catch(err) {
+          msg.textContent = '⚠ Network error. Please try again.';
+          msg.className = 'nf-msg nf-error';
+        } finally {
+          btn.disabled = false;
+          btn.querySelector('.nf-btn-text').textContent = 'Subscribe';
+        }
+      });
+    })();
+    </script>
 
     <script type="module" src="/src/main.js"></script>
   
