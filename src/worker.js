@@ -77,12 +77,6 @@ export default {
       );
     }
 
-    // Explicitly handle root path to serve index.html
-    if (url.pathname === '/' || url.pathname === '') {
-      const indexReq = new Request(new URL('/index.html', request.url), request);
-      return await env.ASSETS.fetch(indexReq);
-    }
-
     // Pass through all static assets to Cloudflare Workers Assets
     try {
       const response = await env.ASSETS.fetch(request);
