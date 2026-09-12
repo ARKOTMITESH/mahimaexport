@@ -1,20 +1,24 @@
-# Mahima Global Entrepreneurs — Robots.txt
+# Mahima Global Entrepreneurs OPC Private Limited — Robots.txt
 # https://mahimaglobalentrepreneurs.com
+
+User-agent: Googlebot
+Allow: /
+Allow: /images/
+
+User-agent: Googlebot-Image
+Allow: /images/
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Applebot
+Allow: /
 
 User-agent: *
 Allow: /
-Disallow: /node_modules/
-Disallow: /src/
-Disallow: /scripts/
-Disallow: /templates/
-Disallow: /dist/
 Disallow: /admin.html
 Disallow: /api/
-Disallow: /uploads/
 Disallow: /server/
 
-# Sitemaps
+# XML Sitemap
 Sitemap: https://mahimaglobalentrepreneurs.com/sitemap.xml
-
-# Crawl-delay
-Crawl-delay: 1
