@@ -20,15 +20,14 @@ const sitemapUrls = [];
 // Static pages for sitemap
 const staticPages = [
   { url: '/', priority: '1.0', changefreq: 'weekly' },
-  { url: '/about.html', priority: '0.8', changefreq: 'monthly' },
-  { url: '/products.html', priority: '0.9', changefreq: 'weekly' },
-  { url: '/network.html', priority: '0.7', changefreq: 'monthly' },
-  { url: '/why-us.html', priority: '0.7', changefreq: 'monthly' },
-  { url: '/partners.html', priority: '0.7', changefreq: 'monthly' },
-  { url: '/contact.html', priority: '0.8', changefreq: 'monthly' },
-  { url: '/blog.html', priority: '0.8', changefreq: 'weekly' },
-  { url: '/blog-post.html', priority: '0.6', changefreq: 'weekly' },
-  { url: '/compliance.html', priority: '0.6', changefreq: 'monthly' },
+  { url: '/about', priority: '0.8', changefreq: 'monthly' },
+  { url: '/products', priority: '0.9', changefreq: 'weekly' },
+  { url: '/network', priority: '0.7', changefreq: 'monthly' },
+  { url: '/why-us', priority: '0.7', changefreq: 'monthly' },
+  { url: '/partners', priority: '0.7', changefreq: 'monthly' },
+  { url: '/contact', priority: '0.8', changefreq: 'monthly' },
+  { url: '/blog', priority: '0.8', changefreq: 'weekly' },
+  { url: '/compliance', priority: '0.6', changefreq: 'monthly' },
 ];
 staticPages.forEach(p => sitemapUrls.push(p));
 
@@ -78,8 +77,8 @@ function overviewSchema(product) {
     '@type': 'BreadcrumbList',
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Home', item: `${BASE_URL}/` },
-      { '@type': 'ListItem', position: 2, name: 'Products', item: `${BASE_URL}/products.html` },
-      { '@type': 'ListItem', position: 3, name: product.name, item: `${BASE_URL}/${product.slug}-overview.html` },
+      { '@type': 'ListItem', position: 2, name: 'Products', item: `${BASE_URL}/products` },
+      { '@type': 'ListItem', position: 3, name: product.name, item: `${BASE_URL}/${product.slug}-overview` },
     ],
   });
 
@@ -94,7 +93,7 @@ function overviewSchema(product) {
         '@type': 'ListItem',
         position: i + 1,
         name: v.name,
-        url: `${BASE_URL}/${product.slug}-${v.slug}.html`,
+        url: `${BASE_URL}/${product.slug}-${v.slug}`,
       })),
     });
   }
@@ -105,7 +104,7 @@ function overviewSchema(product) {
 // Helper: generate JSON-LD schema for detail pages (BreadcrumbList + Product)
 function detailSchema(product, variety) {
   const schemas = [];
-  const filename = `${product.slug}-${variety.slug}.html`;
+  const cleanSlug = `${product.slug}-${variety.slug}`;
 
   // BreadcrumbList
   schemas.push({
@@ -113,13 +112,13 @@ function detailSchema(product, variety) {
     '@type': 'BreadcrumbList',
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Home', item: `${BASE_URL}/` },
-      { '@type': 'ListItem', position: 2, name: 'Products', item: `${BASE_URL}/products.html` },
-      { '@type': 'ListItem', position: 3, name: product.name, item: `${BASE_URL}/${product.slug}-overview.html` },
-      { '@type': 'ListItem', position: 4, name: variety.name, item: `${BASE_URL}/${filename}` },
+      { '@type': 'ListItem', position: 2, name: 'Products', item: `${BASE_URL}/products` },
+      { '@type': 'ListItem', position: 3, name: product.name, item: `${BASE_URL}/${product.slug}-overview` },
+      { '@type': 'ListItem', position: 4, name: variety.name, item: `${BASE_URL}/${cleanSlug}` },
     ],
   });
 
-  // Product schema (AEO/GEO optimized)
+  // Product schema (AEO/GEO optimized, white-hat B2B)
   const productSchema = {
     '@context': 'https://schema.org',
     '@type': 'Product',
@@ -136,41 +135,11 @@ function detailSchema(product, variety) {
       url: BASE_URL,
     },
     category: product.name,
-    url: `${BASE_URL}/${filename}`,
+    url: `${BASE_URL}/${cleanSlug}`,
     image: `${BASE_URL}${variety.image || product.image}`,
-    offers: {
-      '@type': 'Offer',
-      availability: 'https://schema.org/InStock',
-      priceSpecification: {
-        '@type': 'PriceSpecification',
-        priceCurrency: 'USD',
-        valueAddedTaxIncluded: false,
-      },
-      seller: {
-        '@type': 'Organization',
-        name: 'Mahima Global Entrepreneurs',
-      },
-      eligibleRegion: [
-        { '@type': 'Country', name: 'United States' },
-        { '@type': 'Country', name: 'United Arab Emirates' },
-        { '@type': 'Country', name: 'Singapore' },
-        { '@type': 'Country', name: 'United Kingdom' },
-        { '@type': 'Country', name: 'Germany' },
-        { '@type': 'Country', name: 'Australia' },
-        { '@type': 'Country', name: 'Saudi Arabia' },
-        { '@type': 'Country', name: 'Japan' },
-      ],
-    },
     countryOfOrigin: {
       '@type': 'Country',
-      name: product.tradeType === 'import' ? (product.specs["Import Origin"] ? product.specs["Import Origin"].split(',')[0].trim() : 'Global') : 'India',
-    },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.9',
-      reviewCount: '36',
-      bestRating: '5',
-      worstRating: '1',
+      name: product.tradeType === 'import' ? (product.specs && product.specs["Import Origin"] ? product.specs["Import Origin"].split(',')[0].trim() : 'Global') : 'India',
     },
   };
 
@@ -197,7 +166,7 @@ products.forEach(product => {
   
   if (product.varieties && product.varieties.length > 0) {
     product.varieties.forEach(variety => {
-      const varietyUrl = `${product.slug}-${variety.slug}.html`;
+      const varietyUrl = `${product.slug}-${variety.slug}`;
       const encodedWaMsg = encodeURIComponent(variety.waMsg);
       const waLink = `https://wa.me/919381706785?text=${encodedWaMsg}`;
       const imgPath = variety.image || product.image;
@@ -253,7 +222,7 @@ products.forEach(product => {
   fs.writeFileSync(path.resolve(rootDir, `${product.slug}-overview.html`), overviewHtml, 'utf8');
 
   // Add to sitemap
-  sitemapUrls.push({ url: `/${product.slug}-overview.html`, priority: '0.8', changefreq: 'weekly' });
+  sitemapUrls.push({ url: `/${product.slug}-overview`, priority: '0.8', changefreq: 'weekly' });
 
   // 2. Generate detailed pages for each variety
   if (product.varieties && product.varieties.length > 0) {
@@ -277,7 +246,7 @@ products.forEach(product => {
       const detailMetaDesc = metaDesc(`${variety.name} (${variety.code}) — ${variety.tagline}. ${variety.desc}`);
       const detailKeywords = genKeywords(product, variety);
       const detailSchemaMarkup = detailSchema(product, variety);
-      const canonicalSlug = `${product.slug}-${variety.slug}.html`;
+      const canonicalSlug = `${product.slug}-${variety.slug}`;
 
       let detailsHtml = detailsTemplate
         .replaceAll('{{name}}', variety.name)
@@ -290,7 +259,7 @@ products.forEach(product => {
         .replaceAll('{{healthList}}', healthList)
         .replaceAll('{{imageStyle}}', varImageStyle)
         .replaceAll('{{waMsg}}', encodeURIComponent(variety.waMsg))
-        .replaceAll('{{backUrl}}', `${product.slug}-overview.html`)
+        .replaceAll('{{backUrl}}', `${product.slug}-overview`)
         .replaceAll('{{metaDescription}}', detailMetaDesc)
         .replaceAll('{{metaKeywords}}', detailKeywords)
         .replaceAll('{{schemaMarkup}}', detailSchemaMarkup)
@@ -303,7 +272,7 @@ products.forEach(product => {
       console.log(`  -> Generated variety details page: ${filename}`);
 
       // Add to sitemap
-      sitemapUrls.push({ url: `/${filename}`, priority: '0.6', changefreq: 'monthly' });
+      sitemapUrls.push({ url: `/${product.slug}-${variety.slug}`, priority: '0.6', changefreq: 'monthly' });
     });
   }
 

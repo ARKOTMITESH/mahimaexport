@@ -25,9 +25,29 @@ export default {
       });
     }
 
+    const securityHeaders = {
+      'X-Content-Type-Options': 'nosniff',
+      'X-Frame-Options': 'SAMEORIGIN',
+      'Referrer-Policy': 'strict-origin-when-cross-origin',
+      'Permissions-Policy': 'camera=(), microphone=(), geolocation=()',
+    };
+
     const corsHeaders = {
       'Content-Type': 'application/json',
       'Access-Control-Allow-Origin': '*',
+      ...securityHeaders,
+    };
+
+    const withSecurityHeaders = (res) => {
+      const headers = new Headers(res.headers);
+      for (const [key, value] of Object.entries(securityHeaders)) {
+        headers.set(key, value);
+      }
+      return new Response(res.body, {
+        status: res.status,
+        statusText: res.statusText,
+        headers,
+      });
     };
 
     // ── NEWSLETTER SUBSCRIPTION ──
@@ -85,12 +105,12 @@ export default {
         const fallbackReq = new Request(new URL(`${url.pathname}.html`, request.url), request);
         const fallbackRes = await env.ASSETS.fetch(fallbackReq);
         if (fallbackRes.status < 400) {
-          return fallbackRes;
+          return withSecurityHeaders(fallbackRes);
         }
       }
-      return response;
+      return withSecurityHeaders(response);
     } catch (err) {
-      return new Response('Not Found', { status: 404 });
+      return new Response('Not Found', { status: 404, headers: securityHeaders });
     }
   },
 };

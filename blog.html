@@ -7,10 +7,10 @@
   <meta name="description" content="Expert insights on international trade, agricultural commodity markets, export documentation, and global sourcing strategies from Mahima Global Entrepreneurs." />
   <meta name="keywords" content="export blog, trade insights, agricultural commodities, Indian exports, international trade, basmati rice market, spices export" />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://mahimaglobalentrepreneurs.com/blog.html" />
+  <link rel="canonical" href="https://mahimaglobalentrepreneurs.com/blog" />
   <meta property="og:title" content="Blog — Trade Intelligence | Mahima Global Entrepreneurs" />
   <meta property="og:description" content="Expert insights on international trade, agricultural commodities, and global sourcing strategies." />
-  <meta property="og:url" content="https://mahimaglobalentrepreneurs.com/blog.html" />
+  <meta property="og:url" content="https://mahimaglobalentrepreneurs.com/blog" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://mahimaglobalentrepreneurs.com/images/logo-emblem.png" />
   <link rel="icon" href="/favicon.svg">
@@ -24,7 +24,7 @@
     "@type": "BreadcrumbList",
     "itemListElement": [
       {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://mahimaglobalentrepreneurs.com/"},
-      {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://mahimaglobalentrepreneurs.com/blog.html"}
+      {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://mahimaglobalentrepreneurs.com/blog"}
     ]
   }
   </script>
@@ -43,11 +43,11 @@
       </a>
       <nav class="main-nav">
         <a href="/" class="nav-link">Home</a>
-        <a href="/about.html" class="nav-link">About</a>
-        <a href="/products.html" class="nav-link">Products</a>
-        <a href="/network.html" class="nav-link">Network</a>
-        <a href="/blog.html" class="nav-link active">Blog</a>
-        <a href="/contact.html" class="nav-link">Contact</a>
+        <a href="/about" class="nav-link">About</a>
+        <a href="/products" class="nav-link">Products</a>
+        <a href="/network" class="nav-link">Network</a>
+        <a href="/blog" class="nav-link active">Blog</a>
+        <a href="/contact" class="nav-link">Contact</a>
       </nav>
       <button class="hamburger" id="hamburger" aria-label="Menu">
         <span></span><span></span><span></span>
@@ -59,15 +59,15 @@
   <div id="mobile-menu" class="mobile-menu">
     <div class="mobile-menu-inner">
       <ul class="mobile-links">
-        <li><a href="/index.html" class="mob-link">Home</a></li>
-        <li><a href="/about.html" class="mob-link">About Us</a></li>
-        <li><a href="/products.html" class="mob-link">Products</a></li>
-        <li><a href="/network.html" class="mob-link">Global Network</a></li>
-        <li><a href="/why-us.html" class="mob-link">Why Choose Us</a></li>
-        <li><a href="/network.html#export-flow" class="mob-link">Export Process</a></li>
-        <li><a href="/network.html#import-flow" class="mob-link">Import Process</a></li>
-        <li><a href="/partners.html" class="mob-link">Partnerships</a></li>
-        <li><a href="/contact.html" class="mob-link">Contact</a></li>
+        <li><a href="/" class="mob-link">Home</a></li>
+        <li><a href="/about" class="mob-link">About Us</a></li>
+        <li><a href="/products" class="mob-link">Products</a></li>
+        <li><a href="/network" class="mob-link">Global Network</a></li>
+        <li><a href="/why-us" class="mob-link">Why Choose Us</a></li>
+        <li><a href="/network#export-flow" class="mob-link">Export Process</a></li>
+        <li><a href="/network#import-flow" class="mob-link">Import Process</a></li>
+        <li><a href="/partners" class="mob-link">Partnerships</a></li>
+        <li><a href="/contact" class="mob-link">Contact</a></li>
       </ul>
       <div class="mobile-cta">
         <a href="https://wa.me/919381706785?text=Hello%20Mahima%20Global%20Entrepreneurs%2C%20I%20would%20like%20to%20request%20a%20quote%20for%20sourcing." class="btn btn-primary" target="_blank" rel="noopener">Request A Quote</a>
@@ -263,7 +263,7 @@
 
           filtered.forEach((post, i) => {
             const card = document.createElement('a');
-            card.href = `/blog-post.html?slug=${post.slug}`;
+            card.href = `/blog-post?slug=${post.slug}`;
             card.className = 'blog-card';
             card.innerHTML = `
               ${post.thumbnail ? `<img class="blog-card-img" src="${post.thumbnail}" alt="${post.title}">` : `<div class="blog-card-img" style="display:flex;align-items:center;justify-content:center;font-size:3rem;color:rgba(212,175,55,0.3);">📰</div>`}
