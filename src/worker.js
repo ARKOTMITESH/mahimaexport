@@ -77,9 +77,24 @@ export default {
       );
     }
 
+    // Explicitly handle root path to serve index.html
+    if (url.pathname === '/' || url.pathname === '') {
+      const indexReq = new Request(new URL('/index.html', request.url), request);
+      return await env.ASSETS.fetch(indexReq);
+    }
+
     // Pass through all static assets to Cloudflare Workers Assets
     try {
-      return await env.ASSETS.fetch(request);
+      const response = await env.ASSETS.fetch(request);
+      if (response.status === 404 && !url.pathname.includes('.')) {
+        // Fallback for extensionless routes e.g. /about -> /about.html
+        const fallbackReq = new Request(new URL(`${url.pathname}.html`, request.url), request);
+        const fallbackRes = await env.ASSETS.fetch(fallbackReq);
+        if (fallbackRes.status < 400) {
+          return fallbackRes;
+        }
+      }
+      return response;
     } catch (err) {
       return new Response('Not Found', { status: 404 });
     }
