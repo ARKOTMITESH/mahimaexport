@@ -66,6 +66,14 @@ export default {
       );
     }
 
+    // ── GOOGLE SEARCH CONSOLE VERIFICATION ──
+    if (url.pathname === '/google1c37080743a91ac9.html') {
+      return new Response('google-site-verification: google1c37080743a91ac9.html', {
+        status: 200,
+        headers: { 'Content-Type': 'text/html; charset=utf-8' },
+      });
+    }
+
     // Pass through all static assets to Cloudflare Workers Assets
     return env.ASSETS.fetch(request);
   },
